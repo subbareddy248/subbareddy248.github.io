@@ -31,7 +31,7 @@ navbar-links:
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/static/img/desh.jpg"
+avatar: "/static/img/subba.jpg"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -43,9 +43,9 @@ avatar: "/static/img/desh.jpg"
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
   name: Desh Raj
-  email: "draj@cs.jhu.edu"
+  email: "subba.reddy@research.iiit.ac.in"
   github: subbareddy248    # eg. daattali
-#   linkedin: rdesh26
+  linkedin: subba-reddy-oota-11a91254
 #   twitter: rdesh26
 
 # Select which links to show in the footer
