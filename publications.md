@@ -9,50 +9,60 @@ You can also browse my <a href="https://scholar.google.com/citations?user=4Uz0Ln
 **2020**
 
 - **Wound and episode level readmission risk or weeks to readmit: Why do patients get readmitted? How long does it take for a patient to get readmitted?**  
-	Ashish Arora\*, **Desh Raj**\*, Aswin Shanmugam Subramanian\*, Ke Li\*, Bar Benyair, Matthew Maciejewski, Piotr Zelasko, Paola Garcia, Shinji Watanabe, Sanjeev Khudanpur.  
-	*The 6th CHiME Workshop (at ICASSP 2020)*.  
-	[PDF](https://arxiv.org/abs/2006.07898){: .btn}
-	[Video](https://www.youtube.com/watch?v=BLK8YFNk7is&feature=youtu.be){: .btn}
-  	[Slides](https://chimechallenge.github.io/chime2020-workshop/presentations/CHiME_2020_slides_arora.pdf){: .btn}
+	**Subba Reddy Oota**, Nafisur Rahman, Shahid Saleem Mohammed, Jeffrey Galitz, Ming Liu.    
+	[PDF](https://arxiv.org/pdf/2010.02742.pdf){: .btn}
+
 
 **2019**
 
-- **Probing the infomation encoded in x-vectors**  
-	**Desh Raj**, David Snyder, Daniel Povey, Sanjeev Khudanpur.  
-	*IEEE Workshop on Automatic Speech Recognition and Understanding* (ASRU) 2019.  
-	[PDF](http://arxiv.org/abs/1909.06351){: .btn}
-	[Code](https://github.com/desh2608/kaldi/commit/43cfc9d515b94b321acccae51bf39988dafbbef7){: .btn}
-  	[Poster](/static/poster/asru-19-poster.pdf){: .btn}
+- **StepEncog: A Convolutional LSTM Autoencoder for Near-Perfect fMRI Encoding**  
+	**Subba Reddy Oota**, Vijay Rowtula, Manish Gupta, Raju S Bapi.  
+	*International Joint Conference on Neural Networks (IJCNN)* (IJCNN) 2019.  
+	[PDF](http://web2py.iiit.ac.in/research_centres/publications/download/inproceedings.pdf.aa1e8abdc9790c49.494a434e4e5f323031395f66696e616c5f636f70792e706466.pdf){: .btn}
 
-
-- **Using ASR methods for OCR**  
-	Ashish Arora, Chun Chieh Chang, Babak Rekabdar, Daniel Povey, David Etter, **Desh Raj**, Hossein Hadian, Jan Trmal, Paola Garcia, Shinji Watanabe, Vimal Manohar, Yiwen Shao, Sanjeev Khudanpur.  
+- **Towards Automated Evaluation of Handwritten Assessments**  
+	Vijay Rowtula, **Subba Reddy Oota**, CV Jawahar.  
 	*International Conference on Document Analysis and Recognition* (ICDAR) 2019.  
-	[PDF](https://www.danielpovey.com/files/2019_icdar_asr_for_ocr.pdf){: .btn}
-	[Code](https://github.com/kaldi-asr/kaldi/tree/master/egs/bentham){: .btn}
-	[Blog]({% post_url 2018-11-22-subword-segmentation %}){: .btn}
+	[PDF](http://cvit.iiit.ac.in/images/ConferencePapers/2019/PID6008523.pdf){: .btn}
+
+- **
 
 **2018**
 
-- **Uncertain fuzzy self-organization based clustering: interval type-2 approach to adaptive resonance theory**  
-	Shakaiba Majheed, Aditya Gupta, **Desh Raj**, Frank Chung-hoon Rhee.  
-	*Information Sciences*, 2018.  
-	[PDF](https://doi.org/10.1016/j.ins.2017.09.062){: .btn}
+- **A Deep Autoencoder for Near-Perfect fMRI Encoding**  
+	Vijay Rowtula, **Subbareddy Oota**, Manish Gupta, Bapi Raju Surampudi.  
+	[PDF](https://openreview.net/pdf?id=HJfYl4s0tX){: .btn}
+
+- **Believe it or not! identifying bizarre news in online news media**  
+	Vijayasaradhi Indurthi, **Subba Reddy Oota**, Manish Gupta, Vasudeva Varma. 
+	*Proceedings of the ACM India joint international conference on data science and management of data*.   
+	[PDF](https://www.researchgate.net/profile/Subba_Oota/publication/323156528_Believe_it_or_not_identifying_bizarre_news_in_online_news_media/links/5ab36269a6fdcc1bc0c27ed9/Believe-it-or-not-identifying-bizarre-news-in-online-news-media.pdf){: .btn}
+	
+- **fMRI Semantic Category Decoding Using Linguistic Encoding of Word Embeddings**
+	**Subba Reddy Oota**, Naresh Manwani, Raju S Bapi.
+	*International Conference on Neural Information Processing*
+	[PDF](https://arxiv.org/pdf/1806.05177){: .btn}
+
+- **Mixture of Regression Experts in fMRI Encoding**
+	**Subba Reddy Oota**, Adithya Avvaru, Naresh Manwani, Raju S Bapi.
+	[PDF](https://arxiv.org/pdf/1811.10740){: .btn}
 
 **2017**
 
-- **Learning local and global contexts using a convolutional recurrent neural network for relation classification in biomedical text**  
-	**Desh Raj**, Sunil Kumar Sahu, Ashish Anand.  
-	*Proceedings of the 21st Conference on Computational Natural Language Learning* (CoNLL) 2017.   
-	[PDF](https://www.aclweb.org/anthology/K17-1032){: .btn}
-	[Poster](/static/poster/conll-17-poster.pdf){: .btn}
-	[Code](https://github.com/desh2608/crnn-relation-classification){: .btn}
+- **Fermi at semeval-2017 task 7: Detection and interpretation of homographic puns in english language**  
+	V Indurthi,**Subba Reddy Oota**.  
+	*Proceedings of the 11th international workshop on semantic evaluation*  (SemEval) 2017.   
+	[PDF](https://www.aclweb.org/anthology/S17-2079.pdf){: .btn}
 
-- **Analysis of data generated from multidimensional type-1 and type-2 fuzzy membership functions**  
-	**Desh Raj**, Aditya Gupta, Bhuvnesh Garg, Kenil Tanna, Frank Chung-hoon Rhee.  
-	*IEEE Transactions on Fuzzy Systems*, 2017.  
-	[PDF](http://ieeexplore.ieee.org/document/7888454/){: .btn}
+- **Tag me a label with multi-arm: Active learning for telugu sentiment analysis**  
+	Sandeep Sricharan Mukku, **Subba Reddy Oota**, Radhika Mamidi 
+	*International Conference on Big Data Analytics and Knowledge Discovery*, 2017.  
+	[PDF](https://www.researchgate.net/profile/Sandeep_Mukku/publication/318487690_Tag_me_a_Label_with_Multi-Arm_Active_Learning_for_Telugu_Sentiment_Analysis/links/5a043d014585151f4791dd18/Tag-me-a-Label-with-Multi-Arm-Active-Learning-for-Telugu-Sentiment-Analysis.pdf){: .btn}
 
+- **Metastability of cortical BOLD signals in maturation and senescence**
+	Shruti Naik, **Oota Subbareddy**, Arpan Banerjee, Dipanjan Roy, Raju S Bapi.
+	*International Joint Conference on Neural Networks* (IJCNN) 2017.
+	[PDF](){: .btn}
 
 <br /> 
 
