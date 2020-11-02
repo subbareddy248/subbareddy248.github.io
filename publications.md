@@ -8,7 +8,7 @@ You can also browse my <a href="https://scholar.google.com/citations?user=4Uz0Ln
 
 **2020**
 
-- **Wound and episode level readmission risk or weeks to readmit: Why do patients get readmitted? How long does it take for a patient to get readmitted?**  
+- **Wound and episode level readmission risk or weeks to readmit: Why do patients get readmitted? How long does it take for a patient to get readmitted?**
 	**Subba Reddy Oota**, Nafisur Rahman, Shahid Saleem Mohammed, Jeffrey Galitz, Ming Liu.    
 	[PDF](https://arxiv.org/pdf/2010.02742.pdf){: .btn}
 
@@ -51,8 +51,8 @@ You can also browse my <a href="https://scholar.google.com/citations?user=4Uz0Ln
 
 **2017**
 
-- **Fermi at semeval-2017 task 7: Detection and interpretation of homographic puns in english language**  
-	V Indurthi,**Subba Reddy Oota**.  
+- **Fermi at semeval-2017 task 7: Detection and interpretation of homographic puns in english language**
+	Vijayasaradhi Indurthi,**Subba Reddy Oota**.  
 	*Proceedings of the 11th international workshop on semantic evaluation*  (SemEval) 2017.   
 	[PDF](https://www.aclweb.org/anthology/S17-2079.pdf){: .btn}
 
