@@ -22,17 +22,14 @@ You can also browse my <a href="https://scholar.google.com/citations?user=4Uz0Ln
 
 - **StepEncog: A Convolutional LSTM Autoencoder for Near-Perfect fMRI Encoding**  
 	**Subba Reddy Oota**, Vijay Rowtula, Manish Gupta, Raju S Bapi.  
-	*International Joint Conference on Neural Networks* (IJCNN) 2019.  
-	[PDF](http://web2py.iiit.ac.in/research_centres/publications/download/inproceedings.pdf.aa1e8abdc9790c49.494a434e4e5f323031395f66696e616c5f636f70792e706466.pdf){: .btn}
+	*International Joint Conference on Neural Networks* (IJCNN) 2019. [PDF](http://web2py.iiit.ac.in/research_centres/publications/download/inproceedings.pdf.aa1e8abdc9790c49.494a434e4e5f323031395f66696e616c5f636f70792e706466.pdf){: .btn}
 
 - **Towards Automated Evaluation of Handwritten Assessments**  
 	Vijay Rowtula, **Subba Reddy Oota**, CV Jawahar.  
-	*International Conference on Document Analysis and Recognition* (ICDAR) 2019.  
-	[PDF](http://cvit.iiit.ac.in/images/ConferencePapers/2019/PID6008523.pdf){: .btn}
+	*International Conference on Document Analysis and Recognition* (ICDAR) 2019. [PDF](http://cvit.iiit.ac.in/images/ConferencePapers/2019/PID6008523.pdf){: .btn}
 
 - **Evaluating the Combination of Word Embeddings with Mixture of Experts and Cascading gcForest in Identifying Sentiment Polarity**
-	Mounika Marreddy, **Subba Reddy Oota**, Radha Agarwal, Radhika Mamidi.
-	[PDF](https://www.researchgate.net/profile/Radhika_Mamidi/publication/334523826_Evaluating_the_Combination_of_Word_Embeddings_with_Mixture_of_Experts_and_Cascading_gcForest_in_Identifying_Sentiment_Polarity/links/5d2f6c5b299bf1547cbf54b9/Evaluating-the-Combination-of-Word-Embeddings-with-Mixture-of-Experts-and-Cascading-gcForest-in-Identifying-Sentiment-Polarity.pdf){: .btn}
+	Mounika Marreddy, **Subba Reddy Oota**, Radha Agarwal, Radhika Mamidi. [PDF](https://www.researchgate.net/profile/Radhika_Mamidi/publication/334523826_Evaluating_the_Combination_of_Word_Embeddings_with_Mixture_of_Experts_and_Cascading_gcForest_in_Identifying_Sentiment_Polarity/links/5d2f6c5b299bf1547cbf54b9/Evaluating-the-Combination-of-Word-Embeddings-with-Mixture-of-Experts-and-Cascading-gcForest-in-Identifying-Sentiment-Polarity.pdf){: .btn}
 
 **2018**
 
