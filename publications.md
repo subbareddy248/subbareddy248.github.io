@@ -10,7 +10,7 @@ You can also browse my <a href="https://scholar.google.com/citations?user=4Uz0Ln
 
 - **Wound and episode level readmission risk or weeks to readmit: Why do patients get readmitted? How long does it take for a patient to get readmitted?**
 	**Subba Reddy Oota**, Vijay Rowtula, Shahid Saleem Mohammed, Jeffrey Galitz, Ming Liu, Manish Gupta.  
-	*Accepted, WACV-2021*. {: .btn}
+	*Accepted, WACV-2021*. 
 
 - **Wound and episode level readmission risk or weeks to readmit: Why do patients get readmitted? How long does it take for a patient to get readmitted?**
 	**Subba Reddy Oota**, Nafisur Rahman, Shahid Saleem Mohammed, Jeffrey Galitz, Ming Liu.  
