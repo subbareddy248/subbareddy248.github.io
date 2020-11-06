@@ -36,7 +36,7 @@ You can also browse my <a href="https://scholar.google.com/citations?user=4Uz0Ln
 - **A Deep Autoencoder for Near-Perfect fMRI Encoding**  
 	Vijay Rowtula, **Subbareddy Oota**, Manish Gupta, Bapi Raju Surampudi.  
 	*Workshop on Modeling and Decision-Making in the Spatiotemporal Domain, 32nd Conference on Neural
-Information Processing Systems (NeurIPS 2018), Montréal, Canada.
+Information Processing Systems* (NeurIPS 2018), Montréal, Canada.
 	[PDF](https://openreview.net/pdf?id=HJfYl4s0tX){: .btn}
 
 - **Believe it or not! identifying bizarre news in online news media**  
