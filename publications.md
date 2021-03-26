@@ -42,12 +42,12 @@ Information Processing Systems* (NeurIPS 2018), Montréal, Canada.
 
 - **Believe it or not! identifying bizarre news in online news media**  
 	Vijayasaradhi Indurthi, **Subba Reddy Oota**, Manish Gupta, Vasudeva Varma. 
-	*Proceedings of the ACM India joint international conference on data science and management of data*.   
+	*Proceedings of the ACM India joint international conference on data science and management of data*, CODS-COMAD 2018*..   
 	[PDF](https://www.researchgate.net/profile/Subba_Oota/publication/323156528_Believe_it_or_not_identifying_bizarre_news_in_online_news_media/links/5ab36269a6fdcc1bc0c27ed9/Believe-it-or-not-identifying-bizarre-news-in-online-news-media.pdf){: .btn}
 	
 - **fMRI Semantic Category Decoding Using Linguistic Encoding of Word Embeddings**
 	**Subba Reddy Oota**, Naresh Manwani, Raju S Bapi.
-	*International Conference on Neural Information Processing*
+	*International Conference on Neural Information Processing*, ICONIP 2019*.
 	[PDF](https://arxiv.org/pdf/1806.05177){: .btn}
 
 - **Mixture of Regression Experts in fMRI Encoding**
