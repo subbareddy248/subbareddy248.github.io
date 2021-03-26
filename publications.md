@@ -11,11 +11,12 @@ You can also browse my <a href="https://scholar.google.com/citations?user=4Uz0Ln
 - **HealTech: A System for Predicting Patient Hospitalization Risk and Wound Progression**
 	**Subba Reddy Oota**, Vijay Rowtula, Shahid Saleem Mohammed, Jeffrey Galitz, Ming Liu, Manish Gupta.  
 	*Accepted, WACV-2021*. 
+	[PDF](https://openaccess.thecvf.com/content/WACV2021/papers/Oota_HealTech_-_A_System_for_Predicting_Patient_Hospitalization_Risk_and_WACV_2021_paper.pdf){: .btn}
 
 - **Wound and episode level readmission risk or weeks to readmit: Why do patients get readmitted? How long does it take for a patient to get readmitted?**
 	**Subba Reddy Oota**, Nafisur Rahman, Shahid Saleem Mohammed, Jeffrey Galitz, Ming Liu.  
 	*Accepted,  CODS-COMAD 2021*.
-	[PDF](https://arxiv.org/pdf/2010.02742.pdf){: .btn}
+	[PDF](https://dl.acm.org/doi/abs/10.1145/3430984.3431005){: .btn}
 
 
 **2019**
