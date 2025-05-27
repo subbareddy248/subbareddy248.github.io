@@ -1,0 +1,62 @@
+{
+    "recent_publications": [
+        {
+            "title": "Multi-modal brain encoding models for multi-modal stimuli",
+            "conference": "ICLR 2025",
+            "type": "Conference Paper",
+            "status": "Accepted"
+        },
+        {
+            "title": "Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)",
+            "conference": "ICLR 2025",
+            "type": "Conference Paper",
+            "status": "Accepted"
+        },
+        {
+            "title": "Deep Neural Networks and Brain Alignment: Brain Encoding and Decoding (Survey)",
+            "conference": "TMLR",
+            "type": "Journal Paper",
+            "status": "Accepted"
+        },
+        {
+            "title": "Speech language models lack important brain relevant semantics",
+            "conference": "ACL 2024",
+            "type": "Long Paper",
+            "status": "Accepted"
+        }
+    ],
+    "awards": [
+        {
+            "title": "Nasscom AI-Gamechangers award",
+            "description": "Received for ACL-23 Findings paper",
+            "year": "2023"
+        },
+        {
+            "title": "NeurIPS-23 scholar award",
+            "description": "Awarded for accepted paper presentation",
+            "year": "2023"
+        },
+        {
+            "title": "Microsoft and Google Travel grants",
+            "description": "For NAACL-22 conference",
+            "year": "2022"
+        }
+    ],
+    "tutorials": [
+        {
+            "title": "Large Language Models as Human-like Annotators",
+            "venue": "ECIR-25",
+            "status": "Accepted"
+        },
+        {
+            "title": "Language and the Brain: Deep Learning for Brain Encoding and Decoding",
+            "venue": "CODS COMAD-24",
+            "status": "Accepted"
+        },
+        {
+            "title": "Deep Neural Networks and Brain Alignment: Brain Encoding and Decoding",
+            "venue": "IJCAI-23",
+            "status": "Accepted"
+        }
+    ]
+}
