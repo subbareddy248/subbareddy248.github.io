@@ -1,14 +1,14 @@
 - title: Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)
-  image: 2024_sv4d.gif
+  image: 2025_iclr_mllm.PNG
   authors: <b>Subba Reddy Oota</b>, Akshett Jindal, Ishani Mondal, Khushbu Pahwa, Satyasai Srinath Namburi, Manish Shrivastava, Maneesh Singh,  Raju S. Bapi, Manish Gupta
   venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
-  number_link: 5
+  number_link: 4
   link1:
-    url: https://github.com/subbareddy248/mllm_instruction_brain
-    display: Github
-  link2:
     url: https://openreview.net/pdf?id=xkgfLXZ4e0
-    display: openreview
+    display: OpenReview
+  link2:
+    url: https://github.com/subbareddy248/mllm_instruction_brain
+    display: GitHub
   link3:
     url: https://iclr.cc/media/iclr-2025/Slides/27766.pdf
     display: Slides
@@ -17,16 +17,16 @@
     display: Poster
 
 - title: Multi-modal brain encoding models for multi-modal stimuli
-  image: 2024_sv4d.gif
+  image: 2025_iclr_multimodal.PNG
   authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Maneesh Singh,  Raju S. Bapi, Manish Gupta
   venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
-  number_link: 5
+  number_link: 4
   link1:
+    url: https://openreview.net/pdf?id=xkgfLXZ4e0
+    display: OpenReview
+  link2:
     url: https://github.com/subbareddy248/mllm_instruction_brain
     display: Github
-  link2:
-    url: https://openreview.net/pdf?id=xkgfLXZ4e0
-    display: openreview
   link3:
     url: https://iclr.cc/media/iclr-2025/Slides/31247.pdf
     display: Slides
@@ -34,20 +34,17 @@
     url: https://iclr.cc/media/PosterPDFs/ICLR%202025/31247.png?t=1743610800.797328
     display: Poster
 
-- title: (SVD) Stable video diffusion - Scaling latent video diffusion models to large datasets
-  image: 2023_svd.gif
-  authors: Andreas Blattmann, Tim Dockhorn, Sumith Kulal, Daniel Mendelevitch, Maciej Kilian, Dominik Lorenz, Yam Levi, Zion English, <b>Vikram Voleti</b>, Adam Letts, Varun Jampani, Robin Rombach
-  # venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2022</a>
-  number_link: 3
+- title: Deep Neural Networks and Brain Alignment: Brain Encoding and Decoding
+  image: 2024_tmlr.PNG
+  authors: <b>Subba Reddy Oota</b>, Zijiao Chen, Manish Gupta, Bapi S. Raju, Gael Jobard, Frederic Alexandre, Xavier Hinaut
+  venue: <a href="https://openreview.net/group?id=TMLR" target="_blank">TMLR Journal</a>
+  number_link: 2
   link1:
-    url: https://arxiv.org/abs/2311.15127
-    display: arXiv
+    url: https://openreview.net/pdf?id=YxKJihRcby
+    display: OpenReview
   link2:
-    url: https://stability.ai/news/stable-video-diffusion-open-ai-video-model
-    display: Stability
-  link3:
-    url: https://huggingface.co/docs/diffusers/main/en/using-diffusers/svd
-    display: HuggingFace
+    url: https://github.com/subbareddy248/Awesome-Brain-Encoding--Decoding
+    display: GitHub
 
 - title: Multi-Resolution Continuous Normalizing Flows
   image: 2021d_NeurIPS2021_MRCNF.png

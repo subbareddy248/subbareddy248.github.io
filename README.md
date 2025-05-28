@@ -1,4 +1,4 @@
-# Vikram Voleti's website
+# Subba Reddy Oota's website
 
 Based on [Researcher theme](https://github.com/bk2dcradle/researcher).
 
