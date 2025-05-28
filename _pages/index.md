@@ -8,11 +8,11 @@ permalink: /
 
 <!-- <br/> -->
 
-<img class="profile-picture" src="{{site.url}}{{site.baseurl}}/images/profile-picture/Vikram_Voleti_Mila_flip.jpg" />
+<img class="profile-picture" src="{{site.url}}{{site.baseurl}}/images/profile-picture/img_0118.jpg" />
 
-I am a Research Scientist at [Stability AI](https://stability.ai/), I work on generative modeling for image, video, and 3D.
+I am currently a Postdoctoral Researcher at [TU Berlin, Germany](https://denizenslab.github.io/), under the supervision of Prof. Fatma Deniz. I work on understanding language processing in human brain and language models.
 
-I completed my PhD in Computer Science at [Mila](https://mila.quebec/en/){:target="_blank"}, [University of Montreal](https://diro.umontreal.ca/){:target="_blank"}, I was supervised by [Prof. Christopher Pal](https://mila.quebec/en/person/pal-christopher/){:target="_blank"}. My main research interests are at the intersection of computer vision and deep learning, my past research spans generative modeling and representation learning for image, video and 3D.
+I completed my PhD in Computer Science at [Inria](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}, I was supervised by [Dr. Xavier Hinaut](https://sites.google.com/site/xavierhinaut/){:target="_blank"} and [Prof. Alexandre Frederic](https://www.labri.fr/perso/falexand/){:target="_blank"}. My main research interests are at the Bridging AI and Neuroscience (Neuro-AI), Language Analysis in the Brain and Language Models, Multimodal brain alignment with multimodal models, and Mechanistic interpretability of language moedls.
 <!-- My projects include score-based diffusion probabilistic models for video prediction, generation, interpolation; multi-resolution image generation; self-supervised video prediction using dynamical modelling; 3D human pose estimation and inverse kinematics from videos. -->
 
 <!-- I also work as an AI Advisor to [Blue Lion Labs](https://bluelionlabs.com/){:target="_blank"}. -->
