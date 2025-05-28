@@ -65,7 +65,7 @@
   image: 2024_acl_speech.PNG
   authors: <b>Subba Reddy Oota</b>, Emin Celik, Fatma Deniz, Mariya Toneva
   venue: <a href="https://2024.aclweb.org/" target="_blank">ACL 2024 (Long)</a>
-  number_link: 4
+  number_link: 5
   link1:
     url: https://aclanthology.org/2024.acl-long.462.pdf
     display: ACL Anthology
@@ -73,11 +73,14 @@
     url: https://github.com/subbareddy248/speech-llm-brain
     display: Github
   link3:
-    url: https://iclr.cc/media/iclr-2025/Slides/31247.pdf
+    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/5233t83/1454_slides.pdf
     display: Slides
   link4:
-    url: https://iclr.cc/media/PosterPDFs/ICLR%202025/31247.png?t=1743610800.797328
+    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/p643t3v/1454_poster.pdf
     display: Poster
+  link5:
+    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/5n23try/video_1454.mp4
+    display: Video
 
 - title: Joint processing of linguistic properties in brains and language models
   image: 2023_neurips.PNG
@@ -130,7 +133,7 @@
   image: 2024_acl_speech.PNG
   authors: <b>Subba Reddy Oota</b>, Mounika Marreddy, Bapi S. Raju, Manish Gupta
   venue: <a href="https://2023.aclweb.org/" target="_blank">ACL 2023 Findings (Long)</a>
-  number_link: 4
+  number_link: 5
   link1:
     url: https://aclanthology.org/2023.findings-acl.415.pdf
     display: ACL Anthology
@@ -143,3 +146,6 @@
   link4:
     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/la33xtl/ACL_23_Poster.pdf
     display: Poster
+  link5:
+    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/sc23xss/5658_video.mp4
+    display: Video
