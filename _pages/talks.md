@@ -1,5 +1,5 @@
 ---
-title: Vikram Voleti's talks
+title: Subba Reddy Oota's talks
 layout: default
 permalink: /talks
 ---

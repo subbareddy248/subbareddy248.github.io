@@ -1,5 +1,5 @@
 ---
-title: Vikram Voleti's contact details
+title: Subba Reddy Oota's contact details
 layout: default
 type: contact
 permalink: /contact
@@ -9,7 +9,7 @@ permalink: /contact
 
 ## Contact
 
-<i class="fa fa-envelope"></i> vikram dot voleti at gmail dot com
+<i class="fa fa-envelope"></i> subba dot reddy dot oota at tu-berlin dot de
 
 ---
 

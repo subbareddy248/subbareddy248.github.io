@@ -1,5 +1,5 @@
 ---
-title: Vikram Voleti's publications
+title: Subba Reddy Oota's publications
 layout: default
 permalink: /publications
 ---
