@@ -100,37 +100,41 @@
     url: https://neurips.cc/media/PosterPDFs/NeurIPS%202023/72702.png?t=1701438883.8556097
     display: Poster
 
-- title: On Robustness of Finetuned Transformer-based NLP Models
-  image: 2023_threestudio.png
-  authors: Ying-Tian Liu, Yuan-Chen Guo, <b>Vikram Voleti</b>, Ruizhi Shao, Chia-Hao Chen, Guan Luo, Zixin Zou, Chen Wang, Christian Laforte, Yan-Pei Cao, Song-Hai Zhang
-  venue: <a href="https://iccv2023.thecvf.com/" target="_blank">ICCV 2023</a> <a href="https://ai3dcc.github.io/" target="_blank">workshop</a>
-  number_link: 3
-  link1:
-    url: https://github.com/threestudio-project/threestudio
-    display: GitHub
-  link2:
-    url: https://cg.cs.tsinghua.edu.cn/threestudio/ICCV2023_AI3DCC_threestudio.pdf
-    display: PDF
-  link3:
-    url: 20231006_threestudio.pdf
-    display: pdf
+- title: "PhD Thesis - Neuro-computational models of language comprehension : characterizing similarities and differences between language processing in brains and language models."
 
-- title: PhD Thesis - Conditional Generative Modeling for Images, 3D Animations, and Video
-  image: 2023_UdeM.jpg
-  authors: <b>Vikram Voleti</b>
+  image: 2024_inria.PNG
+  authors: <b>Subba Reddy Oota</b>
   number_link: 3
   link1:
     url: https://docs.google.com/presentation/d/1TOhPpjHXGR5OOGsxIATl6ldBm2LDuf11Uwro2_V_aLI/edit?usp=sharing
     display: slides
   link2:
-    url: https://arxiv.org/abs/2310.13157
-    display: arXiv
+    url: https://theses.hal.science/tel-04635168v1/file/OOTA_SUBBA_REDDY_2024.pdf
+    display: HAL Openscience
   link3:
-    url: https://papyrus.bib.umontreal.ca/xmlui/handle/1866/32123
-    display: University of Montreal
+    url: https://www.imn-bordeaux.org/etudiant/subba-reddy-oota/
+    display: University of Bordeaux
+
+- title: On Robustness of Finetuned Transformer-based NLP Models
+  image: 2023_emnlp_robustness.PNG
+  authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
+  venue: <a href="https://2023.emnlp.org/" target="_blank">EMNLP Findings 2023 (Long)</a>
+  number_link: 4
+  link1:
+    url: https://aclanthology.org/2023.findings-emnlp.477.pdf
+    display: ACL Anthology
+  link2:
+    url: https://github.com/PavanNeerudu/Robustness-of-Transformers-models
+    display: Github
+  link3:
+    url: https://docs.google.com/presentation/d/1qSadMQ8ntnrKTTk5nsF0G9V6eepgsuwD/edit?usp=sharing&ouid=100565237099472127436&rtpof=true&sd=true
+    display: Slides
+  link4:
+    url: https://youtu.be/Jg_YEEWRBIY
+    display: Video
 
 - title: How does the brain process syntactic structure while listening?
-  image: 2024_acl_speech.PNG
+  image: 2023_acl_syntax.PNG
   authors: <b>Subba Reddy Oota</b>, Mounika Marreddy, Bapi S. Raju, Manish Gupta
   venue: <a href="https://2023.aclweb.org/" target="_blank">ACL 2023 Findings (Long)</a>
   number_link: 5
@@ -149,3 +153,30 @@
   link5:
     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/sc23xss/5658_video.mp4
     display: Video
+
+- title: "Speech Taskonomy: Which Speech Tasks are the most Predictive of fMRI Brain Activity?"
+  image: 2023_interspeech_speech.PNG
+  authors: <b>Subba Reddy Oota</b>, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
+  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
+  number_link: 1
+  link1:
+    url: https://www.isca-archive.org/interspeech_2023/oota23_interspeech.pdf
+    display: Proceedings
+
+- title: MEG Encoding using Word Context Semantics in Listening Stories
+  image: 2023_interspeech_meg.PNG
+  authors: <b>Subba Reddy Oota</b>, Nathan Trouvain, Frederic Alexandre, Xavier Hinaut
+  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
+  number_link: 1
+  link1:
+    url: https://www.isca-archive.org/interspeech_2023/oota23b_interspeech.pdf
+    display: Proceedings
+
+- title: Neural Architecture of Speech
+  image: 2023_icassp_speech.PNG
+  authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Mounika Marreddy, Bapi S. Raju, Manish Gupta
+  venue: <a href="https://2023.ieeeicassp.org/" target="_blank">ICASSP 2023</a>
+  number_link: 1
+  link1:
+    url: https://arxiv.org/pdf/2204.08261.pdf
+    display: Arxiv
