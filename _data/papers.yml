@@ -1,3 +1,18 @@
+- title: "USDC: A Dataset of ser tance and ogmatism in Long onversations"
+  image: 2025_acl_usdc.PNG
+  authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Manish Gupta, Lucie Flek
+  venue: <a href="https://2025.aclweb.org/" target="_blank">ACL Findings 2025</a>
+  number_link: 3
+  link1:
+    url: https://arxiv.org/abs/2406.16833
+    display: Arxiv
+  link2:
+    url: https://github.com/mounikamarreddy/USDC
+    display: GitHub
+  link3:
+    url: https://openreview.net/pdf?id=Eaw1ZrsNUN
+    display: OpenReview
+
 - title: Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)
   image: 2025_iclr_mllm.PNG
   authors: <b>Subba Reddy Oota</b>, Akshett Jindal, Ishani Mondal, Khushbu Pahwa, Satyasai Srinath Namburi, Manish Shrivastava, Maneesh Singh,  Raju S. Bapi, Manish Gupta
