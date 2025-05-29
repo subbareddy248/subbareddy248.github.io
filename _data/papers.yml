@@ -1,4 +1,4 @@
-- title: "USDC: A Dataset of User Stance and Dogmatism in Long Conversations"
+- title: "USDC: A Dataset of <u>U</u>ser <u>S</u>tance and <u>D</u>ogmatism in Long <u>C</u>onversations"
   image: 2025_acl_usdc.PNG
   authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Manish Gupta, Lucie Flek
   venue: <a href="https://2025.aclweb.org/" target="_blank">ACL Findings 2025 (Long)</a>
@@ -102,18 +102,18 @@
 
 - title: "PhD Thesis - Neuro-computational models of language comprehension : characterizing similarities and differences between language processing in brains and language models."
 
-  image: 2024_inria.PNG
+  image: 2024_inria.png
   authors: <b>Subba Reddy Oota</b>
   number_link: 3
   link1:
-    url: https://docs.google.com/presentation/d/1TOhPpjHXGR5OOGsxIATl6ldBm2LDuf11Uwro2_V_aLI/edit?usp=sharing
+    url: /docs/presentations/subba_phd_2024.pdf
     display: slides
   link2:
     url: https://theses.hal.science/tel-04635168v1/file/OOTA_SUBBA_REDDY_2024.pdf
     display: HAL Openscience
   link3:
     url: https://www.imn-bordeaux.org/etudiant/subba-reddy-oota/
-    display: University of Bordeaux
+    display: Inria Bordeaux, France
 
 - title: On Robustness of Finetuned Transformer-based NLP Models
   image: 2023_emnlp_robustness.png
@@ -158,10 +158,13 @@
   image: 2023_interspeech_speech.PNG
   authors: <b>Subba Reddy Oota</b>, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
   venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
-  number_link: 1
+  number_link: 2
   link1:
     url: https://www.isca-archive.org/interspeech_2023/oota23_interspeech.pdf
     display: Proceedings
+  link2:
+    url: /docs/presentations/interspeech_2023_speech.pdf
+    display: Slides
 
 - title: MEG Encoding using Word Context Semantics in Listening Stories
   image: 2023_interspeech_meg.PNG
@@ -176,10 +179,13 @@
   image: 2023_icassp_speech.PNG
   authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Mounika Marreddy, Bapi S. Raju, Manish Gupta
   venue: <a href="https://2023.ieeeicassp.org/" target="_blank">ICASSP 2023</a>
-  number_link: 1
+  number_link: 2
   link1:
     url: https://arxiv.org/pdf/2204.08261.pdf
     display: Arxiv
+  link2:
+    url: /docs/presentations/icassp_2023_speech.pdf
+    display: Slides
 
 - title: "Neural Language Taskonomy: Which NLP Tasks are the Most Predictive of Brain Activity"
   image: 2023_acl_syntax.PNG
@@ -190,5 +196,5 @@
     url: https://aclanthology.org/2022.naacl-main.235/
     display: ACL Anthology
   link3:
-    url: https://sites.google.com/view/subbareddyoota300/publications?authuser=0
+    url: /docs/presentations/naacl_607_taskonomy.pdf
     display: Slides

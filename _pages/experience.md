@@ -69,7 +69,7 @@ I worked on understanding the reasons behind improved alignment between language
 
 _2020 --- 2024_
 
-### [Inria Bordeaux](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}, [University of Bordeaux](https://www.bordeaux-neurocampus.fr/en/event/soutenance-de-these-subba-reddy-oota/){:target="_blank"}, Canada
+### [Inria Bordeaux](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}{:target="_blank"}, Bordeaux, France
 
 **PhD in Computer Science**
 </div>
@@ -78,7 +78,7 @@ _2020 --- 2024_
 <div class="experience-box" markdown="1">
 [<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/iiith.png">](https://www.iiit.ac.in/){:target="_blank"}
 
-_2009 --- 2014_
+_2014 --- 2016_
 
 ### [International Institute of Information Technology (IIIT-H), Hyderabad, India](https://www.iiit.ac.in/){:target="_blank"}, India
 
