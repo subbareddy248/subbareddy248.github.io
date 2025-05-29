@@ -10,7 +10,7 @@ permalink: /
 
 <img class="profile-picture" src="{{site.url}}{{site.baseurl}}/images/profile-picture/img_0118.jpg" />
 
-I am currently a Postdoctoral Researcher at [TU Berlin, Germany](https://denizenslab.github.io/), under the supervision of Prof. Fatma Deniz. I work on understanding language processing in human brain and language models.
+I am currently a Postdoctoral Researcher at [TU Berlin, Germany](https://denizenslab.github.io/), under the supervision of [Prof. Fatma Deniz](https://www.fatmanet.com/). I work on understanding bilinugal language processing in human brain and multilinugal language models.
 
 I completed my PhD in Computer Science at [Inria](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}, I was supervised by [Dr. Xavier Hinaut](https://sites.google.com/site/xavierhinaut/){:target="_blank"} and [Prof. Alexandre Frederic](https://www.labri.fr/perso/falexand/){:target="_blank"}. During my Ph.D, I also spent time as a visiting scholar at MaxPlanck Institute for Software Systems (MPI-SWS), Germany, where I was supervised by [Dr. Mariya Toneva](https://mtoneva.com/){:target="_blank"}. My main research interests are at the Bridging AI and Neuroscience (Neuro-AI), Language Analysis in the Brain and Language Models, Multimodal brain alignment with multimodal models, and Mechanistic interpretability of language moedls.
 <!-- My projects include score-based diffusion probabilistic models for video prediction, generation, interpolation; multi-resolution image generation; self-supervised video prediction using dynamical modelling; 3D human pose estimation and inverse kinematics from videos. -->

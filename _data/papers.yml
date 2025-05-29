@@ -116,7 +116,7 @@
     display: University of Bordeaux
 
 - title: On Robustness of Finetuned Transformer-based NLP Models
-  image: 2023_emnlp_robustness.PNG
+  image: 2023_emnlp_robustness.png
   authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
   venue: <a href="https://2023.emnlp.org/" target="_blank">EMNLP Findings 2023 (Long)</a>
   number_link: 4
@@ -180,3 +180,15 @@
   link1:
     url: https://arxiv.org/pdf/2204.08261.pdf
     display: Arxiv
+
+- title: "Neural Language Taskonomy: Which NLP Tasks are the Most Predictive of Brain Activity"
+  image: 2023_acl_syntax.PNG
+  authors: <b>Subba Reddy Oota</b>, Jashn Arora, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
+  venue: <a href="https://2022.naacl.org/" target="_blank">NAACL 2022 (Long, Oral)</a>
+  number_link: 2
+  link1:
+    url: https://aclanthology.org/2022.naacl-main.235/
+    display: ACL Anthology
+  link3:
+    url: https://sites.google.com/view/subbareddyoota300/publications?authuser=0
+    display: Slides

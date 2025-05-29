@@ -26,14 +26,14 @@ I work in [Prof. Graham Taylor](https://www.gwtaylor.ca/){:target="_blank"}'s la
  -->
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/stability_ai.png">](https://stability.ai/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/tuberlin.png">](https://www.tu.berlin/en/){:target="_blank"}
 
-_April 2023 --- present_
+_September 2024 --- present_
 
-### [Stability AI](https://stability.ai/){:target="_blank"} - Research Scientist
-**Canada (Remote)**
+### [TU Berlin](https://www.tu.berlin/en/){:target="_blank"} - Postdoctoral Researcher
+**Berlin, Germany; Supervisor: [Prof. Fatma Deniz](https://www.fatmanet.com/){:target="_blank"}**
 
-I lead AI research and development on generating 3D objects, images, videos from text
+I work on understanding bilingual language processing in human brain and multilinugal language models.
 
 </div>
 
@@ -50,14 +50,14 @@ My research interests are broadly in generative models and representation learni
 </div> -->
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/bluelion.jpeg">](https://bluelionlabs.com/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/mpi.jpg">](https://www.mpi-sws.org/){:target="_blank"}
 
-_October 2020 --- present_
+_May 2022 --- June 2024_
 
-### [Blue Lion Labs](https://bluelionlabs.com/){:target="_blank"} - AI Advisor
-**Waterloo, Canada**
+### [MaxPlanck Institute for Software Systems (MPI-SWS)](https://www.mpi-sws.org/){:target="_blank"} - Visiting Scholar
+**Saarbrücken, Germany; Supervisor: [Dr. Mariya Toneva](https://mtoneva.com/)**
 
-I advise [Blue Lion Labs](https://bluelionlabs.com/){:target="_blank"}, an early-stage startup that provides technology to automatically monitor different organisms in water using machine learning.
+I worked on understanding the reasons behind improved alignment between language models and the human brain using linguistic probing tasks. My research also explored what types of information contribute to better brain alignment in both text-based and speech-based language models.
 
 </div>
 
@@ -65,27 +65,27 @@ I advise [Blue Lion Labs](https://bluelionlabs.com/){:target="_blank"}, an early
 # EDUCATION
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/mila_purple.png">](https://mila.quebec/en/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png">](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}
 
-_2018 --- 2023_
+_2020 --- 2024_
 
-### [Mila](https://mila.quebec/en/){:target="_blank"}, [University of Montreal](https://diro.umontreal.ca/){:target="_blank"}, Canada
+### [Inria Bordeaux](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}, [University of Bordeaux](https://www.bordeaux-neurocampus.fr/en/event/soutenance-de-these-subba-reddy-oota/){:target="_blank"}, Canada
 
 **PhD in Computer Science**
 </div>
 
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/kgp.jpg">](http://www.iitkgp.ac.in/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/iiith.png">](https://www.iiit.ac.in/){:target="_blank"}
 
 _2009 --- 2014_
 
-### [Indian Institute of Technology (IIT), Kharagpur](http://www.iitkgp.ac.in/){:target="_blank"}, India
+### [International Institute of Information Technology (IIIT-H), Hyderabad, India](https://www.iiit.ac.in/){:target="_blank"}, India
 
-**Dual Degree (B.Tech. (H) + M.Tech.) in Electrical Engineering**<br />with master's specialization in Instrumentation and Signal Processing
+**Masters Degree (M.Tech.) in Computer Science**<br />with master's specialization in Information Security
 </div>
 
-
+<!-- 
 # EXPERIENCE
 
 <div class="experience-box" markdown="1">
@@ -449,5 +449,5 @@ I experimented with an FPGA, and measured the power consumption among the LookUp
 
 [Presentation](https://github.com/voletiv/summer_2011_FPGA_Imperial_College_London/blob/master/An Automated Flow for Intra-Die Power Variation Measurement.pdf){:target="_blank"} | [GitHub](https://github.com/voletiv/summer_2011_FPGA_Imperial_College_London){:target="_blank"} repository containing presentation, certificate, and recommendation letter from Prof. Peter Cheung
 
-</div>
+</div> -->
 
