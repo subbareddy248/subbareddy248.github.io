@@ -6,6 +6,26 @@ permalink: /
 
 | <a href="{{ site.google_scholar_url }}" target="_blank" style="text-align:center; display:block"><i class="ai ai-google-scholar-square ai-3x"></i></a> | <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" style="text-align:center; display:block"><i class="fa fa-linkedin ai-3x"></i></a> | <a href="https://github.com/{{ site.github_username }}" target="_blank" style="text-align:center; display:block"><i class="fa fa-github ai-3x"></i></a> |
 
+<link rel="stylesheet" href="{{ site.baseurl }}/css/news-ticker.css">
+
+<!-- News Ticker -->
+<div class="news-ticker">
+    <div class="news-icon">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+    </div>
+    <div class="news-ticker-content">
+        {% for article in site.data.news limit:5 %}
+            <span class="news-ticker-item">
+                <span class="news-ticker-date">{{ article.date }}</span>
+                {{ article.news }}
+            </span>
+        {% endfor %}
+        <span class="news-ticker-item">
+            <a href="{{ site.baseurl }}/news">View all news...</a>
+        </span>
+    </div>
+</div>
+
 <!-- <br/> -->
 
 <img class="profile-picture" src="{{site.url}}{{site.baseurl}}/images/profile-picture/img_0118.jpg" />
