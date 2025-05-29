@@ -19,7 +19,7 @@ permalink: /contact
 
 [<i class="fa fa-github"></i> GitHub](https://github.com/{{ site.github_username }}){:target="_blank"}
 
-<!-- [<i class="fa fa-quora"></i> Quora](https://www.quora.com/profile/{{ site.quora_username }}){:target="_blank"} -->
+[<i class="fa fa-twitter"></i> Twitter](https://www.x.com/{{ site.twitter_username }}){:target="_blank"}
 
 <!-- [<i class="fa fa-facebook"></i> Facebook](https://www.facebook.com/{{ site.facebook_username }}){:target="_blank"} -->
 
@@ -27,6 +27,6 @@ permalink: /contact
 
 ### Movie review blog:
 
-[<i class="fa fa-wordpress"></i> {{ site.wordpress_username }}.wordpress.com](https://{{ site.wordpress_username }}.wordpress.com){:target="_blank"}
+<!-- [<i class="fa fa-wordpress"></i> {{ site.wordpress_username }}.wordpress.com](https://{{ site.wordpress_username }}.wordpress.com){:target="_blank"} -->
 
 </div>

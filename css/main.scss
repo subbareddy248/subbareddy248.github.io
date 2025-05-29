@@ -1,3 +1,41 @@
 ---
 ---
-@import "style";  
+
+@import "vars";
+@import "typography";
+@import "tables";
+@import "style";
+
+// Social media icon styles
+.ai, .fa {
+  &.ai-google-scholar-square {
+    color: #4285f4;
+    &:hover {
+      color: darken(#4285f4, 10%);
+    }
+  }
+  
+  &.fa-linkedin {
+    color: #0077b5;
+    &:hover {
+      color: darken(#0077b5, 10%);
+    }
+  }
+  
+  &.fa-github {
+    color: #171515;
+    &:hover {
+      color: darken(#171515, 10%);
+    }
+  }
+  
+  &.fa-twitter {
+    color: #1da1f2;
+    &:hover {
+      color: darken(#1da1f2, 10%);
+    }
+  }
+
+  // Common transition
+  transition: color 0.3s ease;
+}
