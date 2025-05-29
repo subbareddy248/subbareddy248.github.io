@@ -15,7 +15,7 @@ permalink: /publications
     <span class="search-label">Year:</span>
     <select id="year-filter">
         <option value="all">All Years</option>
-        {% assign years = site.data.papers | map: 'year' | uniq | sort | reverse %}
+        {% assign years = site.data.papers | map: 'year' | compact | uniq | sort | reverse %}
         {% for year in years %}
         <option value="{{ year }}">{{ year }}</option>
         {% endfor %}
