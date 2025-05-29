@@ -106,7 +106,7 @@
   authors: <b>Subba Reddy Oota</b>
   number_link: 3
   link1:
-    url: /docs/presentations/subba_phd_2024.pdf
+    url: https://subbareddy248.github.io/docs/presentations/subba_phd_2024.pdf
     display: slides
   link2:
     url: https://theses.hal.science/tel-04635168v1/file/OOTA_SUBBA_REDDY_2024.pdf
@@ -163,7 +163,7 @@
     url: https://www.isca-archive.org/interspeech_2023/oota23_interspeech.pdf
     display: Proceedings
   link2:
-    url: /docs/presentations/interspeech_2023_speech.pdf
+    url: https://subbareddy248.github.io/docs/presentations/interspeech_2023_speech.pdf
     display: Slides
 
 - title: MEG Encoding using Word Context Semantics in Listening Stories
@@ -184,11 +184,11 @@
     url: https://arxiv.org/pdf/2204.08261.pdf
     display: Arxiv
   link2:
-    url: /docs/presentations/icassp_2023_speech.pdf
+    url: https://subbareddy248.github.io/docs/presentations/icassp_2023_speech.pdf
     display: Slides
 
 - title: "Neural Language Taskonomy: Which NLP Tasks are the Most Predictive of Brain Activity"
-  image: 2023_acl_syntax.PNG
+  image: 2022_naacl_taskonomy.jpg
   authors: <b>Subba Reddy Oota</b>, Jashn Arora, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
   venue: <a href="https://2022.naacl.org/" target="_blank">NAACL 2022 (Long, Oral)</a>
   number_link: 2
@@ -196,5 +196,5 @@
     url: https://aclanthology.org/2022.naacl-main.235/
     display: ACL Anthology
   link3:
-    url: /docs/presentations/naacl_607_taskonomy.pdf
+    url: https://subbareddy248.github.io/docs/presentations/naacl_607_taskonomy.pdf
     display: Slides
