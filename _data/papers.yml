@@ -2,6 +2,7 @@
   image: 2025_acl_usdc.PNG
   authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Manish Gupta, Lucie Flek
   venue: <a href="https://2025.aclweb.org/" target="_blank">ACL Findings 2025 (Long)</a>
+  year: "2025"
   number_link: 3
   link1:
     url: https://arxiv.org/abs/2406.16833
@@ -17,6 +18,7 @@
   image: 2025_iclr_mllm.PNG
   authors: <b>Subba Reddy Oota</b>, Akshett Jindal, Ishani Mondal, Khushbu Pahwa, Satyasai Srinath Namburi, Manish Shrivastava, Maneesh Singh,  Raju S. Bapi, Manish Gupta
   venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
+  year: "2025"
   number_link: 4
   link1:
     url: https://openreview.net/pdf?id=xkgfLXZ4e0
