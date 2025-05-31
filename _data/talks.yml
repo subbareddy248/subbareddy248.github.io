@@ -25,8 +25,35 @@
     url: https://www.youtube.com/watch?v=yMms5_E6Onw
     display: video
 
+- title: "Language Models and Brain Alignment: Brain Encoding and Decoding"
+  image: codscomad_talk_2024.PNG
+  date:  December 18, 2024
+  venue: <a href="https://cods-comad.in/dec-2024/tutorials.php" target="_blank">CODS-COMAD Dec'24 Conference</a>, Jodhpur, India
+  number_link: 2
+  link1:
+    url: cods_comad_2024_subba.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/cods_comad_2024_subba.pptx
+    display: slides
+
+- title: "Tutorial on Large language models (LLMs) are Human-like Annotators"
+  image: subba_kr_2024.PNG
+  date:  November 02, 2024
+  venue: <a href="https://kr.org/KR2024/workshops_tutorials.php" target="_blank">KR 2024 Conference</a>, Hanoi, Vietnam
+  number_link: 3
+  link1:
+    url: marreddy24_kr.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/marreddy24_kr.pptx
+    display: slides
+  link2:
+    url: https://sites.google.com/view/lllms-as-human-like-annotators/
+    display: Tutorial Website
+
 - title: Ph.D. thesis talk - "Neuro-computational models of language comprehension, characterizing similarities and differences between language processing in brains and language models."
-  image: subba_2024_phd.PNG
+  image: subba_phd_2024.PNG
   date: April 30, 2024
   venue: <a href="https://team.inria.fr/mnemosyne/team-members/" target="_blank">Inria Bordeaux</a>, France
   number_link: 4

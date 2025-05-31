@@ -145,20 +145,17 @@
   authors: <b>Subba Reddy Oota</b>, Mounika Marreddy, Bapi S. Raju, Manish Gupta
   venue: <a href="https://2023.aclweb.org/" target="_blank">ACL 2023 Findings (Long)</a>
   year: "2023"
-  number_link: 5
+  number_link: 4
   link1:
     url: https://aclanthology.org/2023.findings-acl.415.pdf
     display: ACL Anthology
   link2:
-    url: https://github.com/subbareddy248/lingprop-brain-alignment
-    display: Github
-  link3:
     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/ni43x56/oota23_acl.pdf
     display: Slides
-  link4:
+  link3:
     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/la33xtl/ACL_23_Poster.pdf
     display: Poster
-  link5:
+  link4:
     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/sc23xss/5658_video.mp4
     display: Video
 
