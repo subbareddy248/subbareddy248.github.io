@@ -1,6 +1,6 @@
 - title: "USDC: A Dataset of <u>U</u>ser <u>S</u>tance and <u>D</u>ogmatism in Long <u>C</u>onversations"
   image: 2025_acl_usdc.PNG
-  authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Manish Gupta, Lucie Flek
+  authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Venkata Charan Chinni, Manish Gupta, Lucie Flek
   venue: <a href="https://2025.aclweb.org/" target="_blank">ACL Findings 2025 (Long)</a>
   year: "2025"
   number_link: 3
@@ -195,6 +195,19 @@
     url: https://subbareddy248.github.io/docs/presentations/icassp_2023_speech.pdf
     display: Slides
 
+- title: "WSNet: Towards An Effective Method for Wound Image Segmentation"
+  image: wacv_2023.jpg
+  authors: <b>Subba Reddy Oota</b>, Vijay Rowtula, Shahid Mohammad, Manish Gupta
+  venue: <a href="https://wacv2023.thecvf.com/home" target="_blank">WACV 2023</a>
+  year: "2023"
+  number_link: 2
+  link1:
+    url: https://openaccess.thecvf.com/content/WACV2023/papers/Oota_WSNet_Towards_an_Effective_Method_for_Wound_Image_Segmentation_WACV_2023_paper.pdf
+    display: Paper
+  link3:
+    url: https://subbareddy248.github.io/docs/presentations/oota23_wacv.pdf
+    display: Slides
+
 - title: "Neural Language Taskonomy: Which NLP Tasks are the Most Predictive of Brain Activity"
   image: 2022_naacl_taskonomy.jpg
   authors: <b>Subba Reddy Oota</b>, Jashn Arora, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
@@ -207,3 +220,19 @@
   link3:
     url: https://subbareddy248.github.io/docs/presentations/naacl_607_taskonomy.pdf
     display: Slides
+
+- title: "HealTech: A System for Predicting Patient Hospitalization Risk and Wound Progression"
+  image: wacv_2021.PNG
+  authors: <b>Subba Reddy Oota</b>, Vijay Rowtula, Shahid Mohammed, Ming Liu, Jeffrey Galitz, Manish Gupta
+  venue: <a href="https://wacv2021.thecvf.com/home" target="_blank">WACV 2021</a>
+  year: "2021"
+  number_link: 3
+  link1:
+    url: https://openaccess.thecvf.com/content/WACV2021/papers/Oota_HealTech_-_A_System_for_Predicting_Patient_Hospitalization_Risk_and_WACV_2021_paper.pdf
+    display: Paper
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/oota20_wacv_slides.pdf
+    display: Slides
+  link3:
+    url: https://s3.amazonaws.com/pf-upload-01/u-59356/0/2020-11-21/vi43dew/391.mp4
+    display: Video
