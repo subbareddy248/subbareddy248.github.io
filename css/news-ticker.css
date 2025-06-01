@@ -1,113 +1,153 @@
+/* Compact News Section - Updated for your HTML structure */
 .news-section-box {
     border: 1px solid #d1d9e0;
-    border-radius: 8px;
-    background: #f9fafb;
+    border-radius: 6px;
     margin: 20px 0;
-    font-family: system-ui, sans-serif;
+    background: white;
 }
 
 .news-header {
     display: flex;
     align-items: center;
-    padding: 10px 16px;
-    background: #e9eef3;
-    width: 100%;
-    border: none;
+    padding: 12px 16px;
+    background: #f6f8fa;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    color: #24292f;
     user-select: none;
+    transition: background-color 0.2s ease;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.news-header:hover {
+    background: #f1f3f4;
 }
 
 .news-toggle {
+    display: inline-block;
+    transition: transform 0.2s ease;
     margin-right: 8px;
-    font-family: monospace;
-    color: #6c757d;
     font-size: 12px;
+    color: #656d76;
+    font-family: monospace;
+}
+
+.news-toggle.expanded {
+    transform: rotate(90deg);
 }
 
 .news-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #24292f;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 }
 
 .news-icon {
     font-size: 16px;
-    color: #cc0000;
+    color: #656d76;
 }
 
 .news-content {
-    transition: max-height 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: white;
 }
 
 .news-content.expanded {
-    max-height: 1000px;
+    max-height: 250px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .news-list {
+    padding: 16px 20px;
     list-style: none;
     margin: 0;
-    padding: 0;
+    max-height: 100%;
+    width: 100%;
 }
 
 .news-item-row {
+    padding: 6px 0;
     display: flex;
-    border-top: 1px solid #e2e6ea;
-    padding: 12px 16px;
     align-items: flex-start;
-    gap: 16px;
-    line-height: 1.5;
+    gap: 12px;
+    line-height: 1.4;
+    margin: 0;
+    border-bottom: 1px solid #f1f3f4;
 }
 
-.news-item-row:first-child {
-    border-top: none;
+.news-item-row:last-child {
+    border-bottom: none;
 }
 
 .news-date-col {
-    flex: 0 0 140px;
-    font-weight: 600;
-    color: #343a40;
-    font-size: 15px;
+    flex-shrink: 0;
+    min-width: 100px;
 }
 
 .news-text-col {
     flex: 1;
-    color: #212529;
+    padding-right: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.news-item-row a {
+.news-date {
+    font-weight: 600;
+    color: #24292f;
+}
+
+/* Custom scrollbar styling */
+.news-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-content::-webkit-scrollbar-track {
+    background: #f1f3f4;
+}
+
+.news-content::-webkit-scrollbar-thumb {
+    background: #c1c8cd;
+    border-radius: 3px;
+}
+
+.news-content::-webkit-scrollbar-thumb:hover {
+    background: #a1a7aa;
+}
+
+/* Link styles for news content */
+.news-text-col a {
     color: #0969da;
     text-decoration: none;
 }
 
-.news-item-row a:hover {
+.news-text-col a:hover {
     text-decoration: underline;
 }
 
 .conf-link {
-    float: right;
-    margin-left: 10px;
-    font-weight: 500;
+    display: inline-block;
+    margin-left: 4px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .news-item-row {
-        flex-direction: column;
-        gap: 6px;
+/* Add JavaScript to properly handle the toggle */
+@media (max-width: 768px) {
+    .news-header {
+        padding: 10px 14px;
     }
-
+    
+    .news-list {
+        padding: 12px 16px;
+    }
+    
     .news-date-col {
-        flex: none;
-        font-size: 14px;
-    }
-
-    .conf-link {
-        float: none;
-        display: block;
-        margin-top: 4px;
+        min-width: 80px;
     }
 }

@@ -104,21 +104,22 @@ For a more complete list, please check my <a href="{{ site.google_scholar_url }}
 </table>
 
 <script>
+// JavaScript to handle the toggle functionality
 function toggleNews() {
-    const content = document.getElementById('newsContent');
-    const toggle = document.getElementById('newsToggle');
-    const header = document.querySelector('.news-header');
-
-    const isExpanded = content.classList.contains('expanded');
-
-    // Toggle class
-    content.classList.toggle('expanded');
-    toggle.classList.toggle('expanded');
-
-    // Accessibility: update aria-expanded
-    header.setAttribute('aria-expanded', !isExpanded);
-
-    // Optional: change symbol from ▶ to ▼
-    toggle.textContent = isExpanded ? '▶' : '▼';
+    const newsContent = document.getElementById('newsContent');
+    const newsToggle = document.getElementById('newsToggle');
+    const newsHeader = document.querySelector('.news-header');
+    
+    if (newsContent.classList.contains('expanded')) {
+        newsContent.classList.remove('expanded');
+        newsContent.style.maxHeight = '0';
+        newsToggle.innerHTML = '▶';
+        newsHeader.setAttribute('aria-expanded', 'false');
+    } else {
+        newsContent.classList.add('expanded');
+        newsContent.style.maxHeight = '250px';
+        newsToggle.innerHTML = '▼';
+        newsHeader.setAttribute('aria-expanded', 'true');
+    }
 }
 </script>
