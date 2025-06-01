@@ -56,11 +56,9 @@ I post-graduated from the [International Institute of Information Technology (II
             {% for article in site.data.news %}
             <li class="news-item">
                 <span class="news-bullet">•</span>
-                <span class="news-date">{{ article.date }}:</span>
-                Our {{ article.type | default: "paper" }} 
-                {% if article.link %}<a href="{{ article.link }}" target="_blank">"{{ article.title }}"</a>{% else %}"{{ article.title }}"{% endif %} 
-                {{ article.description }}
-                {% if article.conference_name and article.conference_link %} <a href="{{ article.conference_link }}" target="_blank">{{ article.conference_name }}</a>{% endif %}
+                <div class="news-content-text">
+                    <span class="news-date">{{ article.date }}:</span>Our {{ article.type | default: "paper" }} {% if article.link %}<a href="{{ article.link }}" target="_blank">"{{ article.title }}"</a>{% else %}"{{ article.title }}"{% endif %} {{ article.description }}{% if article.conference_name and article.conference_link %} <a href="{{ article.conference_link }}" target="_blank">{{ article.conference_name }}</a>{% endif %}
+                </div>
             </li>
             {% endfor %}
         </ul>

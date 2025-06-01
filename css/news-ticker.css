@@ -61,7 +61,7 @@
 }
 
 .news-content.expanded {
-    max-height: 400px;
+    max-height: 250px;
     overflow-y: auto;
 }
 
@@ -73,9 +73,11 @@
 }
 
 .news-item {
-    padding: 8px 0;
-    display: block;
-    line-height: 1.5;
+    padding: 6px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
     margin: 0;
     border-bottom: 1px solid #f1f3f4;
 }
@@ -87,15 +89,18 @@
 .news-bullet {
     color: #656d76;
     font-weight: bold;
-    margin-right: 8px;
-    display: inline;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.news-content-text {
+    flex: 1;
 }
 
 .news-date {
     font-weight: 600;
     color: #24292f;
-    display: block;
-    margin-bottom: 4px;
+    margin-right: 8px;
 }
 
 /* Custom scrollbar styling */
