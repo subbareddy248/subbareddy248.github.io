@@ -72,7 +72,7 @@ I worked on AI-driven solutions for automated wound assessment, patient risk of 
 
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/teradata.png">](https://www.teradata.com/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/Teradata_Logo.png">](https://www.teradata.com/){:target="_blank"}
 
 _June 2016 --- July 2018_
 
