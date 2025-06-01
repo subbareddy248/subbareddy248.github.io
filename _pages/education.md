@@ -12,16 +12,12 @@ permalink: /education
   <div class="education-entry">
     <h2 class="degree-title">PhD in Computer Science at Inria Bordeaux</h2>
     
-    <div class="degree-metadata">
-      <div class="date-range">
-        <i class="fas fa-calendar-alt"></i> 2020 - 2024
-      </div>
-      
-      <span class="metadata-divider">|</span>
-      
-      <div class="location">
-        <i class="fas fa-map-marker-alt"></i> Bordeaux, France
-      </div>
+    <div class="metadata-item">
+      <i class="fas fa-calendar-alt"></i> 2020 - 2024
+    </div>
+    
+    <div class="metadata-item">
+      <i class="fas fa-map-marker-alt"></i> Bordeaux, France
     </div>
     
     <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
@@ -69,18 +65,15 @@ permalink: /education
   <div class="education-entry">
     <h2 class="degree-title">Masters Degree (M.Tech.) in Computer Science at IIIT-H</h2>
     
-    <div class="degree-metadata">
-      <div class="date-range">
-        <i class="fas fa-calendar-alt"></i> 2014 - 2016
-      </div>
-      
-      <span class="metadata-divider">|</span>
-      
-      <div class="location">
-        <i class="fas fa-map-marker-alt"></i> Hyderabad, India
-      </div>
+    <div class="metadata-item">
+      <i class="fas fa-calendar-alt"></i> 2014 - 2016
     </div>
     
+    <div class="metadata-item">
+      <i class="fas fa-map-marker-alt"></i> Hyderabad, India
+    </div>
+    
+    <!-- If you have additional details -->
     <ul class="degree-details">
       <li>Specialization in Information Security</li>
     </ul>
