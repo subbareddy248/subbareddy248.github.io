@@ -16,6 +16,9 @@
 - name: "EDUCATION"
   link: "/education"
 
+- name: "MENTORSHIP"
+  link: "/mentorship"
+
 - name: "SERVICE"
   link: "/service"
 

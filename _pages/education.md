@@ -6,23 +6,90 @@ permalink: /education
 
 # EDUCATION
 
-<div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png">](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}
+<div class="education-section">
+  
+  <!-- Inria Bordeaux Entry -->
+  <div class="education-entry">
+    <h2 class="degree-title">PhD in Computer Science at Inria Bordeaux</h2>
+    
+    <div class="degree-metadata">
+      <div class="date-range">
+        <i class="fas fa-calendar-alt"></i> 2020 - 2024
+      </div>
+      
+      <span class="metadata-divider">|</span>
+      
+      <div class="location">
+        <i class="fas fa-map-marker-alt"></i> Bordeaux, France
+      </div>
+    </div>
+    
+    <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
+  </div>
 
-_2020 --- 2024_
+  <!-- OxML Entry -->
+  <div class="education-entry">
+    <h2 class="degree-title">Oxford Machine Learning Summer School</h2>
+    
+    <div class="degree-metadata">
+      <div class="date-range">
+        <i class="fas fa-calendar-alt"></i> August 2021
+      </div>
+      
+      <span class="metadata-divider">|</span>
+      
+      <div class="location">
+        <i class="fas fa-map-marker-alt"></i> University of Oxford
+      </div>
+    </div>
+    
+    <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
+  </div>
 
-### [Inria Bordeaux](https://team.inria.fr/mnemosyne/team-members/){:target="_blank"}{:target="_blank"}, Bordeaux, France
-
-**PhD in Computer Science**
+  <!-- OxML Entry -->
+  <div class="education-entry">
+    <h2 class="degree-title">Neuromatch Academy in Deep Learning</h2>
+    
+    <div class="degree-metadata">
+      <div class="date-range">
+        <i class="fas fa-calendar-alt"></i> August 2021
+      </div>
+      
+      <span class="metadata-divider">|</span>
+      
+      <div class="location">
+        <i class="fas fa-map-marker-alt"></i> Neuromatch
+      </div>
+    </div>
+    
+    <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
+  </div>
+  
+  <!-- IIIT-H Entry -->
+  <div class="education-entry">
+    <h2 class="degree-title">Masters Degree (M.Tech.) in Computer Science at IIIT-H</h2>
+    
+    <div class="degree-metadata">
+      <div class="date-range">
+        <i class="fas fa-calendar-alt"></i> 2014 - 2016
+      </div>
+      
+      <span class="metadata-divider">|</span>
+      
+      <div class="location">
+        <i class="fas fa-map-marker-alt"></i> Hyderabad, India
+      </div>
+    </div>
+    
+    <ul class="degree-details">
+      <li>Specialization in Information Security</li>
+    </ul>
+    
+    <img src="{{site.url}}{{site.baseurl}}/images/experience/iiith.png" alt="IIIT Hyderabad Logo" class="institution-logo">
+  </div>
 </div>
 
-
-<div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/iiith.png">](https://www.iiit.ac.in/){:target="_blank"}
-
-_2014 --- 2016_
-
-### [International Institute of Information Technology (IIIT-H), Hyderabad, India](https://www.iiit.ac.in/){:target="_blank"}, India
-
-**Masters Degree (M.Tech.) in Computer Science**<br />with master's specialization in Information Security
-</div>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />

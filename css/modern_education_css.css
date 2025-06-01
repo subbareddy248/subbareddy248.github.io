@@ -1,0 +1,114 @@
+/* Modern Education Section Styling */
+
+.education-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.education-entry {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.education-entry:last-child {
+    border-bottom: none;
+}
+
+/* Degree title styling */
+.degree-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2a68a5;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.degree-title a {
+    color: #2a68a5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.degree-title a:hover {
+    color: #1c4c7d;
+    text-decoration: underline;
+}
+
+/* Metadata row styling */
+.degree-metadata {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.date-range, .location {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.date-range i, .location i {
+    margin-right: 8px;
+    color: #666;
+}
+
+.metadata-divider {
+    margin: 0 10px;
+    color: #aaa;
+}
+
+/* Details list styling */
+.degree-details {
+    margin-left: 15px;
+}
+
+.degree-details li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 5px;
+}
+
+/* Institution logo styling */
+.institution-logo {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    max-width: 120px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .degree-title {
+        font-size: 20px;
+        padding-right: 100px; /* Make room for logo on small screens */
+    }
+    
+    .institution-logo {
+        max-width: 80px;
+        top: 5px;
+    }
+    
+    .degree-metadata {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .date-range, .location {
+        margin-bottom: 5px;
+    }
+    
+    .metadata-divider {
+        display: none;
+    }
+}
