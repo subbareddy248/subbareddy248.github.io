@@ -6,8 +6,8 @@ permalink: /awards
 
 ## Awards and Honors
 
-### 2024
-- **Travel Grant**, ICLR 2024
+### 2025
+- **Financial Asstistance: Conference Registration**, ICLR 2025
 - **Outstanding Paper Award**, Brain and Language Journal
 
 ### 2023

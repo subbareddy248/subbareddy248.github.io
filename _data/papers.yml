@@ -10,196 +10,196 @@
   code_url: https://github.com/mounikamarreddy/USDC
   location: "Austria, Vienn"
 
-- title: Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)
-  image: 2025_iclr_mllm.PNG
-  authors: <b>Subba Reddy Oota</b>, Akshett Jindal, Ishani Mondal, Khushbu Pahwa, Satyasai Srinath Namburi, Manish Shrivastava, Maneesh Singh,  Raju S. Bapi, Manish Gupta
-  venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
-  year: "2025"
-  number_link: 4
-  link1:
-    url: https://openreview.net/pdf?id=xkgfLXZ4e0
-    display: OpenReview
-  link2:
-    url: https://github.com/subbareddy248/mllm_instruction_brain
-    display: GitHub
-  link3:
-    url: https://iclr.cc/media/iclr-2025/Slides/27766.pdf
-    display: Slides
-  link4:
-    url: https://iclr.cc/media/PosterPDFs/ICLR%202025/27766.png?t=1743588045.258231
-    display: Poster
+# - title: Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)
+#   image: 2025_iclr_mllm.PNG
+#   authors: <b>Subba Reddy Oota</b>, Akshett Jindal, Ishani Mondal, Khushbu Pahwa, Satyasai Srinath Namburi, Manish Shrivastava, Maneesh Singh,  Raju S. Bapi, Manish Gupta
+#   venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
+#   year: "2025"
+#   number_link: 4
+#   link1:
+#     url: https://openreview.net/pdf?id=xkgfLXZ4e0
+#     display: OpenReview
+#   link2:
+#     url: https://github.com/subbareddy248/mllm_instruction_brain
+#     display: GitHub
+#   link3:
+#     url: https://iclr.cc/media/iclr-2025/Slides/27766.pdf
+#     display: Slides
+#   link4:
+#     url: https://iclr.cc/media/PosterPDFs/ICLR%202025/27766.png?t=1743588045.258231
+#     display: Poster
 
-- title: Multi-modal brain encoding models for multi-modal stimuli
-  image: 2025_iclr_multimodal.PNG
-  authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Maneesh Singh,  Raju S. Bapi, Manish Gupta
-  venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
-  year: "2025"
-  number_link: 4
-  link1:
-    url: https://openreview.net/pdf?id=xkgfLXZ4e0
-    display: OpenReview
-  link2:
-    url: https://github.com/subbareddy248/mllm_instruction_brain
-    display: Github
-  link3:
-    url: https://iclr.cc/media/iclr-2025/Slides/31247.pdf
-    display: Slides
-  link4:
-    url: https://iclr.cc/media/PosterPDFs/ICLR%202025/31247.png?t=1743610800.797328
-    display: Poster
+# - title: Multi-modal brain encoding models for multi-modal stimuli
+#   image: 2025_iclr_multimodal.PNG
+#   authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Maneesh Singh,  Raju S. Bapi, Manish Gupta
+#   venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
+#   year: "2025"
+#   number_link: 4
+#   link1:
+#     url: https://openreview.net/pdf?id=xkgfLXZ4e0
+#     display: OpenReview
+#   link2:
+#     url: https://github.com/subbareddy248/mllm_instruction_brain
+#     display: Github
+#   link3:
+#     url: https://iclr.cc/media/iclr-2025/Slides/31247.pdf
+#     display: Slides
+#   link4:
+#     url: https://iclr.cc/media/PosterPDFs/ICLR%202025/31247.png?t=1743610800.797328
+#     display: Poster
 
-- title: "Deep Neural Networks and Brain Alignment: Brain Encoding and Decoding"
-  image: 2024_tmlr.PNG
-  authors: <b>Subba Reddy Oota</b>, Zijiao Chen, Manish Gupta, Bapi S. Raju, Gael Jobard, Frederic Alexandre, Xavier Hinaut
-  venue: <a href="https://openreview.net/group?id=TMLR" target="_blank">TMLR Journal</a>
-  year: "2024"
-  number_link: 2
-  link1:
-    url: https://openreview.net/pdf?id=YxKJihRcby
-    display: OpenReview
-  link2:
-    url: https://github.com/subbareddy248/Awesome-Brain-Encoding--Decoding
-    display: GitHub
+# - title: "Deep Neural Networks and Brain Alignment: Brain Encoding and Decoding"
+#   image: 2024_tmlr.PNG
+#   authors: <b>Subba Reddy Oota</b>, Zijiao Chen, Manish Gupta, Bapi S. Raju, Gael Jobard, Frederic Alexandre, Xavier Hinaut
+#   venue: <a href="https://openreview.net/group?id=TMLR" target="_blank">TMLR Journal</a>
+#   year: "2024"
+#   number_link: 2
+#   link1:
+#     url: https://openreview.net/pdf?id=YxKJihRcby
+#     display: OpenReview
+#   link2:
+#     url: https://github.com/subbareddy248/Awesome-Brain-Encoding--Decoding
+#     display: GitHub
 
-- title: Speech language models lack important brain-relevant semantics
-  image: 2024_acl_speech.PNG
-  authors: <b>Subba Reddy Oota</b>, Emin Celik, Fatma Deniz, Mariya Toneva
-  venue: <a href="https://2024.aclweb.org/" target="_blank">ACL 2024 (Long)</a>
-  number_link: 5
-  link1:
-    url: https://aclanthology.org/2024.acl-long.462.pdf
-    display: ACL Anthology
-  link2:
-    url: https://github.com/subbareddy248/speech-llm-brain
-    display: Github
-  link3:
-    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/5233t83/1454_slides.pdf
-    display: Slides
-  link4:
-    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/p643t3v/1454_poster.pdf
-    display: Poster
-  link5:
-    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/5n23try/video_1454.mp4
-    display: Video
+# - title: Speech language models lack important brain-relevant semantics
+#   image: 2024_acl_speech.PNG
+#   authors: <b>Subba Reddy Oota</b>, Emin Celik, Fatma Deniz, Mariya Toneva
+#   venue: <a href="https://2024.aclweb.org/" target="_blank">ACL 2024 (Long)</a>
+#   number_link: 5
+#   link1:
+#     url: https://aclanthology.org/2024.acl-long.462.pdf
+#     display: ACL Anthology
+#   link2:
+#     url: https://github.com/subbareddy248/speech-llm-brain
+#     display: Github
+#   link3:
+#     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/5233t83/1454_slides.pdf
+#     display: Slides
+#   link4:
+#     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/p643t3v/1454_poster.pdf
+#     display: Poster
+#   link5:
+#     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-07-25/5n23try/video_1454.mp4
+#     display: Video
 
-- title: Joint processing of linguistic properties in brains and language models
-  image: 2023_neurips.PNG
-  authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
-  venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2023</a>
-  year: "2023"
-  number_link: 4
-  link1:
-    url: https://proceedings.neurips.cc/paper_files/paper/2023/file/3a0e2de215bd17c39ad08ba1d16c1b12-Paper-Conference.pdf
-    display: OpenReview
-  link2:
-    url: https://github.com/subbareddy248/lingprop-brain-alignment
-    display: Github
-  link3:
-    url: https://neurips.cc/media/neurips-2023/Slides/72702.pdf
-    display: Slides
-  link4:
-    url: https://neurips.cc/media/PosterPDFs/NeurIPS%202023/72702.png?t=1701438883.8556097
-    display: Poster
+# - title: Joint processing of linguistic properties in brains and language models
+#   image: 2023_neurips.PNG
+#   authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
+#   venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2023</a>
+#   year: "2023"
+#   number_link: 4
+#   link1:
+#     url: https://proceedings.neurips.cc/paper_files/paper/2023/file/3a0e2de215bd17c39ad08ba1d16c1b12-Paper-Conference.pdf
+#     display: OpenReview
+#   link2:
+#     url: https://github.com/subbareddy248/lingprop-brain-alignment
+#     display: Github
+#   link3:
+#     url: https://neurips.cc/media/neurips-2023/Slides/72702.pdf
+#     display: Slides
+#   link4:
+#     url: https://neurips.cc/media/PosterPDFs/NeurIPS%202023/72702.png?t=1701438883.8556097
+#     display: Poster
 
-- title: "PhD Thesis - Neuro-computational models of language comprehension : characterizing similarities and differences between language processing in brains and language models."
+# - title: "PhD Thesis - Neuro-computational models of language comprehension : characterizing similarities and differences between language processing in brains and language models."
 
-  image: 2024_inria.png
-  authors: <b>Subba Reddy Oota</b>
-  year: "2024"
-  number_link: 3
-  link1:
-    url: https://subbareddy248.github.io/docs/presentations/subba_phd_2024.pdf
-    display: slides
-  link2:
-    url: https://theses.hal.science/tel-04635168v1/file/OOTA_SUBBA_REDDY_2024.pdf
-    display: HAL Openscience
-  link3:
-    url: https://www.imn-bordeaux.org/etudiant/subba-reddy-oota/
-    display: Inria Bordeaux, France
+#   image: 2024_inria.png
+#   authors: <b>Subba Reddy Oota</b>
+#   year: "2024"
+#   number_link: 3
+#   link1:
+#     url: https://subbareddy248.github.io/docs/presentations/subba_phd_2024.pdf
+#     display: slides
+#   link2:
+#     url: https://theses.hal.science/tel-04635168v1/file/OOTA_SUBBA_REDDY_2024.pdf
+#     display: HAL Openscience
+#   link3:
+#     url: https://www.imn-bordeaux.org/etudiant/subba-reddy-oota/
+#     display: Inria Bordeaux, France
 
-- title: On Robustness of Finetuned Transformer-based NLP Models
-  image: 2023_emnlp_robustness.png
-  authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
-  venue: <a href="https://2023.emnlp.org/" target="_blank">EMNLP Findings 2023 (Long)</a>
-  year: "2023"
-  number_link: 4
-  link1:
-    url: https://aclanthology.org/2023.findings-emnlp.477.pdf
-    display: ACL Anthology
-  link2:
-    url: https://github.com/PavanNeerudu/Robustness-of-Transformers-models
-    display: Github
-  link3:
-    url: https://docs.google.com/presentation/d/1qSadMQ8ntnrKTTk5nsF0G9V6eepgsuwD/edit?usp=sharing&ouid=100565237099472127436&rtpof=true&sd=true
-    display: Slides
-  link4:
-    url: https://youtu.be/Jg_YEEWRBIY
-    display: Video
+# - title: On Robustness of Finetuned Transformer-based NLP Models
+#   image: 2023_emnlp_robustness.png
+#   authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
+#   venue: <a href="https://2023.emnlp.org/" target="_blank">EMNLP Findings 2023 (Long)</a>
+#   year: "2023"
+#   number_link: 4
+#   link1:
+#     url: https://aclanthology.org/2023.findings-emnlp.477.pdf
+#     display: ACL Anthology
+#   link2:
+#     url: https://github.com/PavanNeerudu/Robustness-of-Transformers-models
+#     display: Github
+#   link3:
+#     url: https://docs.google.com/presentation/d/1qSadMQ8ntnrKTTk5nsF0G9V6eepgsuwD/edit?usp=sharing&ouid=100565237099472127436&rtpof=true&sd=true
+#     display: Slides
+#   link4:
+#     url: https://youtu.be/Jg_YEEWRBIY
+#     display: Video
 
-- title: How does the brain process syntactic structure while listening?
-  image: 2023_acl_syntax.PNG
-  authors: <b>Subba Reddy Oota</b>, Mounika Marreddy, Bapi S. Raju, Manish Gupta
-  venue: <a href="https://2023.aclweb.org/" target="_blank">ACL 2023 Findings (Long)</a>
-  year: "2023"
-  number_link: 4
-  link1:
-    url: https://aclanthology.org/2023.findings-acl.415.pdf
-    display: ACL Anthology
-  link2:
-    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/ni43x56/oota23_acl.pdf
-    display: Slides
-  link3:
-    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/la33xtl/ACL_23_Poster.pdf
-    display: Poster
-  link4:
-    url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/sc23xss/5658_video.mp4
-    display: Video
+# - title: How does the brain process syntactic structure while listening?
+#   image: 2023_acl_syntax.PNG
+#   authors: <b>Subba Reddy Oota</b>, Mounika Marreddy, Bapi S. Raju, Manish Gupta
+#   venue: <a href="https://2023.aclweb.org/" target="_blank">ACL 2023 Findings (Long)</a>
+#   year: "2023"
+#   number_link: 4
+#   link1:
+#     url: https://aclanthology.org/2023.findings-acl.415.pdf
+#     display: ACL Anthology
+#   link2:
+#     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/ni43x56/oota23_acl.pdf
+#     display: Slides
+#   link3:
+#     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/la33xtl/ACL_23_Poster.pdf
+#     display: Poster
+#   link4:
+#     url: https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2023-06-30/sc23xss/5658_video.mp4
+#     display: Video
 
-- title: "Speech Taskonomy: Which Speech Tasks are the most Predictive of fMRI Brain Activity?"
-  image: 2023_interspeech_speech.PNG
-  authors: <b>Subba Reddy Oota</b>, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
-  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
-  year: "2023"
-  number_link: 2
-  link1:
-    url: https://www.isca-archive.org/interspeech_2023/oota23_interspeech.pdf
-    display: Proceedings
-  link2:
-    url: https://subbareddy248.github.io/docs/presentations/interspeech_2023_speech.pdf
-    display: Slides
+# - title: "Speech Taskonomy: Which Speech Tasks are the most Predictive of fMRI Brain Activity?"
+#   image: 2023_interspeech_speech.PNG
+#   authors: <b>Subba Reddy Oota</b>, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
+#   venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
+#   year: "2023"
+#   number_link: 2
+#   link1:
+#     url: https://www.isca-archive.org/interspeech_2023/oota23_interspeech.pdf
+#     display: Proceedings
+#   link2:
+#     url: https://subbareddy248.github.io/docs/presentations/interspeech_2023_speech.pdf
+#     display: Slides
 
-- title: MEG Encoding using Word Context Semantics in Listening Stories
-  image: 2023_interspeech_meg.PNG
-  authors: <b>Subba Reddy Oota</b>, Nathan Trouvain, Frederic Alexandre, Xavier Hinaut
-  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
-  year: "2023"
-  number_link: 1
-  link1:
-    url: https://www.isca-archive.org/interspeech_2023/oota23b_interspeech.pdf
-    display: Proceedings
+# - title: MEG Encoding using Word Context Semantics in Listening Stories
+#   image: 2023_interspeech_meg.PNG
+#   authors: <b>Subba Reddy Oota</b>, Nathan Trouvain, Frederic Alexandre, Xavier Hinaut
+#   venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
+#   year: "2023"
+#   number_link: 1
+#   link1:
+#     url: https://www.isca-archive.org/interspeech_2023/oota23b_interspeech.pdf
+#     display: Proceedings
 
-- title: Neural Architecture of Speech
-  image: 2023_icassp_speech.PNG
-  authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Mounika Marreddy, Bapi S. Raju, Manish Gupta
-  venue: <a href="https://2023.ieeeicassp.org/" target="_blank">ICASSP 2023</a>
-  year: "2023"
-  number_link: 2
-  link1:
-    url: https://arxiv.org/pdf/2204.08261.pdf
-    display: Arxiv
-  link2:
-    url: https://subbareddy248.github.io/docs/presentations/icassp_2023_speech.pdf
-    display: Slides
+# - title: Neural Architecture of Speech
+#   image: 2023_icassp_speech.PNG
+#   authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Mounika Marreddy, Bapi S. Raju, Manish Gupta
+#   venue: <a href="https://2023.ieeeicassp.org/" target="_blank">ICASSP 2023</a>
+#   year: "2023"
+#   number_link: 2
+#   link1:
+#     url: https://arxiv.org/pdf/2204.08261.pdf
+#     display: Arxiv
+#   link2:
+#     url: https://subbareddy248.github.io/docs/presentations/icassp_2023_speech.pdf
+#     display: Slides
 
-- title: "Neural Language Taskonomy: Which NLP Tasks are the Most Predictive of Brain Activity"
-  image: 2022_naacl_taskonomy.jpg
-  authors: <b>Subba Reddy Oota</b>, Jashn Arora, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
-  venue: <a href="https://2022.naacl.org/" target="_blank">NAACL 2022 (Long, Oral)</a>
-  year: "2022"
-  number_link: 2
-  link1:
-    url: https://aclanthology.org/2022.naacl-main.235/
-    display: ACL Anthology
-  link3:
-    url: https://subbareddy248.github.io/docs/presentations/naacl_607_taskonomy.pdf
-    display: Slides
+# - title: "Neural Language Taskonomy: Which NLP Tasks are the Most Predictive of Brain Activity"
+#   image: 2022_naacl_taskonomy.jpg
+#   authors: <b>Subba Reddy Oota</b>, Jashn Arora, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
+#   venue: <a href="https://2022.naacl.org/" target="_blank">NAACL 2022 (Long, Oral)</a>
+#   year: "2022"
+#   number_link: 2
+#   link1:
+#     url: https://aclanthology.org/2022.naacl-main.235/
+#     display: ACL Anthology
+#   link3:
+#     url: https://subbareddy248.github.io/docs/presentations/naacl_607_taskonomy.pdf
+#     display: Slides
