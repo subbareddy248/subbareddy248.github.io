@@ -1,18 +1,14 @@
 - title: "USDC: A Dataset of <u>U</u>ser <u>S</u>tance and <u>D</u>ogmatism in Long <u>C</u>onversations"
   image: 2025_acl_usdc.PNG
-  authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Manish Gupta, Lucie Flek
-  venue: <a href="https://2025.aclweb.org/" target="_blank">ACL Findings 2025 (Long)</a>
-  year: "2025"
-  number_link: 3
-  link1:
-    url: https://arxiv.org/abs/2406.16833
-    display: Arxiv
-  link2:
-    url: https://github.com/mounikamarreddy/USDC
-    display: GitHub
-  link3:
-    url: https://openreview.net/pdf?id=Eaw1ZrsNUN
-    display: OpenReview
+  authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Venakat Charan Chinni, Manish Gupta, Lucie Flek
+  venue: ACL Findings 2025 (Long)
+  venue_url: "https://2025.aclweb.org/"
+  year: 2025
+  type: "poster"
+  paper_url: https://arxiv.org/abs/2406.16833
+  openreview_url: https://openreview.net/pdf?id=Eaw1ZrsNUN
+  code_url: https://github.com/mounikamarreddy/USDC
+  location: "Austria, Vienn"
 
 - title: Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)
   image: 2025_iclr_mllm.PNG
