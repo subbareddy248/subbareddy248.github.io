@@ -13,6 +13,15 @@
 - name: "EXPERIENCE"
   link: "/experience"
 
+- name: "EDUCATION"
+  link: "/education"
+
+- name: "SERVICE"
+  link: "/service"
+
+- name: "AWARDS"
+  link: "/awards"
+
 - name: "CV"
   link: "/CV"
 
