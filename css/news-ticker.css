@@ -5,6 +5,7 @@
     margin: 20px 0;
     overflow: hidden;
     background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 .news-header {
@@ -24,6 +25,10 @@
 
 .news-header:hover {
     background: #f1f3f4;
+}
+
+.news-header[aria-expanded="true"] .news-toggle {
+    transform: rotate(90deg);
 }
 
 .news-toggle {
@@ -68,10 +73,12 @@
 }
 
 .news-content.expanded {
-    max-height: 250px;
+    max-height: 1000px; /* Use a high value for animation; JS can manage true height */
     overflow-y: auto;
-    overflow-x: visible
+    overflow-x: visible;
+    transition: max-height 0.5s ease;
 }
+
 
 .news-list {
     padding: 16px 20px;
@@ -82,25 +89,29 @@
 }
 
 .news-item {
-    padding: 6px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    line-height: 1.4;
-    margin: 0;
-    border-bottom: 1px solid #f1f3f4;
+    position: relative;
+    padding-left: 16px;
+}
+
+.news-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    color: #656d76;
+    font-weight: bold;
 }
 
 .news-item:last-child {
     border-bottom: none;
 }
 
-.news-bullet {
+/* .news-bullet {
     color: #656d76;
     font-weight: bold;
     flex-shrink: 0;
     margin-top: 2px;
-}
+} */
 
 .news-content-text {
     flex: 1;
@@ -130,10 +141,8 @@
     background: #a1a7aa;
 }
 
-/* Link styles for news content */
 .news-item a {
-    color: #0969da;
-    text-decoration: none;
+    padding: 2px 0;
 }
 
 .news-item a:hover {
@@ -146,13 +155,18 @@
     padding: 0;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .news-header {
-        padding: 10px 14px;
+@media (max-width: 480px) {
+    .news-date {
+        display: block;
+        margin-bottom: 4px;
     }
-    
-    .news-list {
-        padding: 12px 16px;
+
+    .news-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .news-content-text {
+        padding-right: 0;
     }
 }
