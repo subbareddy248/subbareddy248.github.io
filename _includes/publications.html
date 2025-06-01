@@ -1,117 +1,142 @@
-<!-- Modern Publication Item Template -->
-<div class="publication-item">
-  <!-- Publication Type Badge -->
-  <div class="publication-badge {% if publication.type == 'poster' %}poster-badge{% elsif publication.type == 'oral' %}oral-badge{% elsif publication.type == 'spotlight' %}spotlight-badge{% else %}paper-badge{% endif %}">
-    {% if publication.type == 'poster' %}
-      Poster Presentation 📊
-    {% elsif publication.type == 'oral' %}
-      Oral Presentation 🎤
-    {% elsif publication.type == 'spotlight' %}
-      Venue Spotlight ⚡
-    {% else %}
-      Journal Publication 📄
-    {% endif %}
-  </div>
+<div class="publications">
 
-  <!-- Publication Content -->
-  <div class="publication-content">
-    <!-- Year -->
-    <div class="publication-year">
-      <i class="fas fa-calendar-alt"></i> {{ publication.year }}
-    </div>
-    
-    <!-- Title -->
-    <h2 class="publication-title">
-      <a href="{{ publication.link1.url | relative_url }}" target="_blank">{{ publication.title }}</a>
-    </h2>
-    
-    <!-- Authors -->
-    <div class="publication-authors">
-      <i class="fas fa-users"></i> 
-      {% assign authors_array = publication.authors | split: ", " %}
-      {% for author in authors_array %}
-        {% if author contains site.name %}
-          <strong>{{ author }}</strong>{% unless forloop.last %}, {% endunless %}
-        {% else %}
-          {{ author }}{% unless forloop.last %}, {% endunless %}
-        {% endif %}
-      {% endfor %}
-    </div>
-    
-    <!-- Links Row -->
-    <div class="publication-links">
-      {% if publication.paper_url %}
-        <a href="{{ publication.paper_url | relative_url }}" class="pub-link paper-link" target="_blank">
-          <i class="fas fa-file-alt"></i> Paper
-        </a>
-      {% endif %}
-      
-      {% if publication.poster_url %}
-        <a href="{{ publication.poster_url | relative_url }}" class="pub-link poster-link" target="_blank">
-          <i class="fas fa-image"></i> Poster
-        </a>
-      {% endif %}
-      
-      {% if publication.code_url %}
-        <a href="{{ publication.code_url | relative_url }}" class="pub-link code-link" target="_blank">
-          <i class="fab fa-github"></i> Code
-        </a>
-      {% endif %}
-      
-      {% if publication.slides_url %}
-        <a href="{{ publication.slides_url | relative_url }}" class="pub-link slides-link" target="_blank">
-          <i class="fas fa-desktop"></i> Slides
-        </a>
-      {% endif %}
-      
-      {% if publication.video_url %}
-        <a href="{{ publication.video_url | relative_url }}" class="pub-link video-link" target="_blank">
-          <i class="fas fa-video"></i> Video
-        </a>
-      {% endif %}
-      
-      {% if publication.location %}
-        <span class="pub-location">
-          <i class="fas fa-map-marker-alt"></i> {{ publication.location }}
-        </span>
-      {% endif %}
-    </div>
-    
-    <!-- Abstract Toggle -->
-    <div class="abstract-section">
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">
-        <i class="fas fa-chevron-right"></i> Abstract
-      </button>
-      <div class="abstract-content">
-        <p>{{ publication.abstract }}</p>
-        
-        {% if publication.venue %}
-          <p class="venue-info">
-            Accepted at the <a href="{{ publication.venue_url }}" target="_blank">{{ publication.venue }}</a>
-            {% if publication.colocated_with %}
-              co-located with {{ publication.colocated_with }}
-            {% endif %}
-          </p>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+{% if publication.link1.url contains '://' %}
+<a href="{{ publication.link1.url }}" target="_blank"><div class="publication-title" class="publication-title">{{ publication.title }}</div></a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank"><div class="publication-title" class="publication-title">{{ publication.title }}</div></a>
+{% endif %}
+
+{% if publication.link1.url contains '://' %}
+<a href="{{ publication.link1.url }}" target="_blank"><img class="publication-picture" src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}" alt="NOT FOUND" /></a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank"><img class="publication-picture" src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}" alt="NOT FOUND" /></a>
+{% endif %}
+
+<div class="publication-text">
+
+{% if publication.description %}
+<p>{{ publication.description }}</p>
+{% endif %}
+
+{% if publication.authors %}
+<p class="publication-authors"><em>{{ publication.authors }}</em></p>
+{% endif %}
+
+{% if publication.venue %}
+<p class="publication-venue">{{ publication.venue }}</p>
+{% endif %}
+
+{% if publication.number_link == 1 %}
+<p>
+{% if publication.link1.url contains '://' %}
+<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% endif %}
+</p>
+{% endif %}
+
+{% if publication.number_link == 2 %}
+<p>
+{% if publication.link1.url contains '://' %}
+<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% endif %}
+|
+{% if publication.link2.url contains '://' %}
+<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% endif %}
+</p>
+{% endif %}
+
+{% if publication.number_link == 3 %}
+<p>
+{% if publication.link1.url contains '://' %}
+<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% endif %}
+|
+{% if publication.link2.url contains '://' %}
+<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% endif %}
+|
+{% if publication.link3.url contains '://' %}
+<a href="{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
+{% endif %}
+</p>
+{% endif %}
+
+{% if publication.number_link == 4 %}
+<p>
+{% if publication.link1.url contains '://' %}
+<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% endif %}
+|
+{% if publication.link2.url contains '://' %}
+<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% endif %}
+|
+{% if publication.link3.url contains '://' %}
+<a href="{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
+{% endif %}
+|
+{% if publication.link4.url contains '://' %}
+<a href="{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
+{% endif %}
+</p>
+{% endif %}
+
+{% if publication.number_link == 5 %}
+<p>
+{% if publication.link1.url contains '://' %}
+<a href="{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">{{ publication.link1.display }}</a>
+{% endif %}
+|
+{% if publication.link2.url contains '://' %}
+<a href="{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link2.url }}" target="_blank">{{ publication.link2.display }}</a>
+{% endif %}
+|
+{% if publication.link3.url contains '://' %}
+<a href="{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link3.url }}" target="_blank">{{ publication.link3.display }}</a>
+{% endif %}
+|
+{% if publication.link4.url contains '://' %}
+<a href="{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link4.url }}" target="_blank">{{ publication.link4.display }}</a>
+{% endif %}
+|
+{% if publication.link5.url contains '://' %}
+<a href="{{ publication.link5.url }}" target="_blank">{{ publication.link5.display }}</a>
+{% else %}
+<a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link5.url }}" target="_blank">{{ publication.link5.display }}</a>
+{% endif %}
+</p>
+{% endif %}
+
 </div>
 
-<script>
-// Function to toggle abstract visibility
-function toggleAbstract(button) {
-  // Toggle active class on button
-  button.classList.toggle('active');
-  
-  // Find the abstract content element (next sibling)
-  const abstractContent = button.nextElementSibling;
-  
-  // Toggle display
-  if (abstractContent.style.display === 'block') {
-    abstractContent.style.display = 'none';
-  } else {
-    abstractContent.style.display = 'block';
-  }
-}
-</script>
+</div>
+
