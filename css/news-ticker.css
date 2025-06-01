@@ -1,12 +1,10 @@
-/* Compact News Section - Enhanced */
+/* Compact News Section - Matching Your Image */
 .news-section {
     border: 1px solid #d1d9e0;
     border-radius: 6px;
     margin: 20px 0;
     overflow: hidden;
     background: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    font-family: system-ui, sans-serif;
 }
 
 .news-header {
@@ -20,6 +18,8 @@
     border: none;
     width: 100%;
     text-align: left;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .news-header:hover {
@@ -56,14 +56,21 @@
 .news-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.3s ease;
     background: white;
 }
 
+.news-content-text {
+    flex: 1;
+    padding-right: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .news-content.expanded {
-    max-height: 1000px;
+    max-height: 250px;
     overflow-y: auto;
-    overflow-x: visible;
+    overflow-x: visible
 }
 
 .news-list {
@@ -73,36 +80,29 @@
     max-height: 100%;
 }
 
-/* News items with smart bullet via ::before */
 .news-item {
     padding: 6px 0;
     display: flex;
     align-items: flex-start;
-    line-height: 1.5;
+    gap: 8px;
+    line-height: 1.4;
     margin: 0;
     border-bottom: 1px solid #f1f3f4;
-    position: relative;
-    padding-left: 16px;
 }
 
 .news-item:last-child {
     border-bottom: none;
 }
 
-.news-item::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    top: 0.3em;
+.news-bullet {
     color: #656d76;
     font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .news-content-text {
     flex: 1;
-    padding-right: 20px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
 .news-date {
@@ -129,44 +129,29 @@
     background: #a1a7aa;
 }
 
-/* Link styles */
+/* Link styles for news content */
 .news-item a {
     color: #0969da;
     text-decoration: none;
-    padding: 2px 0;
 }
 
 .news-item a:hover {
     text-decoration: underline;
 }
 
-/* Cleanup extra spacing */
+/* Remove any extra spacing */
 .news-item * {
     margin: 0;
     padding: 0;
 }
 
-/* Responsive improvements */
+/* Responsive design */
 @media (max-width: 768px) {
     .news-header {
         padding: 10px 14px;
     }
-
+    
     .news-list {
         padding: 12px 16px;
-    }
-
-    .news-item {
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    .news-date {
-        display: block;
-        margin-bottom: 4px;
-    }
-
-    .news-content-text {
-        padding-right: 0;
     }
 }
