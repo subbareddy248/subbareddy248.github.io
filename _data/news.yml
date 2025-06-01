@@ -4,15 +4,21 @@
   conference_link: "#"
   conference_name: "ACL 2025"
   link: "https://arxiv.org/pdf/2406.16833"
-  
-  # news: Paper accepted at ACL Findings 2025 (Long)! "USDC A Dataset of <u>U</u>ser <u>S</u>tance and <u>D</u>ogmatism in Long <u>C</u>onversations" <a href="https://arxiv.org/pdf/2406.16833" target="_blank">arXiv</a>;
 
 - date: January 15, 2025
-  news: Paper accepted at ICLR 2025! "Multi-modal brain encoding models for multi-modal stimuli" <a href="https://openreview.net/pdf?id=0dELcFHig2" target="_blank">OpenReview</a>;
+  title: "Multi-modal brain encoding models for multi-modal stimuli"
+  description: "has been accepted to ICLR 2025!."
+  conference_link: "#"
+  conference_name: "ICLR 2025"
+  link: "https://openreview.net/pdf?id=0dELcFHig2"
 
 - date: January 15, 2025
-  news: Paper accepted at ICLR 2025! "Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)" <a href="https://openreview.net/forum?id=xkgfLXZ4e0" target="_blank">OpenReview</a>; 
-
+  title: "Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)"
+  description: "has been accepted to ICLR 2025!."
+  conference_link: "#"
+  conference_name: "ICLR 2025"
+  link: "https://openreview.net/forum?id=xkgfLXZ4e0"
+ 
 # - date: August 29, 2022 - December 16, 2022
 #   news: Research Intern at <a href="https://about.facebook.com/" target="_blank">Meta</a>, in the AI4AR team.
 
