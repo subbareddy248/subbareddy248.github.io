@@ -51,24 +51,18 @@ I post-graduated from the [International Institute of Information Technology (II
         </div>
     </button>
     <div class="news-content" id="newsContent">
-        <ul class="news-list">
-            {% for article in site.data.news limit:5 %}
-            <li class="news-item">
-                <span class="news-bullet">•</span>
-                <div>
-                    <span class="news-date">{{ article.date }}:</span>
-                    <span class="news-text">
-                        {% if article.link %}
-                            Our {{ article.type | default: "paper" }} <a href="{{ article.link }}">"{{ article.title }}"</a> {{ article.description }}
-                        {% else %}
-                            Our {{ article.type | default: "paper" }} "{{ article.title }}" {{ article.description }}
-                        {% endif %}
-                    </span>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+    <ul class="news-list">
+        {% for article in site.data.news limit:5 %}
+        <li class="news-item">
+            <span class="news-bullet">•</span>
+            <span class="news-date">{{ article.date }}:</span>
+            <span class="news-text">Our {{ article.type | default: "paper" }} 
+            {% if article.link %}<a href="{{ article.link }}">"{{ article.title }}"</a>{% else %}"{{ article.title }}"{% endif %} 
+            {{ article.description }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 </div>
 
 <!-- <br/> -->

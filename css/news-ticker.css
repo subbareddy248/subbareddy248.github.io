@@ -72,15 +72,13 @@
 .news-list {
     padding: 0 20px 20px 20px;
     list-style: none;
-    margin: 0;
+    margin: 0 !important;
 }
 
 .news-item {
-    padding: 8px 0;
-    border-bottom: 1px solid #f1f3f4;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 6px 0; /* Reduce from 8px */
+    margin: 0;
+    line-height: 1.4 !important;
 }
 
 .news-item:last-child {
@@ -99,15 +97,14 @@
 }
 
 .news-date {
-    font-weight: 600;
-    color: #24292f;
-    white-space: nowrap;
+    display: inline;
     margin-right: 8px;
 }
 
 .news-text {
-    color: #24292f;
-    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
 }
 
 .news-text a {
@@ -117,6 +114,12 @@
 
 .news-text a:hover {
     text-decoration: underline;
+}
+
+/* Remove any default margins from paragraphs */
+.news-item p {
+    margin: 0;
+    padding: 0;
 }
 
 /* Responsive design */
