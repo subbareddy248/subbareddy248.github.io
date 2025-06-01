@@ -43,6 +43,7 @@ I post-graduated from the [International Institute of Information Technology (II
 </div> -->
 
 <!-- Replace your news section in index.md with this -->
+<!-- News Section -->
 <div class="news-section">
     <button class="news-header" onclick="toggleNews()">
         <span class="news-toggle" id="newsToggle">▶</span>
@@ -53,19 +54,24 @@ I post-graduated from the [International Institute of Information Technology (II
     </button>
     <div class="news-content" id="newsContent">
         <ul class="news-list">
-            {% for article in site.data.news limit:5 %}
+            {% for article in site.data.news %}
             <li class="news-item">
-                <span class="news-bullet">•</span>
-                <span class="news-date">{{ article.date }}:</span> 
-                Our {{ article.type | default: "paper" }} 
-                {% if article.link %}<a href="{{ article.link }}" target="_blank">"{{ article.title }}"</a>{% else %}"{{ article.title }}"{% endif %} 
+                <strong>{{ article.date }}</strong>:
+                {% if article.link %}
+                Our {{ article.type | default: "paper" }} <a href="{{ article.link }}" target="_blank">"{{ article.title }}"</a>
+                {% else %}
+                Our {{ article.type | default: "paper" }} "{{ article.title }}"
+                {% endif %}
                 {{ article.description }}
-                {% if article.conference_name and article.conference_link %} <a href="{{ article.conference_link }}" target="_blank">{{ article.conference_name }}</a>{% endif %}
+                {% if article.conference_name and article.conference_link %}
+                <a href="{{ article.conference_link }}" target="_blank">{{ article.conference_name }}</a>
+                {% endif %}
             </li>
             {% endfor %}
         </ul>
     </div>
 </div>
+
 
 <!-- <br/> -->
 
