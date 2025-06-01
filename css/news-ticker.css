@@ -1,6 +1,6 @@
-/* Compact News Section - Matching Your Image */
 .news-section {
-    border: 1px solid #d1d9e0;
+    border: 1px solid 
+#d1d9e0;
     border-radius: 6px;
     margin: 20px 0;
     overflow: hidden;
@@ -11,7 +11,8 @@
     display: flex;
     align-items: center;
     padding: 12px 16px;
-    background: #f6f8fa;
+    background: 
+#f6f8fa;
     cursor: pointer;
     user-select: none;
     transition: background-color 0.2s ease;
@@ -23,7 +24,8 @@
 }
 
 .news-header:hover {
-    background: #f1f3f4;
+    background: 
+#f1f3f4;
 }
 
 .news-toggle {
@@ -31,7 +33,8 @@
     transition: transform 0.2s ease;
     margin-right: 8px;
     font-size: 12px;
-    color: #656d76;
+    color: 
+#656d76;
     font-family: monospace;
 }
 
@@ -42,7 +45,8 @@
 .news-title {
     font-size: 16px;
     font-weight: 600;
-    color: #24292f;
+    color: 
+#24292f;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -50,7 +54,8 @@
 
 .news-icon {
     font-size: 16px;
-    color: #656d76;
+    color: 
+#656d76;
 }
 
 .news-content {
@@ -60,17 +65,9 @@
     background: white;
 }
 
-.news-content-text {
-    flex: 1;
-    padding-right: 20px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
 .news-content.expanded {
     max-height: 250px;
     overflow-y: auto;
-    overflow-x: visible
 }
 
 .news-list {
@@ -87,7 +84,8 @@
     gap: 8px;
     line-height: 1.4;
     margin: 0;
-    border-bottom: 1px solid #f1f3f4;
+    border-bottom: 1px solid 
+#f1f3f4;
 }
 
 .news-item:last-child {
@@ -95,7 +93,8 @@
 }
 
 .news-bullet {
-    color: #656d76;
+    color: 
+#656d76;
     font-weight: bold;
     flex-shrink: 0;
     margin-top: 2px;
@@ -107,7 +106,8 @@
 
 .news-date {
     font-weight: 600;
-    color: #24292f;
+    color: 
+#24292f;
     margin-right: 8px;
 }
 
@@ -117,21 +117,25 @@
 }
 
 .news-content::-webkit-scrollbar-track {
-    background: #f1f3f4;
+    background: 
+#f1f3f4;
 }
 
 .news-content::-webkit-scrollbar-thumb {
-    background: #c1c8cd;
+    background: 
+#c1c8cd;
     border-radius: 3px;
 }
 
 .news-content::-webkit-scrollbar-thumb:hover {
-    background: #a1a7aa;
+    background: 
+#a1a7aa;
 }
 
 /* Link styles for news content */
 .news-item a {
-    color: #0969da;
+    color: 
+#0969da;
     text-decoration: none;
 }
 
@@ -145,12 +149,19 @@
     padding: 0;
 }
 
+.news-content-text {
+    flex: 1;
+    padding-right: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .news-header {
         padding: 10px 14px;
     }
-    
+
     .news-list {
         padding: 12px 16px;
     }
