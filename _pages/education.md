@@ -22,6 +22,7 @@ permalink: /education
         <div class="location">
         <i class="fas fa-map-marker-alt"></i> Bordeaux, France
         </div>
+        
     </div>
     
     <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
