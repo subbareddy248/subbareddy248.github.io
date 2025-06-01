@@ -60,9 +60,17 @@
     background: white;
 }
 
+.news-content-text {
+    flex: 1;
+    padding-right: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .news-content.expanded {
     max-height: 250px;
     overflow-y: auto;
+    overflow-x: visible
 }
 
 .news-list {
@@ -70,6 +78,7 @@
     list-style: none;
     margin: 0;
     max-height: 100%;
+    width: calc(100% - 10px)
 }
 
 .news-item {
