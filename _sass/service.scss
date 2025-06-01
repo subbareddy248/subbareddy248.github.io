@@ -1,0 +1,144 @@
+.service-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+
+    h2 {
+        color: #2c3e50;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 3px solid #3498db;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #e74c3c;
+        }
+    }    h3 {
+        color: #34495e;
+        font-size: 1.5rem;
+        margin: 2rem 0 1.5rem;
+        font-weight: 600;
+        position: relative;
+        padding-left: 1rem;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background-color: #3498db;
+            border-radius: 2px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    li {
+        margin-bottom: 0.75rem;
+        padding: 0.75rem 1rem;
+        position: relative;
+        background-color: #f8f9fa;
+        border-radius: 6px;
+        transition: all 0.2s ease;        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        &:before {
+            content: "";
+            width: 4px;
+            height: 100%;
+            background-color: #3498db;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 4px 0 0 4px;
+            opacity: 0.5;
+            transition: opacity 0.2s ease;
+        }
+        
+        &:hover:before {
+            opacity: 1;
+        }
+    }
+
+    .conference-year {
+        color: #e74c3c;
+        font-weight: 500;
+        font-size: 0.9em;
+        margin-left: 0.5rem;
+    }
+
+    .conference-name {
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1.1em;
+    }    .volunteer-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        margin: 2rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+
+        h3 {
+            color: #2980b9;
+            margin-top: 0;
+            padding-left: 0;
+            
+            &:before {
+                display: none;
+            }
+        }
+        
+        ul {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        
+        li {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            
+            &:before {
+                background-color: #e74c3c;
+            }
+        }
+    }
+    
+    @media (max-width: 768px) {
+        margin: 2rem 0;
+        
+        h2 {
+            font-size: 1.75rem;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+        }
+        
+        .volunteer-section {
+            padding: 1.5rem;
+        }
+    }
+}
