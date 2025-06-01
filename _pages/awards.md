@@ -13,5 +13,3 @@ permalink: /awards
 - **NeurIPS-23 scholar award**, NeurIPS 2023
 - **Travel Grant for Cogsci-2022 conference**, MaxPlanck Institute for Software Systems
 - **Microsoft and Google Travel Grant**, NAACL 2022
-- **Best Paper Award**, ACL 2023
-- **Student Scholarship**, EMNLP 2023
