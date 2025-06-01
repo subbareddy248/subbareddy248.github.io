@@ -12,12 +12,16 @@ permalink: /education
   <div class="education-entry">
     <h2 class="degree-title">PhD in Computer Science at Inria Bordeaux</h2>
     
-    <div class="metadata-item">
-      <i class="fas fa-calendar-alt"></i> 2020 - 2024
-    </div>
-    
-    <div class="metadata-item">
-      <i class="fas fa-map-marker-alt"></i> Bordeaux, France
+    <div class="degree-metadata">
+        <div class="date-range">
+        <i class="fas fa-calendar-alt"></i> 2020 - 2024
+        </div>
+
+        <span class="metadata-divider">|</span>
+        
+        <div class="location">
+        <i class="fas fa-map-marker-alt"></i> Bordeaux, France
+        </div>
     </div>
     
     <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
@@ -39,7 +43,7 @@ permalink: /education
       </div>
     </div>
     
-    <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
+    <img src="{{site.url}}{{site.baseurl}}/images/experience/oxml2021.png" alt="Oxford ML School Logo" class="institution-logo">
   </div>
 
   <!-- OxML Entry -->
@@ -58,22 +62,25 @@ permalink: /education
       </div>
     </div>
     
-    <img src="{{site.url}}{{site.baseurl}}/images/experience/2024_inria.png" alt="Inria Bordeaux Logo" class="institution-logo">
+    <img src="{{site.url}}{{site.baseurl}}/images/experience/neuromatch.png" alt="Neuromatch Academy Logo" class="institution-logo">
   </div>
   
   <!-- IIIT-H Entry -->
   <div class="education-entry">
     <h2 class="degree-title">Masters Degree (M.Tech.) in Computer Science at IIIT-H</h2>
     
-    <div class="metadata-item">
-      <i class="fas fa-calendar-alt"></i> 2014 - 2016
+    <div class="degree-metadata">
+      <div class="date-range">
+        <i class="fas fa-calendar-alt"></i> 2014 - 2016
+      </div>
+      
+      <span class="metadata-divider">|</span>
+      
+      <div class="location">
+        <i class="fas fa-map-marker-alt"></i> Hyderabad, India
+      </div>
     </div>
     
-    <div class="metadata-item">
-      <i class="fas fa-map-marker-alt"></i> Hyderabad, India
-    </div>
-    
-    <!-- If you have additional details -->
     <ul class="degree-details">
       <li>Specialization in Information Security</li>
     </ul>

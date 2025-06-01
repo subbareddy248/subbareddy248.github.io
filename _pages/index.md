@@ -93,16 +93,6 @@ For a more complete list, please check my <a href="{{ site.google_scholar_url }}
 
 <p>&nbsp;</p>
 
-## News
-
-<table>
-{% for article in site.data.news %}
-<tr>
-{% include news.html %}
-</tr>
-{% endfor %}
-</table>
-
 <script>
 // JavaScript to handle the toggle functionality
 function toggleNews() {
