@@ -37,18 +37,6 @@ I work on understanding bilingual language processing in human brain and multili
 
 </div>
 
-<!-- <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/mila_purple.png">](https://mila.quebec/en/){:target="_blank"}
-
-_September 2018 --- September 2023_
-
-### [Mila](https://mila.quebec/en/){:target="_blank"}, [University of Montreal](https://diro.umontreal.ca/){:target="_blank"} - PhD candidate
-
-**PhD, Computer Science; Supervisor: [Prof. Christopher Pal](https://mila.quebec/en/person/pal-christopher/){:target="_blank"}**
-
-My research interests are broadly in generative models and representation learning for images, video, 3D. I work on image, video and 3D generation using latent dynamics, and score-based diffusion models.
-</div> -->
-
 <div class="experience-box" markdown="1">
 [<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/mpi.jpg">](https://www.mpi-sws.org/){:target="_blank"}
 
@@ -65,46 +53,53 @@ I worked on understanding the reasons behind improved alignment between language
 # EXPERIENCE
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/woundtech.jpg">](https://stability.ai/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/woundtech.jpg">](https://woundtech.net/){:target="_blank"}
 
-_August 2018 --- July 2023
+_August 2018 --- July 2023_
 
-### [Woundtech Innovative Healthcare Solutions](https://stability.ai/){:target="_blank"} - Lead Data Scientist
-**Hyderabad, India (Remote)**
+### [Woundtech Innovative Healthcare Solutions](https://woundtech.net/){:target="_blank"} - Lead Data Scientist
+**Hyderabad, India (Remote Since 2021)**
 
-I lead AI research and development on generating 3D objects, images, videos from text
+I worked on AI-driven solutions for automated wound assessment, patient risk of hospitalization, wound image segmentation and NLP-based document processing to enhance clinician decision-making.
+
+- Automated OCR processing using Generative AI & NLP, optimizing invoice and referral processing to run in under 10 seconds, reducing manual intervention across 30+ unique templates for 20+ insurance providers.
+- Led the development of hospitalization risk prediction models for critical wounds, integrating wound images and patient attributes (e.g., comorbidities).
+- Developed wound segmentation and wound-type classification models using deep learning on wound tissue images (Published at WACV 2020 & WACV 2022), leveraging a dataset of over 2 million (20,00,000) wound images.
+- Created a Risk of Readmission model (Presented at CODS-COMAD-2021 Conference) to identify high-risk patients.
+- Built and deployed Visits Forecasting models to optimize clinical resource allocation and scheduling.
 
 </div>
 
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/teradata.png">](https://mila.quebec/en/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/teradata.png">](https://www.teradata.com/){:target="_blank"}
 
 _June 2016 --- July 2018_
 
-### [Teradata](https://mila.quebec/en/){:target="_blank"} - Data Scientist
+### [Teradata](https://www.teradata.com/){:target="_blank"} - Data Scientist
 **Hyderabad, India**
 
-- Image generation using Multi-Resolution Continuous Normalizing Flows
-- Image generation using Non-Isotropic Denoising Diffusion Models
-- 3D animation using neural inverse kinematics with 3D human pose prior
-- Video prediction using Neural ODEs
-- Video prediction, generation, interpolation using Masked Conditional Video Diffusion models
+I worked on NLP, text analytics, machine learning, and graph analytics to enhance Teradata Aster’s AI/ML capabilities. My role involved developing word-vector representations, benchmarking classifiers, and optimizing analytical workflows for enterprise-scale data processing.
+
+- Developed NLP models using Word2Vec, GloVe, and fastText for text analytics.
+- Enhanced KNIME workflows for Teradata Aster, improving machine learning automation.
+- Benchmarked ML models (SVM, Decision Trees, Neural Networks, Linear Regression) on AsterR with standard datasets.
+- Implemented text analytics solutions, including NER, POS tagging, and sentiment analysis.
+- Worked on dimensionality reduction techniques like PCA for high-dimensional data processing.
 
 </div>
 
 <div class="experience-box" markdown="1">
-[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/cdac.png">](https://about.facebook.com/){:target="_blank"}
+[<img class="experience-picture" src="{{site.url}}{{site.baseurl}}/images/experience/cdac.jfif">](https://cdac.in/index.aspx?id=MB){:target="_blank"}
 
 _September 2011 --- July 2014_
 
-### [CDAC R&D](https://about.facebook.com/){:target="_blank"} - Project Engineer
+### [CDAC R&D](https://cdac.in/index.aspx?id=MB){:target="_blank"} - Project Engineer
 **Mumbai, India**
 
-I worked with the [AI4AR](https://ai.facebook.com/blog/building-with-ai-across-all-of-meta/) team at [Meta](https://about.facebook.com/){:target="_blank"}, hosted by [Yashar Mehdad](https://scholar.google.com/citations?user=hFKgapkAAAAJ&hl=en).
-• Led the technology development for generating 3D objects, videos from text; dreamfusion, NeRF
-• Applied expertise at neural graphics for 3D rendering; implemented hands-on in PyTorch
-• International AI team; technology transitioned into a Meta end product, adopted by other teams
+I worked on IASF – Intelligent Advisory System for Farmers, an AI-powered Case-Based Reasoning (CBR) system designed to provide automated decision support for farmers. The system stored past queries as cases and leveraged rule-based engines to retrieve solutions for similar queries, significantly reducing response time and improving efficiency.
+• Developed an Intelligent Advisory System for farmers using Java and Case-Based Reasoning (CBR).
+• Implemented a rule-based engine to automate query resolution and decision support.
 
 </div>
 

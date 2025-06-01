@@ -1,24 +1,28 @@
-<td width="160">
-<em>{{ article.date }}</em>
-</td>
-
-<td>
-{{ article.news }}
-
-{% if article.pdf %}
-&nbsp;&nbsp;
-
-{% if article.pdf contains '://' %}
-[<a href="{{ article.pdf }}" target="_blank">pdf</a>]
-{% else %}
-[<a href="{{site.url}}{{site.baseurl}}/docs/{{ article.category }}/{{ article.pdf }}" target="_blank">pdf</a>]
-{% endif %}
-
-{% endif %}
-
-{% if article.url %}
-[<a href="{{ article.url }}" target="_blank">{% if article.display %}{{ article.display }}{% else %}url{% endif %}</a>]
-{% endif %}
-
-</td>
+<article class="news-item">
+    <time class="news-date" datetime="{{ article.date | date: '%Y-%m-%d' }}">
+        {{ article.date | date: "%B %d, %Y" }}
+    </time>
+    
+    <div class="news-content">
+        <h3 class="news-title">
+            {% if article.link %}
+                <a href="{{ article.link }}" target="_blank" rel="noopener">
+                    {{ article.title }}
+                    <span class="sr-only">(opens in new tab)</span>
+                </a>
+            {% else %}
+                {{ article.title }}
+            {% endif %}
+        </h3>
+        
+        <p class="news-description">{{ article.description }}</p>
+        
+        {% if article.conference_name and article.conference_link %}
+            <a href="{{ article.conference_link }}" target="_blank" rel="noopener" class="conference-link">
+                {{ article.conference_name }}
+                <span class="sr-only">(opens in new tab)</span>
+            </a>
+        {% endif %}
+    </div>
+</article>
 

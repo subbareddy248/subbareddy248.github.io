@@ -8,19 +8,39 @@ permalink: /mentorship
 
 <div class="mentorship-section">
   <div class="mentors">
+    
+    <div class="mentor-entry">
+      <h3>Postdoc Advisors</h3>
+      <ul>
+        <li><a href="https://www.fatmanet.com/" target="_blank">Prof. Fatma Deniz</a> - TU Berlin, Germany</li>
+      </ul>
+    </div>
+
     <div class="mentor-entry">
       <h3>PhD Advisors</h3>
       <ul>
-        <li><a href="https://sites.google.com/site/xavierhinaut/" target="_blank">Dr. Xavier Hinaut</a> - Inria Bordeaux</li>
-        <li><a href="https://www.labri.fr/perso/falexand/" target="_blank">Prof. Alexandre Frederic</a> - Inria Bordeaux</li>
+        <li><a href="https://sites.google.com/site/xavierhinaut/" target="_blank">Dr. Xavier Hinaut</a> - Inria Bordeaux, France</li>
+        <li><a href="https://www.labri.fr/perso/falexand/" target="_blank">Prof. Alexandre Frederic</a> - Inria Bordeaux, France</li>
+      </ul>
+    </div>
+
+    <div class="mentor-entry">
+      <h3>M.Tech Thesis Advisors</h3>
+      <ul>
+        <li><a href="https://www.iiit.ac.in/faculty/bapi-raju-s/" target="_blank">Prof. Raju S. Bapi</a> - IIIT-Hyderabad, India</li>
+        <li><a href="https://www.labri.fr/perso/falexand/" target="_blank">Dr. Anoop Namboodari</a> - IIIT-Hyderabad, India</li>
       </ul>
     </div>
 
     <div class="mentor-entry">
       <h3>Research Mentors</h3>
       <ul>
-        <li><a href="https://mtoneva.com/" target="_blank">Dr. Mariya Toneva</a> - MPI-SWS</li>
-        <li><a href="https://www.fatmanet.com/" target="_blank">Prof. Fatma Deniz</a> - TU Berlin</li>
+        <li><a href="https://mtoneva.com/" target="_blank">Dr. Mariya Toneva</a> - MPI-SWS, Germany</li>
+        <li><a href="https://sites.google.com/view/manishg/" target="_blank">Dr. Manish Gupta</a> - Microsoft Bing, Hyderabad, India</li>
+        <li><a href="https://www.gin.cnrs.fr/en/about-us/research-staff/gael-jobard-phd/" target="_blank">Dr. Manish Gupta</a> - Microsoft Bing, Hyderabad, India</li>
+        <li><a href="https://scholar.google.com/citations?user=hdQhiFgAAAAJ&hl=en" target="_blank">Dr. Gaël Jobard</a> - University of Bordeaux, France</li>
+        <li><a href="https://scholar.google.com/citations?user=hdQhiFgAAAAJ&hl=en" target="_blank">Dr. Maneesh Singh</a> - AI R&D. Indic aiDias. Spector.ai</li>
+        <li><a href="https://tanmoychak.com/" target="_blank">Dr. Tanmoy Chakraborty</a> - IIT-Delhi, India</li>
       </ul>
     </div>
   </div>
@@ -32,15 +52,21 @@ permalink: /mentorship
   <div class="mentees">
     <h3>PhD Students Co-supervised</h3>
     <ul>
-      <li>Mounika Marreddy (2023-Present) - IIIT Hyderabad</li>
-      <li>Khushbu Pahwa (2023-Present) - IIIT Hyderabad</li>
+      <li>Anuja Negi (2024-Present) - TU Berlin, Germany</li>
+      <li>Vijay Rowtula (2024-Present) - IIIT Hyderabad, India</li>
+      <li>Mounika Marreddy (2018-2025) - IIIT Hyderabad, India</li>
     </ul>
 
-    <h3>Master's Students Co-supervised</h3>
+    <h3>Bachelors's Students Co-supervised</h3>
     <ul>
-      <li>Nathan Trouvain (2023) - Inria Bordeaux</li>
-      <li>Veeral Agrawal (2022) - IIIT Hyderabad</li>
-      <li>Jashn Arora (2022) - IIIT Hyderabad</li>
+      <li>Leo (2024) - TU Berlin, Germany</li>
+      <li>Jashn Arora (2022) - Cogsci lab, IIIT Hyderabad</li>
+      <li>Veeral Agrawal (2022) - Cogsci lab, IIIT Hyderabad</li>
+      <li>Aksheet Jindal (2024) - LTRC lab, IIIT Hyderabad</li>
+      <li>Akhilesh (2023-2024) - LTRC lab, IIIT Hyderabad</li>
+      <li>Srijith Padakanti (2023-2024) - LTRC lab, IIIT Hyderabad</li>
+      <li>Sirisha Vakada (2021-2022) - LTRC lab, IIIT Hyderabad</li>
+      <li>Venkata Charan Chinny (2020-2021) - LTRC lab, IIIT Hyderabad</li>
     </ul>
   </div>
 </div>
