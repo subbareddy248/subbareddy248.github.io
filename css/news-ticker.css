@@ -1,172 +1,113 @@
-/* Compact News Section - Enhanced */
-.news-section {
+.news-section-box {
     border: 1px solid #d1d9e0;
-    border-radius: 6px;
+    border-radius: 8px;
+    background: #f9fafb;
     margin: 20px 0;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     font-family: system-ui, sans-serif;
 }
 
 .news-header {
     display: flex;
     align-items: center;
-    padding: 12px 16px;
-    background: #f6f8fa;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.2s ease;
-    border: none;
+    padding: 10px 16px;
+    background: #e9eef3;
     width: 100%;
-    text-align: left;
-}
-
-.news-header:hover {
-    background: #f1f3f4;
-}
-
-.news-toggle {
-    display: inline-block;
-    transition: transform 0.2s ease;
-    margin-right: 8px;
-    font-size: 12px;
-    color: #656d76;
-    font-family: monospace;
-}
-
-.news-toggle.expanded {
-    transform: rotate(90deg);
-}
-
-.news-title {
+    border: none;
+    cursor: pointer;
     font-size: 16px;
     font-weight: 600;
     color: #24292f;
+    user-select: none;
+}
+
+.news-toggle {
+    margin-right: 8px;
+    font-family: monospace;
+    color: #6c757d;
+    font-size: 12px;
+}
+
+.news-title {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .news-icon {
     font-size: 16px;
-    color: #656d76;
+    color: #cc0000;
 }
 
 .news-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    background: white;
+    transition: max-height 0.4s ease;
 }
 
 .news-content.expanded {
     max-height: 1000px;
     overflow-y: auto;
-    overflow-x: visible;
 }
 
 .news-list {
-    padding: 16px 20px;
     list-style: none;
-    margin: 0;
-    max-height: 100%;
-}
-
-/* News items with smart bullet via ::before */
-.news-item {
-    padding: 6px 0;
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.5;
-    margin: 0;
-    border-bottom: 1px solid #f1f3f4;
-    position: relative;
-    padding-left: 16px;
-}
-
-.news-item:last-child {
-    border-bottom: none;
-}
-
-.news-item::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    top: 0.3em;
-    color: #656d76;
-    font-weight: bold;
-}
-
-.news-content-text {
-    flex: 1;
-    padding-right: 20px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.news-date {
-    font-weight: 600;
-    color: #24292f;
-    margin-right: 8px;
-}
-
-/* Custom scrollbar styling */
-.news-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.news-content::-webkit-scrollbar-track {
-    background: #f1f3f4;
-}
-
-.news-content::-webkit-scrollbar-thumb {
-    background: #c1c8cd;
-    border-radius: 3px;
-}
-
-.news-content::-webkit-scrollbar-thumb:hover {
-    background: #a1a7aa;
-}
-
-/* Link styles */
-.news-item a {
-    color: #0969da;
-    text-decoration: none;
-    padding: 2px 0;
-}
-
-.news-item a:hover {
-    text-decoration: underline;
-}
-
-/* Cleanup extra spacing */
-.news-item * {
     margin: 0;
     padding: 0;
 }
 
-/* Responsive improvements */
-@media (max-width: 768px) {
-    .news-header {
-        padding: 10px 14px;
-    }
+.news-item-row {
+    display: flex;
+    border-top: 1px solid #e2e6ea;
+    padding: 12px 16px;
+    align-items: flex-start;
+    gap: 16px;
+    line-height: 1.5;
+}
 
-    .news-list {
-        padding: 12px 16px;
-    }
+.news-item-row:first-child {
+    border-top: none;
+}
 
-    .news-item {
+.news-date-col {
+    flex: 0 0 140px;
+    font-weight: 600;
+    color: #343a40;
+    font-size: 15px;
+}
+
+.news-text-col {
+    flex: 1;
+    color: #212529;
+}
+
+.news-item-row a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+.news-item-row a:hover {
+    text-decoration: underline;
+}
+
+.conf-link {
+    float: right;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .news-item-row {
         flex-direction: column;
-        gap: 4px;
+        gap: 6px;
     }
 
-    .news-date {
+    .news-date-col {
+        flex: none;
+        font-size: 14px;
+    }
+
+    .conf-link {
+        float: none;
         display: block;
-        margin-bottom: 4px;
-    }
-
-    .news-content-text {
-        padding-right: 0;
+        margin-top: 4px;
     }
 }
