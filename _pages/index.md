@@ -107,13 +107,18 @@ For a more complete list, please check my <a href="{{ site.google_scholar_url }}
 function toggleNews() {
     const content = document.getElementById('newsContent');
     const toggle = document.getElementById('newsToggle');
-    
-    if (content.classList.contains('expanded')) {
-        content.classList.remove('expanded');
-        toggle.classList.remove('expanded');
-    } else {
-        content.classList.add('expanded');
-        toggle.classList.add('expanded');
-    }
+    const header = document.querySelector('.news-header');
+
+    const isExpanded = content.classList.contains('expanded');
+
+    // Toggle class
+    content.classList.toggle('expanded');
+    toggle.classList.toggle('expanded');
+
+    // Accessibility: update aria-expanded
+    header.setAttribute('aria-expanded', !isExpanded);
+
+    // Optional: change symbol from ▶ to ▼
+    toggle.textContent = isExpanded ? '▶' : '▼';
 }
 </script>
