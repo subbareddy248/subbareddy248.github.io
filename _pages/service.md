@@ -9,6 +9,7 @@ permalink: /service
 ## Program Committee / Reviewer
 
 ### Conference Reviews
+
 <ul>
     <li><span class="conference-name">ICLR</span> <span class="conference-year">2025, 2024, 2023, 2022, 2021</span></li>
     <li><span class="conference-name">NeurIPS</span> <span class="conference-year">2025, 2024, 2023, 2022, 2021, 2020</span></li>
@@ -24,7 +25,10 @@ permalink: /service
     <li><span class="conference-name">IJCNN</span> <span class="conference-year">2023, 2022, 2021</span></li>
     <li><span class="conference-name">CHIL</span> <span class="conference-year">2023, 2022, 2020</span></li>
     <li><span class="conference-name">COLM</span> <span class="conference-year">2025, 2024</span></li>
-    <li><span class="conference-name">ECAI</span> <span class="conference-year">2023</span>, <span class="conference-name">CCN</span> <span class="conference-year">2023</span>, <span class="conference-name">ECML PKDD</span> <span class="conference-year">2022</span>, <span class="conference-name">IROS</span> <span class="conference-year">2022</span></li>
+    <li><span class="conference-name">ECAI</span> <span class="conference-year">2023</span></li> 
+    <li><span class="conference-name">CCN</span> <span class="conference-year">2023</span></li> 
+    <li><span class="conference-name">ECML PKDD</span> <span class="conference-year">2022</span></li> 
+    <li><span class="conference-name">IROS</span> <span class="conference-year">2022</span></li>
 </ul>
 
 ### Journal Reviews

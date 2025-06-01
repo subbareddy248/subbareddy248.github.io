@@ -1,114 +1,90 @@
-/* Modern Education Section Styling */
+/* Fix for education page logo overlap */
 
-.education-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
+// Make the education entry a grid to control the layout
 .education-entry {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #eaeaea;
-    padding-bottom: 30px;
-    position: relative;
-}
-
-.education-entry:last-child {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+    "title logo"
+    "metadata logo"
+    "details logo";
+  gap: 10px;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  
+  &:last-child {
     border-bottom: none;
+  }
 }
 
-/* Degree title styling */
+// Assign grid areas to the elements
 .degree-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: #2a68a5;
-    margin-bottom: 15px;
-    text-decoration: none;
+  grid-area: title;
+  font-size: 26px;
+  font-weight: 500;
+  color: #55463e;
+  margin-bottom: 15px;
 }
 
-.degree-title a {
-    color: #2a68a5;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.degree-title a:hover {
-    color: #1c4c7d;
-    text-decoration: underline;
-}
-
-/* Metadata row styling */
 .degree-metadata {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #555;
+  grid-area: metadata;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
 }
 
-.date-range, .location {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.date-range i, .location i {
-    margin-right: 8px;
-    color: #666;
-}
-
-.metadata-divider {
-    margin: 0 10px;
-    color: #aaa;
-}
-
-/* Details list styling */
 .degree-details {
-    margin-left: 15px;
+  grid-area: details;
+  margin: 15px 0 20px 0;
+  padding-left: 20px;
 }
 
-.degree-details li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-    position: relative;
-    padding-left: 5px;
-}
-
-/* Institution logo styling */
+// Style the institution logo and place it in the right column
 .institution-logo {
-    position: absolute;
-    right: 0;
-    top: 10px;
-    max-width: 120px;
-    max-height: 80px;
-    object-fit: contain;
+  grid-area: logo;
+  justify-self: end; // Align to the right of its grid cell
+  max-width: 200px;
+  max-height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-/* Responsive adjustments */
+// Responsive adjustments
 @media (max-width: 768px) {
-    .degree-title {
-        font-size: 20px;
-        padding-right: 100px; /* Make room for logo on small screens */
-    }
-    
-    .institution-logo {
-        max-width: 80px;
-        top: 5px;
-    }
-    
-    .degree-metadata {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .education-entry {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "title"
+      "metadata"
+      "details"
+      "logo";
+  }
+  
+  .institution-logo {
+    justify-self: start; // Align to the left on mobile
+    margin-top: 15px;
+    max-width: 180px;
+  }
+  
+  .degree-metadata {
+    flex-direction: column;
+    align-items: flex-start;
     
     .date-range, .location {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
     }
     
     .metadata-divider {
-        display: none;
+      display: none;
     }
+  }
 }
