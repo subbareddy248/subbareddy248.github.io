@@ -52,6 +52,18 @@
     url: https://sites.google.com/view/lllms-as-human-like-annotators/
     display: Tutorial Website
 
+- title: "Characterizing Similarities and Differences Between Language Processing in Brains and Language Models"
+  image: nrc_talk_2024.PNG
+  date:  June 21, 2024
+  venue: <a href="https://nrc.canada.ca/en/corporate/contact-us/nrc-directory-science-professionals" target="_blank">National Research Council</a>, Canada
+  number_link: 2
+  link1:
+    url: Characterising_similarities_and_differences_nrc.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/Characterising_similarities_and_differences_nrc.pptx
+    display: slides
+
 - title: Ph.D. thesis talk - "Neuro-computational models of language comprehension, characterizing similarities and differences between language processing in brains and language models."
   image: subba_phd_2024.PNG
   date: April 30, 2024
@@ -70,35 +82,80 @@
     url: https://www.imn-bordeaux.org/etudiant/subba-reddy-oota/
     display: Inria Bordeaux, France
 
-# - title: Diffusion models for solving video tasks
-#   image: 20230202_INRIA_MCVD_Vikram_Voleti.png
-#   date: Mar 6, 2023
-#   venue: <a href="https://www.borealisai.com/" target="_blank">Borealis AI</a>, Vancouver, Canada
-#   number_link: 1
-#   link1:
-#     url: https://docs.google.com/presentation/d/17sBMzmuuMrzPk9NS6Oa9JPok8k9eEomjDxG7927MVec/edit?usp=sharing
-#     display: slides
+- title: "Characterizing Similarities and Differences Between Language Processing in Brains and Language Models"
+  image: mpi_talk_2024.PNG
+  date:  April 10, 2024
+  venue: <a href="https://www.mpi.nl/page/donders-labs" target="_blank">MPI Psycholinguistics, Donders lab</a>, Germany
+  number_link: 2
+  link1:
+    url: Characterising_similarities_and_differences_mpi.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/cods_comad_2024_subba.pptx
+    display: slides
 
-# - title: Diffusion models for solving video tasks
-#   image: 20230202_INRIA_MCVD_Vikram_Voleti.png
-#   date: February 2, 2023
-#   venue: <a href="https://inria.fr/en" target="_blank">INRIA</a>, France
-#   number_link: 1
-#   link1:
-#     url: https://docs.google.com/presentation/d/17sBMzmuuMrzPk9NS6Oa9JPok8k9eEomjDxG7927MVec/edit?usp=sharing
-#     display: slides
+- title: "Characterizing Similarities and Differences Between Language Processing in Brains and Language Models"
+  image: mit_talk_2023.PNG
+  date:  December 8, 2023
+  venue: MIT Brain + Cognitive sciences lab, Cambridge, MA, USA
+  number_link: 2
+  link1:
+    url: mit_talk_2023.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/mit_talk_2023.pptx
+    display: slides
 
-# - title: (MCVD) Masked Conditional Video Diffusion
-#   image: 20221201_NeurIPS_MCVD_Vikram_Voleti.png
-#   date: December 1, 2022
-#   venue: <a href="https://neurips.cc/" target="_blank">NeurIPS 2022</a>, New Orleans, USA
-#   number_link: 2
-#   link1:
-#     url: https://docs.google.com/presentation/d/1HVcg-WGN76R7uIgj_dcIdxaQ2gp2ft7yuwqtKbfZKwI/edit?usp=sharing
-#     display: slides
-#   link2:
-#     url: https://voletiv.github.io/docs/presentations/2022a_MCVD_Poster.png
-#     display: poster
+- title: "Deep Neural Networks and Brain Alignment: Brain Encoding and Decoding"
+  image: ijcai_talk_2023.PNG
+  date:  August 21, 2023
+  venue: <a href="https://ijcai-23.org/tutorials/index.html" target="_blank">IJCAI 2023 Conference</a>, Macao, China
+  number_link: 4
+  link1:
+    url: gupta23_ijcai.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/gupta23_ijcai.pptx
+    display: slides
+  link3:
+    url: https://sites.google.com/view/brain-encoding-decoding/home?authuser=0
+    display: tutorial website
+  link4:
+    url: https://www.youtube.com/watch?v=V3GX8KeQS9I
+    display: video
+
+- title: "Language and the Brain: Deep Learning for Brain Encoding and Decoding"
+  image: ijcnn_talk_2024.PNG
+  date:  Juner 18, 2023
+  venue: <a href="https://2023.ijcnn.org/tutorials#session-6-45" target="_blank">IJCNN 2023 Conference</a>, Queensland, Australia
+  number_link: 3
+  link1:
+    url: oota_ijcnn_encoding.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/oota_ijcnn_encoding.pptx
+    display: slides
+  link3:
+    url: https://www.youtube.com/watch?v=9z_QPS5SS8Y
+    display: video
+
+- title: "Deep Learning for Brain Encoding and Decoding"
+  image: cogsci_talk_2022.PNG
+  date:  July 27, 2022
+  venue: <a href="https://escholarship.org/uc/item/6f37p8fc" target="_blank">Cogsci 2022 Conference</a>, Toronto, Canada
+  number_link: 4
+  link1:
+    url: CogSci_2022_Tutorial_Brain_Encoding.pdf
+    display: pdf
+  link2:
+    url: https://subbareddy248.github.io/docs/presentations/CogSci_2022_Tutorial_Brain_Encoding.pptx
+    display: slides
+  link3:
+    url: https://github.com/jashna14/DL4Brain
+    display: GitHub
+  link4:
+    url: https://www.youtube.com/watch?v=9z_QPS5SS8Y
+    display: video
 
 # - title: SMPL-IK - Learned Morphology-Aware Inverse Kinematics for AI Driven Artistic Workflows
 #   image: 20221206_SIGGRAPH_SMPLIK_Vikram_Voleti.png

@@ -1,7 +1,7 @@
 - title: "USDC: A Dataset of <u>U</u>ser <u>S</u>tance and <u>D</u>ogmatism in Long <u>C</u>onversations"
   image: 2025_acl_usdc.PNG
   authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Venkata Charan Chinni, Manish Gupta, Lucie Flek
-  venue: <a href="https://2025.aclweb.org/" target="_blank">ACL Findings 2025 (Long)</a>
+  venue: <a href="https://2025.aclweb.org/" target="_blank">ACL Findings 2025 (Long)</a><strong>(A*)</strong>
   year: "2025"
   number_link: 3
   link1:
@@ -17,7 +17,7 @@
 - title: Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)
   image: 2025_iclr_mllm.PNG
   authors: <b>Subba Reddy Oota</b>, Akshett Jindal, Ishani Mondal, Khushbu Pahwa, Satyasai Srinath Namburi, Manish Shrivastava, Maneesh Singh,  Raju S. Bapi, Manish Gupta
-  venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
+  venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a><strong>(A*)</strong>
   year: "2025"
   number_link: 4
   link1:
@@ -36,7 +36,7 @@
 - title: Multi-modal brain encoding models for multi-modal stimuli
   image: 2025_iclr_multimodal.PNG
   authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Maneesh Singh,  Raju S. Bapi, Manish Gupta
-  venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a>
+  venue: <a href="https://iclr.cc/Conferences/2025" target="_blank">ICLR 2025</a><strong>(A*)</strong>
   year: "2025"
   number_link: 4
   link1:
@@ -68,7 +68,7 @@
 - title: Speech language models lack important brain-relevant semantics
   image: 2024_acl_speech.PNG
   authors: <b>Subba Reddy Oota</b>, Emin Celik, Fatma Deniz, Mariya Toneva
-  venue: <a href="https://2024.aclweb.org/" target="_blank">ACL 2024 (Long)</a>
+  venue: <a href="https://2024.aclweb.org/" target="_blank">ACL 2024 (Long)</a><strong>(A*)</strong>
   number_link: 5
   link1:
     url: https://aclanthology.org/2024.acl-long.462.pdf
@@ -89,7 +89,7 @@
 - title: Joint processing of linguistic properties in brains and language models
   image: 2023_neurips.PNG
   authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
-  venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2023</a>
+  venue: <a href="https://neurips.cc/Conferences/2023" target="_blank">NeurIPS 2023</a><strong>(A*)</strong>
   year: "2023"
   number_link: 4
   link1:
@@ -124,7 +124,7 @@
 - title: On Robustness of Finetuned Transformer-based NLP Models
   image: 2023_emnlp_robustness.png
   authors: <b>Subba Reddy Oota</b>, Manish Gupta, Mariya Toneva
-  venue: <a href="https://2023.emnlp.org/" target="_blank">EMNLP Findings 2023 (Long)</a>
+  venue: <a href="https://2023.emnlp.org/" target="_blank">EMNLP Findings 2023 (Long)</a><strong>(A*)</strong>
   year: "2023"
   number_link: 4
   link1:
@@ -143,7 +143,7 @@
 - title: How does the brain process syntactic structure while listening?
   image: 2023_acl_syntax.PNG
   authors: <b>Subba Reddy Oota</b>, Mounika Marreddy, Bapi S. Raju, Manish Gupta
-  venue: <a href="https://2023.aclweb.org/" target="_blank">ACL 2023 Findings (Long)</a>
+  venue: <a href="https://2023.aclweb.org/" target="_blank">ACL 2023 Findings (Long)</a><strong>(A*)</strong>
   year: "2023"
   number_link: 4
   link1:
@@ -162,7 +162,7 @@
 - title: "Speech Taskonomy: Which Speech Tasks are the most Predictive of fMRI Brain Activity?"
   image: 2023_interspeech_speech.PNG
   authors: <b>Subba Reddy Oota</b>, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
-  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
+  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a><strong>(A)</strong>
   year: "2023"
   number_link: 2
   link1:
@@ -175,7 +175,7 @@
 - title: MEG Encoding using Word Context Semantics in Listening Stories
   image: 2023_interspeech_meg.PNG
   authors: <b>Subba Reddy Oota</b>, Nathan Trouvain, Frederic Alexandre, Xavier Hinaut
-  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a>
+  venue: <a href="https://www.isca-archive.org/interspeech_2023/index.html" target="_blank">INTERSPEECH 2023</a><strong>(A)</strong>
   year: "2023"
   number_link: 1
   link1:
@@ -198,7 +198,7 @@
 - title: "WSNet: Towards An Effective Method for Wound Image Segmentation"
   image: wacv_2023.jpg
   authors: <b>Subba Reddy Oota</b>, Vijay Rowtula, Shahid Mohammad, Manish Gupta
-  venue: <a href="https://wacv2023.thecvf.com/home" target="_blank">WACV 2023</a>
+  venue: <a href="https://wacv2023.thecvf.com/home" target="_blank">WACV 2023</a><strong>(A)</strong>
   year: "2023"
   number_link: 2
   link1:
@@ -208,10 +208,37 @@
     url: https://subbareddy248.github.io/docs/presentations/oota23_wacv.pdf
     display: Slides
 
+- title: "Visio-Linguistic Brain Encoding"
+  image: coling_2022_vlbrain.PNG
+  authors: <b>Subba Reddy Oota</b>, Jashn Arora, Vijay Rowtula, Manish Gupta, Bapi S. Raju
+  venue: <a href="https://coling2022.org/" target="_blank">COLING 2022 (Long, Oral)</a><strong>(A)</strong>
+  year: "2022"
+  number_link: 2
+  link1:
+    url: https://aclanthology.org/2022.coling-1.11/
+    display: ACL Anthology
+  link3:
+    url: https://subbareddy248.github.io/docs/presentations/coling_2022b.pdf
+    display: Slides
+
+- title: "Multi-view and Cross-view Brain Decoding"
+  image: coling_2022_multiview.PNG
+  authors: <b>Subba Reddy Oota</b>, Jashn Arora, Manish Gupta, Bapi S. Raju
+  venue: <a href="https://coling2022.org/" target="_blank">COLING 2022 (Long, Oral)</a><strong>(A)</strong>
+  year: "2022"
+  number_link: 2
+  link1:
+    url: https://aclanthology.org/2022.coling-1.10/
+    display: ACL Anthology
+  link3:
+    url: https://subbareddy248.github.io/docs/presentations/coling_2022a.pdf
+    display: Slides
+
+
 - title: "Neural Language Taskonomy: Which NLP Tasks are the Most Predictive of Brain Activity"
   image: 2022_naacl_taskonomy.jpg
   authors: <b>Subba Reddy Oota</b>, Jashn Arora, Veeral Agrawal, Mounika Marreddy, Bapi S. Raju, Manish Gupta
-  venue: <a href="https://2022.naacl.org/" target="_blank">NAACL 2022 (Long, Oral)</a>
+  venue: <a href="https://2022.naacl.org/" target="_blank">NAACL 2022 (Long, Oral)</a><strong>(A)</strong>
   year: "2022"
   number_link: 2
   link1:
@@ -224,7 +251,7 @@
 - title: "HealTech: A System for Predicting Patient Hospitalization Risk and Wound Progression"
   image: wacv_2021.PNG
   authors: <b>Subba Reddy Oota</b>, Vijay Rowtula, Shahid Mohammed, Ming Liu, Jeffrey Galitz, Manish Gupta
-  venue: <a href="https://wacv2021.thecvf.com/home" target="_blank">WACV 2021</a>
+  venue: <a href="https://wacv2021.thecvf.com/home" target="_blank">WACV 2021</a><strong>(A)</strong>
   year: "2021"
   number_link: 3
   link1:
