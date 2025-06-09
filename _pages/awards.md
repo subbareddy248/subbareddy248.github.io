@@ -4,15 +4,48 @@ layout: default
 permalink: /awards
 ---
 
-## Awards and Honors
+<div class="awards-section">
+    <h1 class="section-title">Awards and Honors</h1>
 
-- **Nasscom AI-Gamechangers award**, AI research track for my ACL-23 Findings paper
+    <div class="award-category">
+        <h2>Research Excellence</h2>
+        <div class="award-grid">
+            <div class="award-card">
+                <div class="award-title">Nasscom AI-Gamechangers Award</div>
+                <div class="award-year">2023</div>
+                <p class="award-description">AI research track for ACL-23 Findings paper</p>
+            </div>
+        </div>
+    </div>
 
-### Conferences
-- **Financial Asstistance: Conference Registration**, ICLR 2025
-- **NeurIPS-23 scholar award**, NeurIPS 2023
-- **Travel Grant for Cogsci-2022 conference**, MaxPlanck Institute for Software Systems
-- **Microsoft and Google Travel Grant**, NAACL 2022
+    <div class="award-category">
+        <h2>Conference Recognition</h2>
+        <div class="award-grid">
+            <div class="award-card">
+                <div class="award-title">ICLR Financial Assistance</div>
+                <div class="award-year">2025</div>
+                <p class="award-description">Conference Registration Grant</p>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">NeurIPS Scholar Award</div>
+                <div class="award-year">2023</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">MaxPlanck Travel Grant</div>
+                <div class="award-year">2022</div>
+                <p class="award-description">For Cogsci-2022 Conference</p>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">Microsoft and Google Travel Grant</div>
+                <div class="award-year">2022</div>
+                <p class="award-description">For NAACL 2022</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 ### Ranks
 - **1704 All India Rank in Computer Science Stream (99%)**, GATE-2014
