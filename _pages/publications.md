@@ -20,6 +20,37 @@ permalink: /publications
         <option value="{{ year }}">{{ year }}</option>
         {% endfor %}
     </select>
+
+    <span class="search-label">Venue:</span>
+    <select id="venue-filter">
+        <option value="all">All Venues</option>
+        {% assign venues = "" | split: "" %}
+        {% for paper in site.data.papers %}
+            {% if paper.venue contains "ICLR" %}
+                {% assign venues = venues | push: "ICLR" %}
+            {% elsif paper.venue contains "NeurIPS" %}
+                {% assign venues = venues | push: "NeurIPS" %}
+            {% elsif paper.venue contains "ACL" %}
+                {% assign venues = venues | push: "ACL" %}
+            {% elsif paper.venue contains "EMNLP" %}
+                {% assign venues = venues | push: "EMNLP" %}
+            {% elsif paper.venue contains "COLING" %}
+                {% assign venues = venues | push: "COLING" %}
+            {% elsif paper.venue contains "NAACL" %}
+                {% assign venues = venues | push: "NAACL" %}
+            {% elsif paper.venue contains "WACV" %}
+                {% assign venues = venues | push: "WACV" %}
+            {% elsif paper.venue contains "INTERSPEECH" %}
+                {% assign venues = venues | push: "INTERSPEECH" %}
+            {% elsif paper.venue contains "ICASSP" %}
+                {% assign venues = venues | push: "ICASSP" %}
+            {% endif %}
+        {% endfor %}
+        {% assign venues = venues | uniq | sort %}
+        {% for venue in venues %}
+        <option value="{{ venue }}">{{ venue }}</option>
+        {% endfor %}
+    </select>
     <div id="result-count"></div>
 </div>
 

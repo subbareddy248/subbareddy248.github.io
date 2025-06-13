@@ -35,9 +35,4 @@ permalink: /news
     </div>
 </div>
 
-<!-- Full News List -->
-<div class="news-list">
-    {% for article in site.data.news %}
-        {% include news.html %}
-    {% endfor %}
-</div>
+
