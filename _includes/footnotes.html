@@ -1,0 +1,14 @@
+{% assign has_footer = false %}
+{% for paper in site.data.papers %}
+    {% if paper.footer %}
+        {% assign has_footer = true %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{% if has_footer %}
+<div class="footnotes">
+    <hr>
+    <p class="footnote">{{ paper.footer }}</p>
+</div>
+{% endif %}

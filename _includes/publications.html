@@ -19,7 +19,12 @@
 {% endif %}
 
 {% if publication.authors %}
-<p class="publication-authors"><em>{{ publication.authors }}</em></p>
+<p class="publication-authors">
+  <em>{{ publication.authors }}</em>
+  {% if publication.equal_contribution %}
+    <a href="#footnote-equal-contribution" class="equal-contribution" title="Equal contribution">*</a>
+  {% endif %}
+</p>
 {% endif %}
 
 {% if publication.venue %}

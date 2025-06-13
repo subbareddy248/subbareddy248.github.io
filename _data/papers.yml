@@ -1,3 +1,26 @@
+- title: "Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language Models"
+  image: bling_tuning_2025.PNG
+  authors: Anuja Negi*, <b>Subba Reddy Oota*</b>, Anuja Negi, Anwar Nunez-Elizalde, Manish Gupta, Fatma Deniz
+  venue: Arxiv (Pre-print)
+  year: "2025"
+  equal_contribution: true
+  number_link: 0
+
+- title: "Instruction-Tuned Video-Audio Models Elucidate Functional Specialization in the Brain"
+  image: instruction_tuned_2025.PNG
+  authors: <b>Subba Reddy Oota</b>, Khushbu Pahwa, Prachi Jindal, Satyasai Srinath Namburi, Maneesh Singh, Tanmoy Chakraborty, Raju S. Bapi, Manish Gupta
+  venue: Arxiv (Pre-print)
+  year: "2025"
+  number_link: 2
+  link1:
+    url: https://www.arxiv.org/pdf/2506.08277
+    display: Arxiv
+  link2:
+    url: https://github.com/subbareddy248/mllm_videos
+    display: GitHub
+
+- footer: "*&nbsp;Equal contribution."
+
 - title: "USDC: A Dataset of <u>U</u>ser <u>S</u>tance and <u>D</u>ogmatism in Long <u>C</u>onversations"
   image: 2025_acl_usdc.PNG
   authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Venkata Charan Chinni, Manish Gupta, Lucie Flek

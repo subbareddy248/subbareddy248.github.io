@@ -31,3 +31,7 @@ permalink: /publications
 {% endfor %}
 </div>
 
+<div class="footnotes">
+    <p><small>*&nbsp;Equal contribution</small></p>
+</div>
+
