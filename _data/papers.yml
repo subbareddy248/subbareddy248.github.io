@@ -19,8 +19,6 @@
     url: https://github.com/subbareddy248/mllm_videos
     display: GitHub
 
-- footer: "*&nbsp;Equal contribution."
-
 - title: "USDC: A Dataset of <u>U</u>ser <u>S</u>tance and <u>D</u>ogmatism in Long <u>C</u>onversations"
   image: 2025_acl_usdc.PNG
   authors: Mounika Marreddy, <b>Subba Reddy Oota</b>, Venkata Charan Chinni, Manish Gupta, Lucie Flek
@@ -227,7 +225,7 @@
   link1:
     url: https://openaccess.thecvf.com/content/WACV2023/papers/Oota_WSNet_Towards_an_Effective_Method_for_Wound_Image_Segmentation_WACV_2023_paper.pdf
     display: Paper
-  link3:
+  link2:
     url: https://subbareddy248.github.io/docs/presentations/oota23_wacv.pdf
     display: Slides
 
@@ -240,7 +238,7 @@
   link1:
     url: https://aclanthology.org/2022.coling-1.11/
     display: ACL Anthology
-  link3:
+  link2:
     url: https://subbareddy248.github.io/docs/presentations/coling_2022b.pdf
     display: Slides
 
@@ -253,7 +251,7 @@
   link1:
     url: https://aclanthology.org/2022.coling-1.10/
     display: ACL Anthology
-  link3:
+  link2:
     url: https://subbareddy248.github.io/docs/presentations/coling_2022a.pdf
     display: Slides
 
@@ -267,7 +265,7 @@
   link1:
     url: https://aclanthology.org/2022.naacl-main.235/
     display: ACL Anthology
-  link3:
+  link2:
     url: https://subbareddy248.github.io/docs/presentations/naacl_607_taskonomy.pdf
     display: Slides
 
@@ -286,3 +284,5 @@
   link3:
     url: https://s3.amazonaws.com/pf-upload-01/u-59356/0/2020-11-21/vi43dew/391.mp4
     display: Video
+
+- footer: "*&nbsp;Equal contribution."
