@@ -1,59 +1,61 @@
 <div class="publications">
 
-  <div class="publication-picture-wrapper">
-    {% if publication.image %}
-      <a href="{{ publication.link1.url }}" target="_blank">
-        <img class="publication-picture" src="{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="Image" />
-      </a>
-    {% endif %}
-  </div>
+  <div class="publication-item">
+    <div class="publication-picture-wrapper">
+      {% if publication.image %}
+        <a href="{{ publication.link1.url }}" target="_blank">
+          <img class="publication-picture" src="{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="{{ publication.title }}" />
+        </a>
+      {% endif %}
+    </div>
 
-  <div class="publication-text">
+    <div class="publication-text">
+      {% if publication.title %}
+        <a class="publication-title" href="{{ publication.link1.url }}" target="_blank">
+          {{ publication.title }}
+        </a>
+      {% endif %}
 
-    {% if publication.title %}
-      <a class="publication-title" href="{{ publication.link1.url }}" target="_blank">
-        {{ publication.title }}
-      </a>
-    {% endif %}
-
-    {% if publication.authors %}
-      <p class="publication-authors">
-        <em>{{ publication.authors }}</em>
-        {% if publication.equal_contribution %}
-          <a href="#footnote-equal-contribution" class="equal-contribution" title="Equal contribution">*</a>
-        {% endif %}
-      </p>
-    {% endif %}
-
-    {% if publication.venue %}
-      <p class="publication-venue">{{ publication.venue | raw }}</p>
-    {% endif %}
-
-    {% if publication.number_link %}
-      <div class="publication-links">
-        {% for i in (1..publication.number_link) %}
-          {% assign link = publication["link" | append: i] %}
-          {% assign url = link.url | downcase %}
-          {% assign icon = "fas fa-link" %}
-          {% if url contains "github.com" %}
-            {% assign icon = "fab fa-github" %}
-          {% elsif url contains "arxiv.org" %}
-            {% assign icon = "ai ai-arxiv" %}
-          {% elsif url contains "openreview.net" or url contains ".pdf" %}
-            {% assign icon = "fas fa-file-pdf" %}
-          {% elsif url contains "slides" %}
-            {% assign icon = "fas fa-chalkboard" %}
-          {% elsif url contains "poster" %}
-            {% assign icon = "fas fa-image" %}
-          {% elsif url contains "video" %}
-            {% assign icon = "fas fa-video" %}
+      {% if publication.authors %}
+        <p class="publication-authors">
+          {{ publication.authors }}
+          {% if publication.equal_contribution %}
+            <a href="#footnote-equal-contribution" class="equal-contribution" title="Equal contribution">*</a>
           {% endif %}
-          <a class="pub-link" href="{{ link.url }}" target="_blank">
-            <i class="{{ icon }}"></i> {{ link.display }}
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
+        </p>
+      {% endif %}
 
+      {% if publication.venue %}
+        <p class="publication-venue">{{ publication.venue }}</p>
+      {% endif %}
+
+      {% if publication.number_link %}
+        <div class="publication-links">
+          {% for i in (1..publication.number_link) %}
+            {% assign link = publication["link" | append: i] %}
+            {% assign url = link.url | downcase %}
+            {% assign display = link.display | downcase %}
+            {% assign icon = "fas fa-link" %}
+            {% if url contains "github" %}
+              {% assign icon = "fab fa-github" %}
+            {% elsif url contains "arxiv" %}
+              {% assign icon = "ai ai-arxiv" %}
+            {% elsif url contains "pdf" or url contains "openreview" %}
+              {% assign icon = "fas fa-file-pdf" %}
+            {% elsif display contains "slides" %}
+              {% assign icon = "fas fa-chalkboard-teacher" %}
+            {% elsif display contains "poster" %}
+              {% assign icon = "fas fa-image" %}
+            {% elsif display contains "video" %}
+              {% assign icon = "fas fa-video" %}
+            {% endif %}
+            <a class="pub-link" href="{{ link.url }}" target="_blank" title="{{ link.display }}">
+              <i class="{{ icon }}"></i>
+              <span>{{ link.display }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
