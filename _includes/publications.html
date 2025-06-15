@@ -1,3 +1,7 @@
+<!-- Include in head of your layout if not already -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+
 <div class="publications">
   <div class="publication-item">
     <div class="publication-picture-wrapper">
@@ -13,6 +17,7 @@
           {{ publication.title }}
         </a>
       {% endif %}
+
       {% if publication.authors %}
         <p class="publication-authors">
           <em>{{ publication.authors }}</em>
@@ -21,9 +26,11 @@
           {% endif %}
         </p>
       {% endif %}
+
       {% if publication.venue %}
         <p class="publication-venue">{{ publication.venue | raw }}</p>
       {% endif %}
+
       {% if publication.number_link %}
         <div class="publication-links">
           {% for i in (1..publication.number_link) %}
