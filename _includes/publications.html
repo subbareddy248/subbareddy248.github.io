@@ -1,57 +1,67 @@
-<div class="publications">
-  <div class="publication-picture-wrapper">
-    {% if publication.image and publication.links and publication.links[0].url %}
-      <a href="{{ publication.links[0].url }}" target="_blank">
+<div class="publication-item"
+     data-year="{{ publication.year }}"
+     data-venue="{{ publication.venue_abbr | downcase }}">
+
+  <div class="publications">
+
+    <div class="publication-picture-wrapper">
+      {% if publication.image and publication.links and publication.links[0].url %}
+        <a href="{{ publication.links[0].url }}" target="_blank">
+          <img class="publication-picture" src="{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="Image" />
+        </a>
+      {% elsif publication.image %}
         <img class="publication-picture" src="{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="Image" />
-      </a>
-    {% endif %}
-  </div>
-
-  <div class="publication-text">
-    {% if publication.title %}
-      {% if publication.links and publication.links[0].url %}
-        <a class="publication-title" href="{{ publication.links[0].url }}" target="_blank">{{ publication.title }}</a>
-      {% else %}
-        <div class="publication-title">{{ publication.title }}</div>
       {% endif %}
-    {% endif %}
+    </div>
 
-    {% if publication.authors %}
-      <p class="publication-authors">
-        <em>{{ publication.authors }}</em>
-        {% if publication.equal_contribution %}
-          <a href="#footnote-equal-contribution" class="equal-contribution" title="Equal contribution">*</a>
+    <div class="publication-text">
+
+      {% if publication.title %}
+        {% if publication.links and publication.links[0].url %}
+          <a class="publication-title" href="{{ publication.links[0].url }}" target="_blank">{{ publication.title }}</a>
+        {% else %}
+          <div class="publication-title">{{ publication.title }}</div>
         {% endif %}
-      </p>
-    {% endif %}
+      {% endif %}
 
-    {% if publication.venue %}
-      <p class="publication-venue">{{ publication.venue | raw }}</p>
-    {% endif %}
-
-    {% if publication.links %}
-      <div class="publication-links">
-        {% for link in publication.links %}
-          {% assign url = link.url | downcase %}
-          {% assign icon = "fas fa-link" %}
-          {% if url contains "github.com" %}
-            {% assign icon = "fab fa-github" %}
-          {% elsif url contains "arxiv.org" %}
-            {% assign icon = "ai ai-arxiv" %}
-          {% elsif url contains "openreview.net" or url contains ".pdf" %}
-            {% assign icon = "fas fa-file-pdf" %}
-          {% elsif url contains "slides" %}
-            {% assign icon = "fas fa-chalkboard-teacher" %}
-          {% elsif url contains "poster" %}
-            {% assign icon = "fas fa-image" %}
-          {% elsif url contains "video" or url contains ".mp4" %}
-            {% assign icon = "fas fa-video" %}
+      {% if publication.authors %}
+        <p class="publication-authors">
+          <em>{{ publication.authors }}</em>
+          {% if publication.equal_contribution %}
+            <a href="#footnote-equal-contribution" class="equal-contribution" title="Equal contribution">*</a>
           {% endif %}
-          <a class="pub-link" href="{{ link.url }}" target="_blank">
-            <i class="{{ icon }}"></i> {{ link.display }}
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
+        </p>
+      {% endif %}
+
+      {% if publication.venue %}
+        <p class="publication-venue">{{ publication.venue | raw }}</p>
+      {% endif %}
+
+      {% if publication.links %}
+        <div class="publication-links">
+          {% for link in publication.links %}
+            {% assign url = link.url | downcase %}
+            {% assign icon = "fas fa-link" %}
+            {% if url contains "github.com" %}
+              {% assign icon = "fab fa-github" %}
+            {% elsif url contains "arxiv.org" %}
+              {% assign icon = "ai ai-arxiv" %}
+            {% elsif url contains "openreview.net" or url contains ".pdf" %}
+              {% assign icon = "fas fa-file-pdf" %}
+            {% elsif url contains "slides" %}
+              {% assign icon = "fas fa-chalkboard-teacher" %}
+            {% elsif url contains "poster" %}
+              {% assign icon = "fas fa-image" %}
+            {% elsif url contains "video" or url contains ".mp4" %}
+              {% assign icon = "fas fa-video" %}
+            {% endif %}
+            <a class="pub-link" href="{{ link.url }}" target="_blank">
+              <i class="{{ icon }}"></i> {{ link.display }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+    </div>
   </div>
 </div>
