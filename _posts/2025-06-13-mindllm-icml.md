@@ -17,7 +17,7 @@ This post unpacks the *neuroscience-informed attention* at the heart of MindLLM,
 
 The diagram below illustrates the full neuroscience-informed attention pipeline for two subjects with different fMRI voxel sets:
 
-![Neuroscience-Informed Attention Diagram](/docs/images/mindllm_pipeline.png)
+![Neuroscience-Informed Attention Diagram](/docs/blogs/mindllm_pipeline.png)
 
 ---
 
@@ -67,9 +67,9 @@ This allows the model to learn **where** and **what** to attend to — across br
 | Step | Subject A | Subject B |
 |------|-----------|-----------|
 | Voxel count | 12,000 | 15,000 |
-| Activation | 12k × 1 | 15k × 1 |
-| Coords | 12k × 3 | 15k × 3 |
-| Region IDs | 12k × 1 | 15k × 1 |
+| Activation | 12000 × 1 | 15000 × 1 |
+| Coords | 12000 × 3 | 15000 × 3 |
+| Region IDs | 12000 × 1 | 15000 × 1 |
 
 ---
 
@@ -85,6 +85,7 @@ Each voxel is converted to a key using:
 
 ```math
 k_i = W_k \cdot [xyz \,||\, \text{Fourier}(xyz) \,||\, \text{RegionEmb}(r_i)]
+```
 
 ---
 
@@ -126,3 +127,5 @@ class fMRIEncoder(nn.Module):
         z = attn_weights @ values                             # [num_queries, dim]
 
         return self.output_proj(z.flatten()).reshape(-1, 128) # [num_queries, token_dim]
+
+```
