@@ -38,41 +38,34 @@
     {% endif %}
 
     {% if publication.number_link %}
-  <p class="publication-links">
-    {% for i in (1..publication.number_link) %}
-      {% assign link = publication["link" | append: i] %}
-      {% assign url = link.url | downcase %}
-      {% assign icon = "fas fa-link" %}
-
-      {% if url contains "github.com" %}
-        {% assign icon = "fab fa-github" %}
-      {% elsif url contains "arxiv.org" %}
-        {% assign icon = "ai ai-arxiv" %}
-      {% elsif url contains "openreview.net" %}
-        {% assign icon = "fas fa-file-pdf" %}
-      {% elsif url contains "pdf" %}
-        {% assign icon = "fas fa-file-pdf" %}
-      {% elsif url contains "slides" %}
-        {% assign icon = "fas fa-chalkboard" %}
-      {% elsif url contains "poster" %}
-        {% assign icon = "fas fa-image" %}
-      {% elsif url contains "video" %}
-        {% assign icon = "fas fa-video" %}
-      {% endif %}
-
-      {% if link.url contains '://' %}
-        <a href="{{ link.url }}" target="_blank">
-          <i class="{{ icon }}"></i> {{ link.display }}
-        </a>
-      {% else %}
-        <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ link.url }}" target="_blank">
-          <i class="{{ icon }}"></i> {{ link.display }}
-        </a>
-      {% endif %}
-      {% unless forloop.last %} | {% endunless %}
-    {% endfor %}
-  </p>
+<div class="publication-links">
+  {% for i in (1..publication.number_link) %}
+    {% assign link = publication["link" | append: i] %}
+    {% if link.url %}
+      <a class="pub-link" href="{{ link.url }}" target="_blank">
+        {% if link.display contains "Arxiv" %}
+          <i class="ai ai-arxiv"></i>
+        {% elsif link.display contains "GitHub" or link.display contains "Github" %}
+          <i class="fab fa-github"></i>
+        {% elsif link.display contains "PDF" or link.display contains "OpenReview" %}
+          <i class="fas fa-file-pdf"></i>
+        {% elsif link.display contains "Slide" %}
+          <i class="fas fa-chalkboard"></i>
+        {% elsif link.display contains "Poster" %}
+          <i class="fas fa-image"></i>
+        {% elsif link.display contains "Video" %}
+          <i class="fas fa-video"></i>
+        {% else %}
+          <i class="fas fa-link"></i>
+        {% endif %}
+        {{ link.display }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
 {% endif %}
+
+
 
 
   </div>
