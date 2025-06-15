@@ -1,58 +1,53 @@
-<div class="publication-item"
-     data-year="{{ publication.year }}"
-     data-venue="{{ publication.venue | strip | escape_once }}">
+<div class="publications">
 
-  <div class="publications">
+  {% if publication.link1.url contains '://' %}
+    <a href="{{ publication.link1.url }}" target="_blank" class="publication-title">{{ publication.title }}</a>
+  {% else %}
+    <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ publication.link1.url }}" target="_blank" class="publication-title">{{ publication.title }}</a>
+  {% endif %}
 
-    {% if publication.link1.url contains '://' %}
-      <a href="{{ publication.link1.url }}" target="_blank" class="publication-title">{{ publication.title }}</a>
-    {% else %}
-      <a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank" class="publication-title">{{ publication.title }}</a>
+  {% if publication.link1.url contains '://' %}
+    <a href="{{ publication.link1.url }}" target="_blank">
+      <img class="publication-picture" src="{{ site.url }}{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
+    </a>
+  {% else %}
+    <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ publication.link1.url }}" target="_blank">
+      <img class="publication-picture" src="{{ site.url }}{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
+    </a>
+  {% endif %}
+
+  <div class="publication-text">
+
+    {% if publication.description %}
+      <p>{{ publication.description }}</p>
     {% endif %}
 
-    {% if publication.link1.url contains '://' %}
-      <a href="{{ publication.link1.url }}" target="_blank">
-        <img class="publication-picture" src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
-      </a>
-    {% else %}
-      <a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ publication.link1.url }}" target="_blank">
-        <img class="publication-picture" src="{{site.url}}{{site.baseurl}}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
-      </a>
+    {% if publication.authors %}
+      <p class="publication-authors">
+        <em>{{ publication.authors }}</em>
+        {% if publication.equal_contribution %}
+          <a href="#footnote-equal-contribution" class="equal-contribution" title="Equal contribution">*</a>
+        {% endif %}
+      </p>
     {% endif %}
 
-    <div class="publication-text">
+    {% if publication.venue %}
+      <p class="publication-venue">{{ publication.venue }}</p>
+    {% endif %}
 
-      {% if publication.description %}
-        <p>{{ publication.description }}</p>
-      {% endif %}
-
-      {% if publication.authors %}
-        <p class="publication-authors">
-          <em>{{ publication.authors }}</em>
-          {% if publication.equal_contribution %}
-            <a href="#footnote-equal-contribution" class="equal-contribution" title="Equal contribution">*</a>
+    {% if publication.number_link %}
+      <p>
+        {% for i in (1..publication.number_link) %}
+          {% assign link = publication["link" | append: i] %}
+          {% if link.url contains '://' %}
+            <a href="{{ link.url }}" target="_blank">{{ link.display }}</a>
+          {% else %}
+            <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ link.url }}" target="_blank">{{ link.display }}</a>
           {% endif %}
-        </p>
-      {% endif %}
-
-      {% if publication.venue %}
-        <p class="publication-venue">{{ publication.venue }}</p>
-      {% endif %}
-
-      {% if publication.number_link %}
-<p>
-  {% for i in (1..publication.number_link) %}
-    {% assign link = publication["link" | append: i] %}
-    {% if link.url contains '://' %}
-      <a href="{{ link.url }}" target="_blank">{{ link.display }}</a>
-    {% else %}
-      <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ link.url }}" target="_blank">{{ link.display }}</a>
+          {% unless forloop.last %} | {% endunless %}
+        {% endfor %}
+      </p>
     {% endif %}
-    {% unless forloop.last %} | {% endunless %}
-  {% endfor %}
-</p>
-{% endif %}
 
-    </div>
   </div>
 </div>
