@@ -17,7 +17,7 @@ This post unpacks the *neuroscience-informed attention* at the heart of MindLLM,
 
 The diagram below illustrates the full neuroscience-informed attention pipeline for two subjects with different fMRI voxel sets:
 
-![Neuroscience-Informed Attention Diagram](/docs/blogs/mindllm_pipeline.png)
+![Neuroscience-Informed Attention Diagram](/images/blogs/mindllm_pipeline.png)
 
 ---
 

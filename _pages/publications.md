@@ -12,6 +12,7 @@ permalink: /publications
 <div class="search-container">
     <span class="search-label">Search:</span>
     <input type="text" id="publication-search" placeholder="Search by title, author, or venue...">
+
     <span class="search-label">Year:</span>
     <select id="year-filter">
         <option value="all">All Years</option>
@@ -24,39 +25,20 @@ permalink: /publications
     <span class="search-label">Venue:</span>
     <select id="venue-filter">
         <option value="all">All Venues</option>
-        {% assign venues = "" | split: "" %}
-        {% for paper in site.data.papers %}
-            {% if paper.venue contains "ICLR" %}
-                {% assign venues = venues | push: "ICLR" %}
-            {% elsif paper.venue contains "NeurIPS" %}
-                {% assign venues = venues | push: "NeurIPS" %}
-            {% elsif paper.venue contains "ACL" %}
-                {% assign venues = venues | push: "ACL" %}
-            {% elsif paper.venue contains "EMNLP" %}
-                {% assign venues = venues | push: "EMNLP" %}
-            {% elsif paper.venue contains "COLING" %}
-                {% assign venues = venues | push: "COLING" %}
-            {% elsif paper.venue contains "NAACL" %}
-                {% assign venues = venues | push: "NAACL" %}
-            {% elsif paper.venue contains "WACV" %}
-                {% assign venues = venues | push: "WACV" %}
-            {% elsif paper.venue contains "INTERSPEECH" %}
-                {% assign venues = venues | push: "INTERSPEECH" %}
-            {% elsif paper.venue contains "ICASSP" %}
-                {% assign venues = venues | push: "ICASSP" %}
-            {% endif %}
-        {% endfor %}
-        {% assign venues = venues | uniq | sort %}
+        {% assign venues = site.data.papers | map: 'venue' | compact | uniq | sort %}
         {% for venue in venues %}
-        <option value="{{ venue }}">{{ venue }}</option>
+        <option value="{{ venue | strip }}">{{ venue }}</option>
         {% endfor %}
     </select>
+
     <div id="result-count"></div>
 </div>
 
 <div id="publications-list">
 {% for publication in site.data.papers %}
-<div class="publication-item" data-year="{{ publication.year }}">
+<div class="publication-item"
+     data-year="{{ publication.year }}"
+     data-venue="{{ publication.venue | strip | escape_once }}">
     {% include publications.html %}
 </div>
 {% endfor %}
@@ -65,4 +47,3 @@ permalink: /publications
 <div class="footnotes">
     <p><small>*&nbsp;Equal contribution</small></p>
 </div>
-
