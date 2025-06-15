@@ -1,77 +1,65 @@
 /* Modern Publications Styling */
 
-.publications {
-  width: 100%;
-}
-
 /* Container for each publication item */
 .publication-item {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-bottom: 36px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 18px 24px;
+  margin-bottom: 40px;
+  border-left: 3px solid #e0e0e0;
+  padding-left: 20px;
 
   &:hover {
     border-left-color: #2a68a5;
+  }
+
+  .publications {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 }
 
 /* Image wrapper for layout consistency */
 .publication-picture-wrapper {
-  flex: 0 0 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px;
+  flex: 0 0 160px;
 }
 
 /* Paper image */
 .publication-picture {
-  width: 140px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
-  background: #f8f8f8;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Container for all text content */
 .publication-text {
   flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-width: 250px;
 }
 
 /* Title styling */
 .publication-title {
-  font-size: 1.45em;
-  font-weight: 700;
-  color: #a11b1b;
-  margin-bottom: 6px;
-  text-align: left;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #c0392b;
   line-height: 1.3;
   text-decoration: none;
-  display: block;
+  display: inline-block;
 
   &:hover {
-    color: #1a4a7a;
+    color: #2a68a5;
     text-decoration: underline;
   }
 }
 
 /* Authors styling */
 .publication-authors {
-  margin: 0 0 6px 0;
-  font-size: 1.05em;
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
   color: #444;
   font-style: italic;
-  text-align: left;
 }
 
 /* Venue styling */
@@ -79,16 +67,6 @@
   margin: 0 0 10px 0;
   font-size: 1em;
   color: #666;
-  text-align: left;
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-    
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 /* Links section styling */
@@ -117,7 +95,7 @@
 
   &:hover {
     background-color: #e0e0e0;
-    color: #a11b1b;
+    color: #c0392b;
     transform: translateY(-1px);
   }
 }
