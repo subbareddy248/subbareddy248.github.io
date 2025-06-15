@@ -6,14 +6,16 @@
     <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ publication.link1.url }}" target="_blank" class="publication-title">{{ publication.title }}</a>
   {% endif %}
 
-  {% if publication.link1.url contains '://' %}
-    <a href="{{ publication.link1.url }}" target="_blank">
-      <img class="publication-picture" src="{{ site.url }}{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
-    </a>
-  {% else %}
-    <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ publication.link1.url }}" target="_blank">
-      <img class="publication-picture" src="{{ site.url }}{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
-    </a>
+  {% if publication.image %}
+    {% if publication.link1.url contains '://' %}
+      <a href="{{ publication.link1.url }}" target="_blank">
+        <img class="publication-picture" src="{{ site.url }}{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
+      </a>
+    {% else %}
+      <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ publication.link1.url }}" target="_blank">
+        <img class="publication-picture" src="{{ site.url }}{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="NOT FOUND" />
+      </a>
+    {% endif %}
   {% endif %}
 
   <div class="publication-text">
@@ -36,18 +38,42 @@
     {% endif %}
 
     {% if publication.number_link %}
-      <p>
-        {% for i in (1..publication.number_link) %}
-          {% assign link = publication["link" | append: i] %}
-          {% if link.url contains '://' %}
-            <a href="{{ link.url }}" target="_blank">{{ link.display }}</a>
-          {% else %}
-            <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ link.url }}" target="_blank">{{ link.display }}</a>
-          {% endif %}
-          {% unless forloop.last %} | {% endunless %}
-        {% endfor %}
-      </p>
-    {% endif %}
+  <p class="publication-links">
+    {% for i in (1..publication.number_link) %}
+      {% assign link = publication["link" | append: i] %}
+      {% assign url = link.url | downcase %}
+      {% assign icon = "fas fa-link" %}
+
+      {% if url contains "github.com" %}
+        {% assign icon = "fab fa-github" %}
+      {% elsif url contains "arxiv.org" %}
+        {% assign icon = "ai ai-arxiv" %}
+      {% elsif url contains "openreview.net" %}
+        {% assign icon = "fas fa-file-pdf" %}
+      {% elsif url contains "pdf" %}
+        {% assign icon = "fas fa-file-pdf" %}
+      {% elsif url contains "slides" %}
+        {% assign icon = "fas fa-chalkboard" %}
+      {% elsif url contains "poster" %}
+        {% assign icon = "fas fa-image" %}
+      {% elsif url contains "video" %}
+        {% assign icon = "fas fa-video" %}
+      {% endif %}
+
+      {% if link.url contains '://' %}
+        <a href="{{ link.url }}" target="_blank">
+          <i class="{{ icon }}"></i> {{ link.display }}
+        </a>
+      {% else %}
+        <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ link.url }}" target="_blank">
+          <i class="{{ icon }}"></i> {{ link.display }}
+        </a>
+      {% endif %}
+      {% unless forloop.last %} | {% endunless %}
+    {% endfor %}
+  </p>
+{% endif %}
+
 
   </div>
 </div>
