@@ -15,6 +15,11 @@ sass:
 
 include: ["_pages"]
 
+# Blog settings
+permalink: /blog/:year/:month/:day/:title/
+future: true    # Allow posts with future dates to be shown
+
+# Social media links
 google_scholar_url:   https://scholar.google.com/citations?hl=en&user=4Uz0LngAAAAJ&view_op=list_works&sortby=pubdate
 github_username:      subbareddy248
 linkedin_username:    subba-reddy-oota-11a91254
