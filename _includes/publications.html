@@ -40,18 +40,18 @@
       {% endif %}
 
       {% if publication.number_link %}
-        <p>
-          {% for i in (1..publication.number_link) %}
-            {% assign link = publication["link" | append: i] %}
-            {% if link.url contains '://' %}
-              <a href="{{ link.url }}" target="_blank">{{ link.display }}</a>
-            {% else %}
-              <a href="{{site.url}}{{site.baseurl}}/docs/publications/{{ link.url }}" target="_blank">{{ link.display }}</a>
-            {% endif %}
-            {% unless forloop.last %} | {% endunless %}
-          {% endfor %}
-        </p>
-      {% endif %}
+<p>
+  {% for i in (1..publication.number_link) %}
+    {% assign link = publication["link" | append: i] %}
+    {% if link.url contains '://' %}
+      <a href="{{ link.url }}" target="_blank">{{ link.display }}</a>
+    {% else %}
+      <a href="{{ site.url }}{{ site.baseurl }}/docs/publications/{{ link.url }}" target="_blank">{{ link.display }}</a>
+    {% endif %}
+    {% unless forloop.last %} | {% endunless %}
+  {% endfor %}
+</p>
+{% endif %}
 
     </div>
   </div>

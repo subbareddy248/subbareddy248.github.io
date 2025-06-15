@@ -25,7 +25,7 @@ permalink: /publications
     <span class="search-label">Venue:</span>
     <select id="venue-filter">
         <option value="all">All Venues</option>
-        {% assign venues = site.data.papers | map: 'venue' | compact | uniq | sort %}
+        {% assign venues = site.data.papers | map: 'venue' | map: 'strip_html' | map: 'strip' | compact | uniq | sort %}
         {% for venue in venues %}
         <option value="{{ venue | strip }}">{{ venue }}</option>
         {% endfor %}
@@ -38,7 +38,7 @@ permalink: /publications
 {% for publication in site.data.papers %}
 <div class="publication-item"
      data-year="{{ publication.year }}"
-     data-venue="{{ publication.venue | strip | escape_once }}">
+     data-venue="{{ publication.venue | strip_html | strip | escape_once }}">
     {% include publications.html %}
 </div>
 {% endfor %}
