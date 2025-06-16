@@ -89,3 +89,19 @@
   year: 2007
   title: Secured 1704 state rank in EAMCET-2007 Engineering Entrance Examination in Andhra Pradesh
   location: ""
+- type: rank
+  year: 2014
+  title: 1704 All India Rank in Computer Science Stream (99%)
+  exam: GATE-2014
+- type: rank
+  year: 2012
+  title: 4527 All India Rank in Computer Science Stream (97%)
+  exam: GATE-2012
+- type: rank
+  year: 2011
+  title: 3437 All India Rank in Computer Science Stream (97%)
+  exam: GATE-2011
+- type: rank
+  year: 2007
+  title: 1704 EAMCET Rank in Engineering Stream
+  exam: EAMCET-2007
