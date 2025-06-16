@@ -1,5 +1,9 @@
 # Travel Grants
 - type: travel
+  year: 2025
+  title: Awarded Financial Assistance (conference registration) for ICLR-25 conference
+  location: Singapore
+- type: travel
   year: 2024
   title: Awarded MaxPlanck Travel grant for ACL-24 conference
   location: Bangkok, Thailand
