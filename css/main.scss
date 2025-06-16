@@ -12,29 +12,25 @@
 @import "awards";
 @import "blogs";
 
-// Social media icon styles
-.ai, .fa {
-  &.ai-google-scholar-square {
-    color: #4285f4;
-    &:hover {
-      color: darken(#4285f4, 10%);
-    }
-  }
-  
+// Font Awesome styles
+/* Font Awesome Icon Styling */
+.fa {
+  transition: color 0.3s ease;
+
   &.fa-linkedin {
     color: #0077b5;
     &:hover {
       color: darken(#0077b5, 10%);
     }
   }
-  
+
   &.fa-github {
     color: #171515;
     &:hover {
       color: darken(#171515, 10%);
     }
   }
-  
+
   &.fa-twitter {
     color: #1da1f2;
     &:hover {
@@ -42,6 +38,39 @@
     }
   }
 
-  // Common transition
-  transition: color 0.3s ease;
+  &.fa-file-pdf {
+    color: #d44638;
+    &:hover {
+      color: darken(#d44638, 10%);
+    }
+  }
+
+  &.fa-chalkboard-teacher,
+  &.fa-image,
+  &.fa-video {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
 }
+
+/* Academicons Styling */
+.ai {
+  transition: color 0.3s ease;
+
+  &.ai-google-scholar-square {
+    color: #4285f4;
+    &:hover {
+      color: darken(#4285f4, 10%);
+    }
+  }
+
+  &.ai-arxiv {
+    color: #b31b1b;
+    &:hover {
+      color: darken(#b31b1b, 10%);
+    }
+  }
+} 
+
