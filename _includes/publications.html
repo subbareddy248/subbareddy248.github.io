@@ -39,28 +39,30 @@
 
       {% if publication.links %}
         <div class="publication-links">
-          {% for link in publication.links %}
+            {% for link in publication.links %}
             {% assign url = link.url | downcase %}
             {% assign icon = "fas fa-link" %}
             {% if url contains "github.com" %}
-              {% assign icon = "fab fa-github" %}
+                {% assign icon = "fab fa-github" %}
             {% elsif url contains "arxiv.org" %}
-              {% assign icon = "ai ai-arxiv" %}
+                {% assign icon = "ai ai-arxiv" %}
             {% elsif url contains "openreview.net" or url contains ".pdf" %}
-              {% assign icon = "fas fa-file-pdf" %}
+                {% assign icon = "fas fa-file-pdf" %}
             {% elsif url contains "slides" %}
-              {% assign icon = "fas fa-chalkboard-teacher" %}
+                {% assign icon = "fas fa-chalkboard-teacher" %}
             {% elsif url contains "poster" %}
-              {% assign icon = "fas fa-image" %}
+                {% assign icon = "fas fa-image" %}
             {% elsif url contains "video" or url contains ".mp4" %}
-              {% assign icon = "fas fa-video" %}
+                {% assign icon = "fas fa-video" %}
             {% endif %}
+            
             <a class="pub-link" href="{{ link.url }}" target="_blank">
-              <i class="{{ icon }}"></i> {{ link.display }}
+                <i class="{{ icon }}"></i> {{ link.display }}
             </a>
-          {% endfor %}
+            {% unless forloop.last %}<span style="margin: 0 8px;">|</span>{% endunless %}
+            {% endfor %}
         </div>
-      {% endif %}
+        {% endif %}
 
     </div>
   </div>
