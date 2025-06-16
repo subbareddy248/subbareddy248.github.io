@@ -14,45 +14,32 @@
 
 // Font Awesome styles
 /* Font Awesome Icon Styling */
-.fa {
-  transition: color 0.3s ease;
-
+.ai, .fa, .fab, .fa-brands {
+  &.ai-google-scholar-square {
+    color: #4285f4;
+    &:hover {
+      color: darken(#4285f4, 10%);
+    }
+  }
   &.fa-linkedin {
     color: #0077b5;
     &:hover {
       color: darken(#0077b5, 10%);
     }
   }
-
   &.fa-github {
     color: #171515;
     &:hover {
       color: darken(#171515, 10%);
     }
   }
-
-  &.fa-twitter {
-    color: #1da1f2;
+  &.fa-x-twitter {
+    color: #000000;
     &:hover {
-      color: darken(#1da1f2, 10%);
+      color: #1da1f2;
     }
   }
-
-  &.fa-file-pdf {
-    color: #d44638;
-    &:hover {
-      color: darken(#d44638, 10%);
-    }
-  }
-
-  &.fa-chalkboard-teacher,
-  &.fa-image,
-  &.fa-video {
-    color: #555;
-    &:hover {
-      color: #222;
-    }
-  }
+  transition: color 0.3s ease;
 }
 
 /* Academicons Styling */
@@ -65,12 +52,5 @@
       color: darken(#4285f4, 10%);
     }
   }
-
-  &.ai-arxiv {
-    color: #b31b1b;
-    &:hover {
-      color: darken(#b31b1b, 10%);
-    }
-  }
-} 
+}
 
