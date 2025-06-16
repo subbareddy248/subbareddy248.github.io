@@ -1,6 +1,11 @@
+- date: June 16, 2025
+  title: "Two Extended Abstracts as Posters Accepted at Cognitive Computational Neuroscience (CCN) 2025"
+  description: "Both of our recent works — one on comparing variance partitioning and the residual method for interpreting brain recordings, and another on inducing bias from bilingual brains into language models — have been accepted as poster presentations at CCN 2025."
+  link: "https://2025.ccneuro.org/"  # Optional: add https://ccn2025.org or specific link if available
+
 - date: June 10, 2025
   title: "Instruction-Tuned Video-Audio Models Elucidate Functional Specialization in the Brain"
-  description: "Our preprint is out"
+  description: "preprint is out"
   link: "https://www.arxiv.org/pdf/2506.08277"
 
 - date: May 15, 2025
