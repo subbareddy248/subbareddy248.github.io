@@ -30,7 +30,7 @@ permalink: /publications
   <span class="search-label">Venue:</span>
   <select id="venue-filter">
     <option value="all">All Venues</option>
-    {% assign venues = site.data.papers | map: "venue" | map: "strip_html" | uniq | sort %}
+    {% assign venues = site.data.papers | map: "venue_abbr" | map: "strip_html" | uniq | sort %}
     {% for venue in venues %}
       {% assign plain_venue = venue | strip_html | strip_newlines | strip | escape_once %}
       {% if plain_venue != "" %}
