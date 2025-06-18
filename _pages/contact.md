@@ -15,11 +15,11 @@ permalink: /contact
 
 [<i class="ai ai-google-scholar-square"></i> Google Scholar]({{ site.google_scholar_url }}){:target="_blank"}
 
-[<i class="fa fa-linkedin"></i> LinkedIn](https://linkedin.com/in/{{ site.linkedin_username }}){:target="_blank"}
+[<i class="fab fa-linkedin fa-2x"></i> LinkedIn](https://linkedin.com/in/{{ site.linkedin_username }}){:target="_blank"}
 
-[<i class="fa fa-github"></i> GitHub](https://github.com/{{ site.github_username }}){:target="_blank"}
+[<i class="fab fa-github fa-2x"></i> GitHub](https://github.com/{{ site.github_username }}){:target="_blank"}
 
-[<i class="fa fa-twitter"></i> Twitter](https://www.x.com/{{ site.twitter_username }}){:target="_blank"}
+[<i class="fa-brands fa-x-twitter fa-2x"></i> Twitter](https://www.x.com/{{ site.twitter_username }}){:target="_blank"}
 
 <!-- [<i class="fa fa-facebook"></i> Facebook](https://www.facebook.com/{{ site.facebook_username }}){:target="_blank"} -->
 
