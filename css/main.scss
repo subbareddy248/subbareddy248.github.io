@@ -1,0 +1,58 @@
+---
+---
+
+@import "vars";
+@import "typography";
+@import "tables";
+@import "style";
+@import "news";
+@import "education";
+@import "experience";
+@import "service";
+@import "awards";
+@import "blogs";
+@import "projects";
+@import "projects";
+
+// Font Awesome styles
+/* Font Awesome Icon Styling */
+.ai, .fa, .fab, .fa-brands {
+  &.ai-google-scholar-square {
+    color: #4285f4;
+    &:hover {
+      color: darken(#4285f4, 10%);
+    }
+  }
+  &.fa-linkedin {
+    color: #0077b5;
+    &:hover {
+      color: darken(#0077b5, 10%);
+    }
+  }
+  &.fa-github {
+    color: #171515;
+    &:hover {
+      color: darken(#171515, 10%);
+    }
+  }
+  &.fa-x-twitter {
+    color: #000000;
+    &:hover {
+      color: #1da1f2;
+    }
+  }
+  transition: color 0.3s ease;
+}
+
+/* Academicons Styling */
+.ai {
+  transition: color 0.3s ease;
+
+  &.ai-google-scholar-square {
+    color: #4285f4;
+    &:hover {
+      color: darken(#4285f4, 10%);
+    }
+  }
+}
+

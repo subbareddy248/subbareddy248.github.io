@@ -1,0 +1,90 @@
+/* Fix for education page logo overlap */
+
+// Make the education entry a grid to control the layout
+.education-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+    "title logo"
+    "metadata logo"
+    "details logo";
+  gap: 10px;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Assign grid areas to the elements
+.degree-title {
+  grid-area: title;
+  font-size: 26px;
+  font-weight: 500;
+  color: #55463e;
+  margin-bottom: 15px;
+}
+
+.degree-metadata {
+  grid-area: metadata;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.degree-details {
+  grid-area: details;
+  margin: 15px 0 20px 0;
+  padding-left: 20px;
+}
+
+// Style the institution logo and place it in the right column
+.institution-logo {
+  grid-area: logo;
+  justify-self: end; // Align to the right of its grid cell
+  max-width: 200px;
+  max-height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .education-entry {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "title"
+      "metadata"
+      "details"
+      "logo";
+  }
+  
+  .institution-logo {
+    justify-self: start; // Align to the left on mobile
+    margin-top: 15px;
+    max-width: 180px;
+  }
+  
+  .degree-metadata {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .date-range, .location {
+      margin-bottom: 5px;
+    }
+    
+    .metadata-divider {
+      display: none;
+    }
+  }
+}

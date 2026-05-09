@@ -1,0 +1,110 @@
+/* Fix for experience page layout to match education page */
+
+// Experience entry grid layout
+.experience-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+    "title logo"
+    "metadata logo"
+    "supervisor logo"
+    "description logo"
+    "achievements logo";
+  gap: 10px;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Position title in grid
+.position-title {
+  grid-area: title;
+  font-size: 26px;
+  font-weight: 500;
+  color: #55463e;
+  margin-bottom: 15px;
+}
+
+// Position metadata in grid
+.position-metadata {
+  grid-area: metadata;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+// Position supervisor in grid
+.supervisor {
+  grid-area: supervisor;
+  margin-bottom: 15px;
+}
+
+// Position description in grid
+.position-description {
+  grid-area: description;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+// Position achievements list in grid
+.achievements-list {
+  grid-area: achievements;
+  margin: 0 0 20px 20px;
+  padding-left: 15px;
+}
+
+// Style the institution logo and place it in the right column
+.institution-logo {
+  grid-area: logo;
+  justify-self: end; // Align to the right of its grid cell
+  align-self: start; // Align to the top of its area
+  max-width: 200px;
+  max-height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .experience-entry {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "title"
+      "metadata"
+      "supervisor"
+      "description"
+      "achievements"
+      "logo";
+  }
+  
+  .institution-logo {
+    justify-self: start; // Align to the left on mobile
+    margin-top: 15px;
+    max-width: 180px;
+  }
+  
+  .position-metadata {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .date-range, .location {
+      margin-bottom: 5px;
+    }
+    
+    .metadata-divider {
+      display: none;
+    }
+  }
+}

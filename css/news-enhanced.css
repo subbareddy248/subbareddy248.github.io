@@ -1,0 +1,103 @@
+/* Enhanced news visuals and animations */
+
+/* Subtle entry animation for news items */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-item {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Stagger the animations */
+.news-grid .news-item:nth-child(1) { animation-delay: 0.1s; }
+.news-grid .news-item:nth-child(2) { animation-delay: 0.2s; }
+.news-grid .news-item:nth-child(3) { animation-delay: 0.3s; }
+.news-grid .news-item:nth-child(4) { animation-delay: 0.4s; }
+.news-grid .news-item:nth-child(5) { animation-delay: 0.5s; }
+.news-grid .news-item:nth-child(6) { animation-delay: 0.6s; }
+.news-grid .news-item:nth-child(n+7) { animation-delay: 0.7s; }
+
+/* Color coding for different types of news */
+.news-item[data-type="paper"] {
+    border-left-color: #3498db; /* Blue for papers */
+}
+
+.news-item[data-type="award"] {
+    border-left-color: #f1c40f; /* Yellow for awards */
+}
+
+.news-item[data-type="talk"] {
+    border-left-color: #2ecc71; /* Green for talks */
+}
+
+.news-item[data-type="event"] {
+    border-left-color: #9b59b6; /* Purple for events */
+}
+
+.news-item[data-type="appointment"] {
+    border-left-color: #e74c3c; /* Red for appointments/roles */
+}
+
+/* Add the type as a data attribute in the template */
+.news-type {
+    &.paper { background-color: #e3f2fd; color: #1565c0; }
+    &.award { background-color: #fffde7; color: #f57f17; }
+    &.talk { background-color: #e8f5e9; color: #2e7d32; }
+    &.event { background-color: #f3e5f5; color: #6a1b9a; }
+    &.appointment { background-color: #ffebee; color: #c62828; }
+}
+
+/* Enhanced focus styles for accessibility */
+.news-item a:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Image support for news items that have images */
+.news-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    
+    img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .news-item {
+        padding: 1.2rem;
+    }
+    
+    .news-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .news-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .news-actions {
+        margin-top: 0.75rem;
+        text-align: left;
+    }
+}

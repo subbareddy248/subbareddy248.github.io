@@ -1,0 +1,28 @@
+title: SUBBA REDDY OOTA
+author: Subba Reddy Oota
+url: "https://subbareddy248.github.io"
+baseurl: ""
+
+description: Subba Reddy Oota's website
+
+markdown: kramdown
+
+google_analytics_tracking_id: UA-109052064-1
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+include: ["_pages"]
+
+# Blog settings
+permalink: /blog/:year/:month/:day/:title/
+future: true    # Allow posts with future dates to be shown
+
+# Social media links
+google_scholar_url:   https://scholar.google.com/citations?hl=en&user=4Uz0LngAAAAJ&view_op=list_works&sortby=pubdate
+github_username:      subbareddy248
+linkedin_username:    subba-reddy-oota-11a91254
+facebook_username:    vikky2904
+twitter_username:     subbareddy300
+google_plus_username: vikky2904

@@ -1,0 +1,64 @@
+/* Auto-scrolling news section styles */
+@keyframes scrollNews {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.news-content.auto-scroll {
+    position: relative;
+    overflow: hidden !important;
+}
+
+.news-list.scrolling {
+    animation: scrollNews 30s linear infinite;
+    padding-bottom: 20px;
+}
+
+.news-list.scrolling:hover {
+    animation-play-state: paused;
+}
+
+/* Create a duplicate of the news list for continuous scrolling */
+.news-list.scrolling::after {
+    content: "";
+    display: block;
+    height: 20px; /* Space between the end and the beginning */
+}
+
+.news-content.auto-scroll .news-list {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Control buttons for auto-scroll */
+.news-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px;
+    background: #f6f8fa;
+    border-top: 1px solid #d1d9e0;
+}
+
+.news-control-btn {
+    background: none;
+    border: none;
+    color: #656d76;
+    cursor: pointer;
+    padding: 2px 8px;
+    margin-left: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.news-control-btn:hover {
+    background: #e1e4e8;
+}
+
+.news-control-btn.active {
+    background: #0969da;
+    color: white;
+}

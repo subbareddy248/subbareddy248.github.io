@@ -1,0 +1,131 @@
+.blogs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    .section-title {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #e74c3c);
+            border-radius: 2px;
+        }
+    }
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .blog-card-content {
+        padding: 1.5rem;
+    }
+}
+
+.blog-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    
+    a {
+        color: #2c3e50;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover {
+            color: #3498db;
+        }
+    }
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    
+    .blog-date {
+        color: #3498db;
+    }
+    
+    .paper-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #e74c3c;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.blog-excerpt {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    
+    .tag {
+        background: #f0f2f5;
+        color: #2c3e50;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        transition: background 0.2s ease;
+        
+        &:hover {
+            background: #e2e5e9;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .blogs-container {
+        padding: 1rem;
+    }
+    
+    .blogs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
