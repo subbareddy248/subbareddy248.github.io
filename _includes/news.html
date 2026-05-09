@@ -1,0 +1,43 @@
+<article class="news-item" {% if article.type %}data-type="{{ article.type }}"{% endif %}>
+    <div class="news-item-header">
+        <time class="news-date" datetime="{{ article.date | date: '%Y-%m-%d' }}">
+            <span class="date-icon">📅</span> {{ article.date | date: "%B %d, %Y" }}
+        </time>
+        
+        {% if article.type %}
+        <span class="news-type {{ article.type }}">{{ article.type }}</span>
+        {% endif %}
+    </div>
+    
+    {% if article.image %}
+    <div class="news-image">
+        <img src="{{ site.baseurl }}{{ article.image }}" alt="Image for {{ article.title }}">
+    </div>
+    {% endif %}
+    
+    <div class="news-content">
+        <h3 class="news-title">
+            {% if article.link %}
+                <a href="{{ article.link }}" target="_blank" rel="noopener">
+                    {{ article.title }}
+                    <span class="external-link-icon">↗</span>
+                    <span class="sr-only">(opens in new tab)</span>
+                </a>
+            {% else %}
+                {{ article.title }}
+            {% endif %}
+        </h3>
+        
+        <p class="news-description">{{ article.description }}</p>
+        
+        <div class="news-footer">
+            {% if article.conference_name and article.conference_link %}
+                <a href="{{ article.conference_link }}" target="_blank" rel="noopener" class="conference-link">
+                    <span class="conference-icon">🏛️</span> {{ article.conference_name }}
+                    <span class="sr-only">(opens in new tab)</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</article>
+

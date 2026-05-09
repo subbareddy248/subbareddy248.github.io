@@ -1,0 +1,36 @@
+# Rows for vision-language model comparison
+- - "Wang et al. (2022)"
+  - "CLIP (Vision-Language)"
+  - "Visual Cortex"
+  - "<span class='x-mark'>✕</span>"
+  - "Baseline"
+
+- - "Oota et al. (2022)"
+  - "VisualBERT, LXMERT"
+  - "Visual & Language Areas"
+  - "<span class='x-mark'>✕</span>"
+  - "+5%"
+
+- - "Tang et al. (2022)"
+  - "BridgeTower"
+  - "Multiple Regions"
+  - "<span class='x-mark'>✕</span>"
+  - "+8%"
+
+- - "Chen et al. (2023)"
+  - "BLIP-2"
+  - "Visual Cortex"
+  - "<span class='x-mark'>✕</span>"
+  - "+10%"
+
+- - "Kumar et al. (2024)"
+  - "MiniGPT-4"
+  - "Visual & Language Areas"
+  - "<span class='checkmark'>✓</span>"
+  - "+12%"
+
+- - "Our Study (2025)"
+  - "LLaVA, InstructBLIP"
+  - "All Studied Regions"
+  - "<span class='checkmark'>✓</span>"
+  - "+18-25%"

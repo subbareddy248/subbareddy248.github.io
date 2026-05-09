@@ -1,0 +1,39 @@
+- name: "HOME"
+  link: "/"
+
+- name: "NEWS"
+  link: "/news"
+
+- name: "PUBLICATIONS"
+  link: "/publications"
+
+- name: "PROJECTS"
+  link: "/projects"
+
+- name: "TALKS"
+  link: "/talks"
+
+- name: "EXPERIENCE"
+  link: "/experience"
+
+- name: "EDUCATION"
+  link: "/education"
+
+- name: "MENTORSHIP"
+  link: "/mentorship"
+
+- name: "SERVICE"
+  link: "/service"
+
+- name: "AWARDS"
+  link: "/awards"
+
+- name: "CV"
+  link: "/CV"
+
+- name: "CONTACT"
+  link: "/contact"
+
+- name: "BLOGS"
+  link: "/blogs"
+

@@ -1,0 +1,27 @@
+# Model performance data for visualization
+- name: "Instruction-Tuned MLLMs"
+  color: "#1976d2"
+  values:
+    - 75
+    - 72
+    - 68
+    - 70
+    - 65
+
+- name: "Non-Instruction MLLMs"
+  color: "#ff9800"
+  values:
+    - 60
+    - 58
+    - 55
+    - 53
+    - 51
+
+- name: "Unimodal Models"
+  color: "#4caf50"
+  values:
+    - 55
+    - 52
+    - 48
+    - 50
+    - 45

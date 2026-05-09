@@ -1,0 +1,93 @@
+<div class="publication-item"
+     data-year="{{ publication.year }}"
+     data-venue="{{ publication.venue_abbr }}">
+
+  <div class="publication-picture-wrapper">
+    {% if publication.video %}
+      <video class="publication-picture" controls autoplay muted loop playsinline>
+        <source src="{{ site.baseurl }}/images/publications/{{ publication.video }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% elsif publication.image and publication.links and publication.links[0].url %}
+      <a href="{{ publication.links[0].url }}" target="_blank">
+        <img class="publication-picture" src="{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="Image" />
+      </a>
+    {% elsif publication.image %}
+      <img class="publication-picture" src="{{ site.baseurl }}/images/publications/{{ publication.image }}" alt="Image" />
+    {% endif %}
+  </div>
+
+  <div class="publication-text">
+
+    {% if publication.title %}
+      {% if publication.links and publication.links[0].url %}
+        <a class="publication-title" href="{{ publication.links[0].url }}" target="_blank">{{ publication.title }}</a>
+      {% else %}
+        <div class="publication-title">{{ publication.title }}</div>
+      {% endif %}
+    {% endif %}
+
+    {% if publication.authors %}
+      <p class="publication-authors">
+        <em>{{ publication.authors }}</em>
+        {% if publication.equal_contribution %}
+          <span style="color: #7c3aed; font-weight: 500; margin-left: 4px; font-size: 1em;">
+          * Equal contribution
+        </span>
+        {% endif %}
+      </p>
+    {% endif %}
+
+    {% if publication.venue_abbr %}
+      <p class="publication-venue">
+        {{ publication.venue | raw }}
+        {% if publication.acceptance_rate %}
+          <span class="acceptance-rate" style="color: #059669; font-weight: 500; margin-left: 8px;">
+            (Acceptance Rate: {{ publication.acceptance_rate }})
+          </span>
+        {% endif %}
+        {% if publication.award %}
+          <span class="publication-award" style="color: #0066cc; font-weight: 500; margin-left: 8px;">
+            🏆 {{ publication.award }}
+          </span>
+        {% endif %}
+      </p>
+    {% endif %}
+
+    {% if publication.award_image %}
+      <div class="award-image-container" style="margin: 10px 0;">
+        <img src="{{ site.baseurl }}/images/publications/{{ publication.award_image }}" 
+             alt="{{ publication.award }}" 
+             style="max-width: 400px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+      </div>
+    {% endif %}
+
+    {% if publication.links %}
+      <div class="publication-links">
+          {% for link in publication.links %}
+          {% assign url = link.url | downcase %}
+          {% assign icon = "fas fa-link" %}
+          {% if url contains "github.com" %}
+              {% assign icon = "fab fa-github" %}
+          {% elsif url contains "arxiv.org" %}
+              {% assign icon = "ai ai-arxiv" %}
+          {% elsif url contains "openreview.net" or url contains ".pdf" %}
+              {% assign icon = "fas fa-file-pdf" %}
+          {% elsif url contains "slides" %}
+              {% assign icon = "fas fa-chalkboard-teacher" %}
+          {% elsif url contains "poster" %}
+              {% assign icon = "fas fa-image" %}
+          {% elsif url contains "video" or url contains ".mp4" %}
+              {% assign icon = "fas fa-video" %}
+          {% endif %}
+          
+          <a class="pub-link" href="{{ link.url }}" target="_blank">
+              <i class="{{ icon }}"></i> {{ link.display }}
+          </a>
+          {% unless forloop.last %}<span style="margin: 0 8px;">|</span>{% endunless %}
+          {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>

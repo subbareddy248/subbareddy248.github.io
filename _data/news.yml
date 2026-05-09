@@ -1,0 +1,153 @@
+- date: Feb 25, 2026
+  title: "Our paper featured by EqualyzAI on Twitter"
+  description: "'How much AI do we really need to mirror the human brain? 3B-parameter models can predict brain activity about as well as much larger 14B models — brain alignment saturates at modest model sizes.' - EqualyzAI"
+  link: "https://x.com/equalyz_ai/status/2026605322245116238"
+
+- date: Feb 07, 2026
+  title: "New Preprint: How Does Longer Temporal Context Enhance Multimodal Narrative Video Processing in the Brain?"
+  description: "Our latest work exploring the impact of temporal context on multimodal narrative video processing in the brain is now available on arXiv."
+  link: "https://arxiv.org/abs/2602.07570"
+
+- date:  Feb 07, 2026
+  title: "New Preprint: Linguistic Properties and Model Scale in Brain Encoding: From Small to Compressed Language Models"
+  description: "Rejected at ICLR 2026 (<font color='red'>A*</font>). Meta-review: 'The paper would likely have landed just below or around the acceptance threshold.' [<a href='https://openreview.net/forum?id=GK6WWEwHek' target='_blank'>OpenReview</a>]"
+  link: "https://arxiv.org/abs/2602.07547"
+
+- date: Jan 27, 2026
+  title: "Instruction-Tuned Video-Audio Models Elucidate Functional Specialization in the Brain"
+  description: "Decision: Rejected from ICLR 2026 (<font color='red'>A*</font>) with scores of 6, 6, 4. This is the second rejection despite positive reviews — after NeurIPS 2025 rejection (scores: 5, 5, 5, 3)."
+  link: "https://www.arxiv.org/pdf/2506.08277"
+
+- date: Jan 2, 2026
+  title: "Joined ADIA (Abu Dhabi Investment Authority) Lab as a Research Scientist"
+  description: "I'm excited to announce that I've joined ADIA Lab (Abu Dhabi Investment Authority) as a Research Scientist, where I will be working on building AI agents for healthcare."
+  link: "#"
+
+- date: Dec 27, 2025
+  title: "Our NeurIPS 2025 paper featured in Instagram video"
+  description: "'Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language Models' highlighted as one of the good papers."
+  link: "https://www.instagram.com/reel/DR5DpKfjjfS/"
+
+- date: Dec 9, 2025
+  title: "Tutorial: Encoding and Decoding Language in the Brain with Language Models"
+  description: "has been accepted to EACL 2026! (<font color='red'>A</font>)"
+  conference_link: "https://2026.eacl.org/program/tutorials/"
+  conference_name: "EACL 2026"
+
+- date: Nov 07, 2025
+  title: "Aligning Text/Speech Representations from Multimodal Models with MEG Brain Activity During Listening"
+  description: "has been <font color='blue'>selected for SAC Highlight Award (Top 2% of accepted papers)</font>"
+  conference_link: "https://2025.emnlp.org/program/awards/"
+  conference_name: "EMNLP 2025"
+
+- date: Nov 03, 2025
+  title: "Invited to serve as a reviewer for Transactions on Machine Learning Research (TMLR)."
+  description: "I'm honored to join the reviewer pool for Transactions on Machine Learning Research (TMLR), a top-tier journal in the field."
+  link: "#"
+
+- date: Nov 03, 2025
+  title: "Invited to serve as a reviewer for ACM Computing Surverys."
+  description: "I'm honored to join the reviewer pool for ACM Computing Surveys, a top-tier journal in the field."
+  link: "#"
+
+- date: Oct 25, 2025
+  title: "IndicSentEval: How Effectively do Multilingual Transformer Models encode Linguistic Properties for Indic Languages?"
+  description: "has been accepted to AACL-IJCNLP Findings 2025 (Findings, Long)"
+  conference_link: "https://2025.aaclnet.org/"
+  conference_name: "AACL-IJCNLP 2025"
+  link: "https://arxiv.org/pdf/2410.02611"
+
+- date: Oct 20, 2025
+  title: "Invited to serve as a reviewer for IEEE Transactions on Neural Networks and Learning Systems (TNNLS)."
+  description: "I'm honored to join the reviewer pool for IEEE Transactions on Neural Networks and Learning Systems (TNNLS), a top-tier journal in the field."
+  link: "#"
+
+- date: Oct 20, 2025
+  title: "Received 'Great Review' Recognition from ACL Rolling Review"
+  description: "Recognized by Area Chairs for providing an exceptional review in the ACL Rolling Review, noted for its clarity, helpfulness, and decisiveness."
+  conference_name: "ACL ARR July cycle (AACL-IJCNLP 2025)"
+  conference_link: "http://stats.aclrollingreview.org/iterations/2025/july/"
+  link: "#"
+
+- date: Oct 04, 2025
+  title: "I am serving as an Area Chair for the October 2025 ACL ARR cycle (EACL 2026)"
+  description: "I'm honored to serve as an Area Chair for ACL Rolling Review starting October 2025, which will handle submissions for EACL-2026."
+  conference_link: "https://aclrollingreview.org/"
+  link: "#"
+
+- date: Sep 18, 2025
+  title: "Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language Models"
+  description: "has been accepted to NeurIPS Conference 2025 (Main Track, <font color='red'>A*</font>): Scores: 5,5,4,4,3"
+  link: "https://www.biorxiv.org/content/10.1101/2025.07.07.662360v1"
+  conference_name: "NeurIPS 2025"
+  conference_link: "https://nips.cc/"
+
+- date: Sep 18, 2025
+  title: "Instruction-Tuned Video-Audio Models Elucidate Functional Specialization in the Brain"
+  description: "Decision: Rejected from NeurIPS conference 2025 (Main Track, <font color='red'>A*</font>)-even with mostly positive reviews (scores: 5 (accept), 5 (accept), 5 (accept), 3 (border-line reject))."
+  link: "https://www.arxiv.org/pdf/2506.08277"
+
+- date: Sep 8, 2025
+  title: "Tutorial: Brain-Inspired AI 2.0: Aligning Language Models Across Languages and Modalities"
+  description: "has been accepted to AAAI 2026! (<font color='red'>A*</font>)"
+  conference_link: "https://aaai.org/conference/aaai/aaai-26/tutorial-and-lab-list/#th02"
+  conference_name: "AAAI 2026"
+
+- date: Aug 20, 2025
+  title: "Received 'Great Review' Recognition from ACL Rolling Review"
+  description: "Review marked as 'Great Review' by Area Chairs in the ACL Rolling Review for its quality and constructive feedback."
+  conference_name: "ACL ARR May cycle (EMNLP 2025)"
+  conference_link: "http://stats.aclrollingreview.org/iterations/2025/may/"
+  link: "#"
+
+- date: Aug 20, 2025
+  title: "Aligning Text/Speech Representations from Multimodal Models with MEG Brain Activity During Listening"
+  description: "has been accepted to EMNLP Conference 2025 (Main, Long, <font color='red'>A*</font>) <font color='blue'>(Nominated for the Paper Award)</font>"
+  conference_link: "https://2025.emnlp.org/"
+  conference_name: "EMNLP 2025"
+
+- date: July 17, 2025
+  title: "Invited to serve as a reviewer for Nature Human Behavior."
+  description: "I'm honored to join the reviewer pool for Nature Human Behavior, a top-tier journal in cognitive and behavioral sciences."
+  link: "#"
+
+- date: July 16, 2025
+  title: "Appointed as Demos & Exhibits Co-Chair for AI-ML Systems 2025"
+  description: "I'm excited to join the organizing committee of AI-ML Systems 2025 as the Demos & Exhibits Co-Chair."
+  link: "https://www.aimlsystems.org/2025/organising-committee/"
+
+- date: July 10, 2025
+  title: "New Preprint: Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language Models"
+  description: "Our latest work on leveraging brain data to improve multilingual capabilities in language models is now available on bioRxiv."
+  link: "https://www.biorxiv.org/content/10.1101/2025.07.07.662360v1"
+
+- date: June 16, 2025
+  title: "Two Extended Abstracts are Accepted as Posters at Cognitive Computational Neuroscience (CCN) 2025"
+  description: "Both of our recent works — one on comparing variance partitioning and the residual method for interpreting brain recordings, and another on inducing bias from bilingual brains into language models — have been accepted as poster presentations at CCN 2025."
+  link: "https://2025.ccneuro.org/"
+
+- date: June 10, 2025
+  title: "Instruction-Tuned Video-Audio Models Elucidate Functional Specialization in the Brain"
+  description: "Our new preprint explores how instruction-tuned multimodal models can provide insights into functional specialization in the brain."
+  link: "https://www.arxiv.org/pdf/2506.08277"
+
+- date: May 15, 2025
+  title: "USDC A Dataset of User Stance and Dogmatism in Long Conversations"
+  description: "has been accepted to ACL Findings 2025 (Findings, Long, <font color='red'>A*</font>)"
+  conference_link: "https://2025.aclweb.org/"
+  conference_name: "ACL 2025"
+  link: "https://aclanthology.org/2025.findings-acl.1216/"
+
+- date: January 15, 2025
+  title: "Multi-modal brain encoding models for multi-modal stimuli"
+  description: "has been accepted to ICLR 2025! (Main Track, <font color='red'>A*</font>)"
+  conference_link: "https://iclr.cc/"
+  conference_name: "ICLR 2025"
+  link: "https://openreview.net/pdf?id=0dELcFHig2"
+
+- date: January 15, 2025
+  title: "Correlating instruction-tuning (in multimodal models) with vision-language processing (in the brain)"
+  description: "has been accepted to ICLR 2025! (Main Track, <font color='red'>A*</font>)"
+  conference_link: "https://iclr.cc/"
+  conference_name: "ICLR 2025"
+  link: "https://openreview.net/forum?id=xkgfLXZ4e0"

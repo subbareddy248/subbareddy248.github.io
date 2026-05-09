@@ -1,0 +1,196 @@
+<!-- Project comparison chart component -->
+<div class="comparison-chart">
+  <div class="chart-header">
+    <div class="chart-title">{{ include.title }}</div>
+    <div class="chart-subtitle">{{ include.subtitle }}</div>
+  </div>
+  
+  <div class="chart-container">
+    <div class="chart-labels">
+      {% for label in include.labels %}
+        <div class="chart-label">{{ label }}</div>
+      {% endfor %}
+    </div>
+    
+    <div class="chart-bars">
+      {% for dataset in include.datasets %}
+        <div class="chart-dataset">
+          <div class="dataset-name">{{ dataset.name }}</div>
+          <div class="dataset-bars">
+            {% for value in dataset.values %}
+              <div class="dataset-bar" style="--bar-value: {{ value }}%; --bar-color: {{ dataset.color }};">
+                <span class="bar-value">{{ value }}%</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="chart-legend">
+    {% for dataset in include.datasets %}
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: {{ dataset.color }};"></span>
+        <span class="legend-name">{{ dataset.name }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.comparison-chart {
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chart-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.chart-subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+.chart-container {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.chart-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 1rem;
+  min-width: 150px;
+}
+
+.chart-label {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.chart-bars {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-dataset {
+  display: flex;
+  align-items: center;
+}
+
+.dataset-name {
+  min-width: 150px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.dataset-bars {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dataset-bar {
+  height: 30px;
+  width: calc(var(--bar-value) * 0.7% + 20px);
+  max-width: 100%;
+  background-color: var(--bar-color);
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  transition: width 1s ease, transform 0.3s ease;
+}
+
+.dataset-bar:hover {
+  transform: translateY(-2px);
+}
+
+.bar-value {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+.legend-name {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .comparison-chart {
+    padding: 1rem;
+  }
+  
+  .chart-container {
+    flex-direction: column;
+  }
+  
+  .chart-labels {
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .chart-label {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  
+  .chart-dataset {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .dataset-name {
+    min-width: auto;
+    text-align: center;
+  }
+  
+  .dataset-bars {
+    width: 100%;
+  }
+  
+  .dataset-bar {
+    height: 25px;
+  }
+}
+</style>

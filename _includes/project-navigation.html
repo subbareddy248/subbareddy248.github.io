@@ -1,0 +1,70 @@
+<!-- Project page navigation -->
+<div class="project-navigation">
+  <div class="project-nav-container">
+    <a href="#abstract" class="project-nav-item">Abstract</a>
+    <a href="#why" class="project-nav-item">Why Instruction-Tuned MLLMs?</a>
+    <a href="#contributions" class="project-nav-item">Key Contributions</a>
+    <a href="#results" class="project-nav-item">Results</a>
+    <a href="#methodology" class="project-nav-item">Methodology</a>
+    <a href="#citation" class="project-nav-item">Citation</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Sticky navigation
+    const nav = document.querySelector('.project-navigation');
+    const navTop = nav.offsetTop;
+    
+    function stickyNavigation() {
+      if (window.scrollY >= navTop) {
+        nav.classList.add('sticky');
+      } else {
+        nav.classList.remove('sticky');
+      }
+    }
+    
+    window.addEventListener('scroll', stickyNavigation);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('.project-nav-item').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Active state for navigation items
+    const sections = document.querySelectorAll('.project-section');
+    
+    function highlightNavItem() {
+      let scrollPosition = window.scrollY + 100;
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (sectionId && scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          document.querySelectorAll('.project-nav-item').forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === '#' + sectionId) {
+              item.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', highlightNavItem);
+  });
+</script>
