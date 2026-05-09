@@ -1,14 +1,14 @@
 - title: "Encoding and Decoding Language in the Brain with Language Models"
-  image: eacl_2026_image.png
+  image: ecal_image_2026.png
   date:  March 29, 2026
   venue: <a href="https://eacl2026.org/" target="_blank">EACL 2026 Conference</a>, Rabat, Morocco
   number_link: 1
   link1:
-    url: https://subbareddy248.github.io/docs/presentations/eacl_2026_subba.pptx
+    url: https://subbareddy248.github.io/docs/presentations/eacl_2026_subba.pdf
     display: slides
 
 - title: "Brain-Inspired AI 2.0: Aligning Language Models Across Languages and Modalities"
-  image: aaai_2026_image.png
+  image: aaai_image_2026.png
   date:  January 21, 2026
   venue: <a href="https://aaai.org/Conferences/AAAI-26/" target="_blank">AAAI 2026 Conference</a>, Singapore
   number_link: 1
