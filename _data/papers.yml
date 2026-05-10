@@ -34,28 +34,6 @@
   - url: /images/publications/NeurIPS25-social.mp4
     display: Video
 
-- title: Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language
-    Models
-  image: bling_tuning_2025.PNG
-  video: NeurIPS25-social.mp4
-  authors: Anuja Negi*, <b>Subba Reddy Oota*</b>, Anwar Nunez-Elizalde, Manish Gupta, Fatma Deniz
-  venue: <a href="https://neurips.cc/Conferences/2025" target="_blank">NeurIPS 2025</a> <strong>(A*)</strong>
-  venue_abbr: NeurIPS
-  year: '2025'
-  acceptance_rate: "24.5%"
-  equal_contribution: true
-  links:
-  - url: https://openreview.net/pdf?id=JPogehP8By
-    display: OpenReview
-  - url: https://github.com/denizenslab/brain-informed-fine-tuning
-    display: GitHub
-  - url: https://neurips.cc/media/neurips-2025/Slides/118728.pdf
-    display: Slides
-  - url: https://neurips.cc/media/PosterPDFs/NeurIPS%202025/118728.png?t=1764610626.683547
-    display: Poster
-  - url: /images/publications/NeurIPS25-social.mp4
-    display: Video
-
 - title: Aligning Text/Speech Representations from Multimodal Models with MEG Brain Activity During Listening
   image: emnlp_2025.PNG
   authors: Padakanti Srijith, Khushbu Pahwa, Radhika Mamidi, Bapi Raju Surampudi, Manish Gupta, <b>Subba Reddy Oota</b>
