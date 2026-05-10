@@ -1,3 +1,39 @@
+- title: Linguistic Properties and Model Scale in Brain Encoding - From Small to Compressed Language Models
+  image: instrcution_tuned_2025.PNG
+  authors: <b>Subba Reddy Oota</b>, Satya Sai Srinath Namburi GNVV, Vijay Rowtula, Khushbu Pahwa, Anant Khandelwal, Manish Gupta, Tanmoy Chakraborty, Bapi Raju Surampudi
+  venue: <a href="https://icml.cc/Conferences/2026" target="_blank">ICML 2026</a> <strong>(Spotlight)</strong>
+  venue_abbr: ICML
+  year: '2026'
+  acceptance_rate: "26.6% (Top 2.2% Spotlight)"
+  award: Spotlight Paper (Top 2.2% of submissions)
+  links:
+  - url: https://openreview.net/forum?id=WK1NvxRMsL
+    display: OpenReview
+  - url: https://arxiv.org/abs/2602.07547
+    display: Arxiv
+
+- title: Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language
+    Models
+  image: bling_tuning_2025.PNG
+  video: NeurIPS25-social.mp4
+  authors: Anuja Negi*, <b>Subba Reddy Oota*</b>, Anwar Nunez-Elizalde, Manish Gupta, Fatma Deniz
+  venue: <a href="https://neurips.cc/Conferences/2025" target="_blank">NeurIPS 2025</a> <strong>(A*)</strong>
+  venue_abbr: NeurIPS
+  year: '2025'
+  acceptance_rate: "24.5%"
+  equal_contribution: true
+  links:
+  - url: https://openreview.net/pdf?id=JPogehP8By
+    display: OpenReview
+  - url: https://github.com/denizenslab/brain-informed-fine-tuning
+    display: GitHub
+  - url: https://neurips.cc/media/neurips-2025/Slides/118728.pdf
+    display: Slides
+  - url: https://neurips.cc/media/PosterPDFs/NeurIPS%202025/118728.png?t=1764610626.683547
+    display: Poster
+  - url: /images/publications/NeurIPS25-social.mp4
+    display: Video
+
 - title: Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language
     Models
   image: bling_tuning_2025.PNG
