@@ -1,9 +1,10 @@
+{% for article in site.data.news %}
 <article class="news-item" {% if article.type %}data-type="{{ article.type }}"{% endif %}>
     <div class="news-item-header">
         <time class="news-date" datetime="{{ article.date | date: '%Y-%m-%d' }}">
             <span class="date-icon">📅</span> {{ article.date | date: "%B %d, %Y" }}
         </time>
-        
+
         {% if article.type %}
         <span class="news-type {{ article.type }}">{{ article.type }}</span>
         {% endif %}
@@ -40,4 +41,4 @@
         </div>
     </div>
 </article>
-
+{% endfor %}
