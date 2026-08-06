@@ -1,4 +1,11 @@
-- date: May 10, 2026
+- date: July 25, 2026
+  title: "I am serving as an Area Chair for AAAI 2027"
+  description: "I'm honored to serve as an Area Chair for AAAI 2027 (<font color='red'>A*</font>)."
+  conference_link: "https://aaai.org/conference/aaai/aaai-27/"
+  conference_name: "AAAI 2027"
+  link: "#"
+
+- date: May 01, 2026
   title: "Linguistic Properties and Model Scale in Brain Encoding: From Small to Compressed Language Models"
   description: "has been <font color='blue'>accepted as a spotlight paper at ICML 2026 (<font color='red'>A*</font>) (Top 2.2% of 23,918 submissions)</font>"
   conference_link: "https://openreview.net/forum?id=WK1NvxRMsL"
