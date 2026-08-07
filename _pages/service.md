@@ -9,7 +9,8 @@ permalink: /service
 ## Area Chair
 
 <ul>
-    <li><span class="role">Area Chair</span><span class="conference-name">ACL Rolling Review (EACL-2026)</span> <span class="conference-year">2025</span></li>
+    <li><span class="role">Area Chair</span><span class="conference-name">AAAI</span> <span class="conference-year">2027</span></li>
+    <li><span class="role">Area Chair</span><span class="conference-name">ACL Rolling Review (EACL-2026, ACL-2026, EMNLP-2026)</span> <span class="conference-year">2025, 2026</span></li>
 </ul>
 
 ## Program Committee / Reviewer
@@ -48,6 +49,7 @@ permalink: /service
 ## Conference Organization
 
 <ul>
+    <li><span class="role">Workshop Chair</span><span class="conference-name">AI-ML Systems</span> <span class="conference-year">2026</span></li>
     <li><span class="role">Demos & Exhibits Co-Chair</span><span class="conference-name">AI-ML Systems</span> <span class="conference-year">2025</span></li>
     <li><span class="role">Web Chair</span><span class="conference-name">CoDS COMAD</span> <span class="conference-year">2020</span></li>
 </ul>
