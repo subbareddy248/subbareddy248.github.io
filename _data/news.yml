@@ -1,6 +1,8 @@
-- date: Aug 07, 2026
-  title: "Appointed as Workshop Chair for AI-ML Systems 2026"
-  description: "I'm excited to join the organizing committee of AI-ML Systems 2026 as the Workshop Chair."
+- date: Sep 10, 2026
+  title: "I am serving as an Area Chair for ICLR 2027"
+  description: "I am honored to serve as an Area Chair for ICLR 2027 (<font color='red'>A*</font>)."
+  conference_link: "https://iclr.cc/Conferences/2027"
+  conference_name: "ICLR 2027"
   link: "#"
 
 - date: July 25, 2026
@@ -9,6 +11,11 @@
   conference_link: "https://aaai.org/conference/aaai/aaai-27/"
   conference_name: "AAAI 2027"
   link: "#"
+
+- date: July 01, 2026
+  title: "Serving as a Workshop Chair for AI-ML Systems 2026"
+  description: "I am excited to join the organizing committee of AI-ML Systems 2026 as the Workshop Chair."
+  link: "https://www.aimlsystems.org/2026/organizing-committee-2/"
 
 - date: May 01, 2026
   title: "Linguistic Properties and Model Scale in Brain Encoding: From Small to Compressed Language Models"

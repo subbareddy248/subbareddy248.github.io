@@ -11,6 +11,12 @@
     display: OpenReview
   - url: https://arxiv.org/abs/2602.07547
     display: Arxiv
+  - url: https://subbareddy248.github.io/docs/presentations/ICML_2026_Linguistic_properties.pdf
+    display: Slides
+  - url: https://subbareddy248.github.io/docs/presentations/ICML_2026_poster.pdf
+    display: Poster
+  - url: https://recorder-v3.slideslive.com/?share=113028&s=8bd82b43-8d65-4975-b201-f283dcd2ba8e
+    display: Video
 
 - title: Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language
     Models

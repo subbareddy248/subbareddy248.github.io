@@ -9,6 +9,7 @@ permalink: /service
 ## Area Chair
 
 <ul>
+    <li><span class="role">Area Chair</span><span class="conference-name">ICLR</span> <span class="conference-year">2027</span></li>
     <li><span class="role">Area Chair</span><span class="conference-name">AAAI</span> <span class="conference-year">2027</span></li>
     <li><span class="role">Area Chair</span><span class="conference-name">ACL Rolling Review (EACL-2026, ACL-2026, EMNLP-2026)</span> <span class="conference-year">2025, 2026</span></li>
 </ul>
