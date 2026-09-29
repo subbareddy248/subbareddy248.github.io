@@ -924,7 +924,7 @@
   // Autoplay cycles through every run, like the planning-pattern deck; it
   // holds while paused or scrolled off screen, and stays off for reduced motion.
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var demoPaused = reduceMotion, demoOffscreen = false, HOLD_MS = 6500;
+  var demoPaused = reduceMotion, demoOffscreen = false, HOLD_MS = 5000;
   function held(){ return demoPaused || demoOffscreen; }
   var STEP_MS = 850;
 
@@ -1299,13 +1299,18 @@
     findingNote.classList.add("show");
     statusPill.textContent = "done";
     statusPill.dataset.live = "2";
-    timer = setTimeout(function(){ advance(p); }, HOLD_MS);
+    countdown(p, HOLD_MS);
   }
 
-  // move on to the next run once the finished one has been on screen long enough
-  function advance(p){
-    if(held()){ timer = setTimeout(function(){ advance(p); }, 300); return; }
-    selectPacket((PACKETS.indexOf(p) + 1) % PACKETS.length);
+  // After a run finishes, count down visibly (progress bar drains) and then
+  // move on to the next run; the count holds while paused or off screen.
+  function countdown(p, left){
+    var next = PACKETS[(PACKETS.indexOf(p) + 1) % PACKETS.length];
+    stepNote.textContent = held() ? "paused · next: " + next.label
+      : "next: " + next.label + " in " + Math.ceil(left / 1000) + "s";
+    progFill.style.width = (100 * left / HOLD_MS) + "%";
+    if(left <= 0){ selectPacket(PACKETS.indexOf(next)); return; }
+    timer = setTimeout(function(){ countdown(p, held() ? left : left - 250); }, 250);
   }
 
   function tick(p){
