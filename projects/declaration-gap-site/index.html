@@ -267,22 +267,11 @@
   .demo-source{font-family:var(--sans);font-size:.78rem;color:var(--faint);margin-top:10px;
                font-style:italic}
 
-  /* ── plain results table (matches the reference's evidence-not-decor tone) ── */
-  table.results{width:100%;border-collapse:collapse;margin-top:16px;font-family:var(--sans);
-        font-size:.92rem}
-  table.results th, table.results td{text-align:left;padding:9px 10px;
-        border-bottom:1px solid var(--line)}
-  table.results th{font-weight:600;font-size:.78rem;letter-spacing:.03em;
-        text-transform:uppercase;color:var(--muted)}
-  table.results td.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
-  table.results tr:last-child td{border-bottom:2px solid var(--line-2);font-weight:600}
-
   .plotfam{margin-top:30px}
   .plotfam h3{font-size:1.05rem;font-weight:600;margin-bottom:4px}
   .plotfam .cap{font-family:var(--sans);font-size:.86rem;color:var(--muted);
                 max-width:66ch;margin-bottom:12px;line-height:1.55}
-  .plotgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  @media (max-width:600px){.plotgrid{grid-template-columns:1fr}}
+  .plotgrid{display:grid;grid-template-columns:1fr;gap:14px}
   .plotcell{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
   .plotcell img{display:block;width:100%;height:auto}
   .plotcell .plabel{font-family:var(--mono);font-size:10.5px;color:var(--muted);
@@ -308,14 +297,6 @@
         text-transform:uppercase;color:var(--faint)}
   .slide-title{font-size:1.5rem;font-weight:700;margin-top:2px}
   .slide-blurb{font-size:1rem;color:var(--muted);margin-top:5px;max-width:64ch;line-height:1.55}
-  .cites{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;
-        font-family:var(--sans);font-size:.8rem;color:var(--muted);line-height:1.45}
-  .cites li{display:flex;gap:8px;align-items:baseline}
-  .cite-tag{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.07em;
-        text-transform:uppercase;color:var(--llm);border:1px solid color-mix(in srgb,var(--llm) 45%,transparent);
-        border-radius:4px;padding:1px 5px;flex:none}
-  .cites a{color:var(--ink);text-decoration-color:var(--line-2)}
-  .cites a:hover{text-decoration-color:var(--ink)}
   .dg-wrap{margin-top:14px;border:1px solid var(--line);border-radius:10px;overflow-x:auto;
         background:color-mix(in srgb,var(--paper-2) 55%,var(--paper))}
   .dg-wrap svg{display:block;width:100%;min-width:640px;height:auto}
@@ -424,7 +405,6 @@
       <sup>4</sup>Cornell University &nbsp;·&nbsp; <sup>5</sup>Lawrence Berkeley National Laboratory</p>
     <nav class="pagenav">
       <a href="https://github.com/photonsarefree/agent-plan-analysis" target="_blank" rel="noopener">Code</a>
-      <a href="https://github.com/photonsarefree/agent-plan-analysis/issues/55" target="_blank" rel="noopener">Issue #55</a>
       <a href="#patterns">Planning Patterns</a>
       <a href="#demo-section">Replays</a>
       <a href="#bibtex">BibTeX</a>
@@ -462,8 +442,8 @@
     <div class="prose">
       <p>Every pattern below runs on the same query, <em>“Check for pickup restaurants
       available in Boston”</em>, so the only thing that changes from slide to slide is
-      how the plan is declared, dispatched and checked. Each slide cites the work the
-      pattern comes from; step through with the buttons or the arrow keys.</p>
+      how the plan is declared, dispatched and checked. Step through with the buttons
+      or the arrow keys; the work each pattern follows is listed under References.</p>
     </div>
 
     <div class="deck" id="deck" tabindex="0" aria-roledescription="carousel" aria-label="Planning patterns">
@@ -472,7 +452,6 @@
         <div class="slide-kicker" id="slideKicker"></div>
         <h3 class="slide-title" id="slideTitle"></h3>
         <p class="slide-blurb" id="slideBlurb"></p>
-        <ul class="cites" id="slideCites"></ul>
         <div class="dg-wrap"><svg class="dg" id="dg" role="img" aria-labelledby="slideTitle"></svg></div>
         <div class="dg-caption"><span class="cap-n" id="capN"></span><span id="capText"></span></div>
       </div>
@@ -541,32 +520,6 @@
       <b>Mind2Web</b> (real website navigation — click, type, select),
       <b>SWE-bench</b> (repository bug fixes — search, read, patch, test), and
       <b>WebArena</b> (live simulated sites — GitLab, Reddit, shopping).</p>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="h">How Often Is the Plan Actually Followed?</h2>
-    <div class="prose">
-      <p>100 Plan+ReAct ALFWorld trajectories were read independently by a human
-      annotator with no access to the automated checker's verdict, and scored
-      for whether the declared plan's structure was maintained during execution.</p>
-    </div>
-    <table class="results">
-      <thead><tr><th>Model</th><th>n</th><th>Plan structure maintained</th></tr></thead>
-      <tbody>
-        <tr><td>DeepSeek-V4-Flash</td><td class="num">43</td><td class="num">39.5%</td></tr>
-        <tr><td>Qwen3.6-35B-A3B</td><td class="num">29</td><td class="num">41.4%</td></tr>
-        <tr><td>Gemma-4-26B-A4B</td><td class="num">28</td><td class="num">35.7%</td></tr>
-        <tr><td>All models pooled</td><td class="num">100</td><td class="num">39%</td></tr>
-      </tbody>
-    </table>
-    <div class="prose" style="margin-top:18px">
-      <p>A rule-based structural checker exists and runs at scale, but it should
-      not be read on its own: against a second human annotator it agrees only
-      weakly (Cohen's κ 0.14–0.34), and the two annotators agree with each other
-      only moderately (κ≈0.35). The animations above make the same point a
-      different way — even a "success" episode routinely does not execute its
-      declared plan in the order, or with the division of labor, it declared.</p>
     </div>
   </section>
 
@@ -641,14 +594,14 @@
 
   <section id="references">
     <h2 class="h">References</h2>
-    <div class="prose"><p>Prior work each planning pattern follows, as cited on its slide and in the paper.</p></div>
+    <div class="prose"><p>Prior work each planning pattern follows, as cited in the paper.</p></div>
     <ol class="refs" id="refList"></ol>
   </section>
 
   <footer>
     <div class="fl">
       <span>Oota, Herrera, Cabot Sagrera, López de Prado, Khan · ADIA Lab</span>
-      <span>declaration–execution gap · issue #55</span>
+      <span>Plan Declaration–Execution Gap</span>
     </div>
   </footer>
 </div>
@@ -1785,26 +1738,6 @@
     pipsEl.appendChild(p); sl._pip = p;
   });
 
-  function fillCites(ul, cites){
-    ul.innerHTML = "";
-    cites.forEach(function(c){
-      var li = document.createElement("li");
-      var tag = document.createElement("span");
-      tag.className = "cite-tag"; tag.textContent = "cite";
-      var a = document.createElement("a");
-      a.href = c.u;
-      if(c.u.charAt(0) !== "#"){ a.target = "_blank"; a.rel = "noopener"; }
-      a.textContent = c.t;
-      li.appendChild(tag);
-      var body = document.createElement("span");
-      body.appendChild(document.createTextNode(c.a + " · "));
-      body.appendChild(a);
-      body.appendChild(document.createTextNode(" · " + c.v));
-      li.appendChild(body);
-      ul.appendChild(li);
-    });
-  }
-
   function staticFrame(sl){
     var sc = new Scene(svg, sl.w, sl.h);
     sl.build(sc);
@@ -1837,7 +1770,6 @@
     document.getElementById("slideKicker").textContent = sl.kicker;
     document.getElementById("slideTitle").textContent = sl.title;
     document.getElementById("slideBlurb").textContent = sl.blurb;
-    fillCites(document.getElementById("slideCites"), sl.cites);
     document.getElementById("deckCount").textContent = (cur + 1) + " / " + SLIDES.length;
     slideEl.classList.remove("enter"); void slideEl.offsetWidth; slideEl.classList.add("enter");
     if(reduce && run.userPaused){ staticFrame(sl); return; }
