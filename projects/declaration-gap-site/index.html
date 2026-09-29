@@ -1,0 +1,1907 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Declaration Gap</title>
+<meta name="description" content="Do LLM agents execute the plans they declare? Planning-as-Routing: an LLM declares a planning mode and a router sends it to a matching executor. Animated planning patterns and real replays.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FAFAF8; --paper-2:#F1F1EE; --ink:#1B1B18; --muted:#5A5A54; --faint:#8C8C84;
+    --line:#DEDED6; --line-2:#CACAC0;
+    --plan:#95601A; --plan-ink:#6E4712; --plan-soft:#F2E4CB; --plan-line:#DDBD86;
+    --exec:#1C6E6E; --exec-ink:#12504F; --exec-soft:#DCECEC; --exec-line:#A9D2D1;
+    --goal:#2C6B37; --goal-soft:#DEEBDF; --goal-line:#A9CFAE;
+    --miss:#93392A; --miss-soft:#F1DFD8; --miss-line:#D9AC9C;
+    --panel:#111512; --panel-2:#1A201B; --panel-ink:#DCE4DE; --panel-muted:#82897F;
+    --panel-line:#2B322C;
+    --llm:#2F79AE; --llm-soft:#DDEDF8; --tool:#C4652A; --tool-soft:#FBE6D8;
+    --xec:#9C3589; --xec-soft:#F4E0EF; --rep:#3B8A37; --rep-soft:#E0EFDC;
+    --syn:#A06E17; --syn-soft:#F6EAD2; --jdg:#46505A; --jdg-soft:#E6E9EC;
+    --card:#FFFFFF; --edge:#56708A;
+    --serif: "EB Garamond", ui-serif, Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --paper:#15140F; --paper-2:#1C1B15; --ink:#EBE8DD; --muted:#A6A296; --faint:#726F63;
+      --line:#33321F; --line-2:#403E28;
+      --plan:#DBA857; --plan-ink:#EFC787; --plan-soft:#2E2513; --plan-line:#4A3B1C;
+      --exec:#66BFBE; --exec-ink:#A2DAD9; --exec-soft:#132625; --exec-line:#1F4342;
+      --goal:#7CC488; --goal-soft:#152A19; --goal-line:#274B2E;
+      --miss:#DD8F79; --miss-soft:#2B1912; --miss-line:#4A2B1E;
+      --panel:#0A0C0A; --panel-2:#12160F; --panel-ink:#DFE6DA; --panel-muted:#71786C;
+      --panel-line:#232A20;
+      --llm:#6DB3E3; --llm-soft:#14293A; --tool:#E79A63; --tool-soft:#35200F;
+      --xec:#D77CC4; --xec-soft:#30152B; --rep:#86C780; --rep-soft:#172B15;
+      --syn:#DDB062; --syn-soft:#2E2312; --jdg:#AEB8C2; --jdg-soft:#1F2429;
+      --card:#1C1B15; --edge:#8095A8;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --paper:#15140F; --paper-2:#1C1B15; --ink:#EBE8DD; --muted:#A6A296; --faint:#726F63;
+    --line:#33321F; --line-2:#403E28;
+    --plan:#DBA857; --plan-ink:#EFC787; --plan-soft:#2E2513; --plan-line:#4A3B1C;
+    --exec:#66BFBE; --exec-ink:#A2DAD9; --exec-soft:#132625; --exec-line:#1F4342;
+    --goal:#7CC488; --goal-soft:#152A19; --goal-line:#274B2E;
+    --miss:#DD8F79; --miss-soft:#2B1912; --miss-line:#4A2B1E;
+    --panel:#0A0C0A; --panel-2:#12160F; --panel-ink:#DFE6DA; --panel-muted:#71786C;
+    --panel-line:#232A20;
+    --llm:#6DB3E3; --llm-soft:#14293A; --tool:#E79A63; --tool-soft:#35200F;
+    --xec:#D77CC4; --xec-soft:#30152B; --rep:#86C780; --rep-soft:#172B15;
+    --syn:#DDB062; --syn-soft:#2E2312; --jdg:#AEB8C2; --jdg-soft:#1F2429;
+    --card:#1C1B15; --edge:#8095A8;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);
+       font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:inherit;text-decoration-color:var(--line-2)}
+  .wrap{max-width:760px;margin:0 auto;padding-inline:20px}
+
+  /* ── title block ─────────────────────────────────────────────────── */
+  .titleblock{text-align:center;padding-block:56px 30px}
+  h1.title{font-size:clamp(2.1rem,6vw,2.85rem);font-weight:700;letter-spacing:-.01em}
+  .subtitle{font-weight:400;font-style:italic;color:var(--muted);
+            font-size:clamp(1.05rem,3vw,1.3rem);margin:10px auto 16px;max-width:46ch}
+  .byline{font-size:.98rem;color:var(--muted);line-height:1.7}
+  .byline b{color:var(--ink);font-weight:600}
+  .affil{font-size:.86rem;color:var(--faint);margin-top:4px}
+  .pagenav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .pagenav a{font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.02em;
+             color:var(--ink);border:1px solid var(--line-2);border-radius:99px;
+             padding:7px 16px;text-decoration:none;transition:background .2s,border-color .2s}
+  .pagenav a:hover{background:var(--paper-2);border-color:var(--muted)}
+
+  /* ── sections ─────────────────────────────────────────────────────── */
+  section{padding-block:34px}
+  section + section{border-top:1px solid var(--line)}
+  h2.h{font-size:1.5rem;font-weight:700;margin-bottom:14px}
+  section p{margin-bottom:14px}
+  section p:last-child{margin-bottom:0}
+  .prose{max-width:66ch}
+  .prose b{font-weight:600}
+  .prose em{font-style:italic}
+
+  /* ── mode selector ────────────────────────────────────────────────── */
+  .modes{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
+  .mode-btn{font:inherit;font-family:var(--sans);font-size:.82rem;font-weight:600;
+            cursor:pointer;padding:8px 13px;border-radius:7px;border:1px solid var(--line-2);
+            background:var(--paper-2);color:var(--muted);display:inline-flex;
+            align-items:center;gap:7px;transition:background .2s,color .2s,border-color .2s}
+  .mode-btn .dot{width:6px;height:6px;border-radius:99px;background:var(--faint);flex:none}
+  .mode-btn:hover{border-color:var(--muted);color:var(--ink)}
+  .mode-btn[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .mode-btn[aria-selected="true"] .dot{background:var(--plan)}
+  .mode-btn[aria-selected="true"][data-plan="0"] .dot{background:var(--faint)}
+
+  /* ── demo widget (the one custom-styled box on the page) ────────────── */
+  .demo{background:var(--panel);border:1px solid var(--panel-line);border-radius:12px;
+        overflow:hidden;margin-top:16px;font-family:var(--sans)}
+  .demo-top{display:flex;align-items:center;gap:10px;padding:12px 17px;
+            border-bottom:1px solid var(--panel-line);flex-wrap:wrap}
+  .dots{display:flex;gap:6px;flex:none}
+  .dots span{width:8px;height:8px;border-radius:99px;background:var(--panel-line)}
+  .demo-path{font-family:var(--mono);font-size:11px;color:var(--panel-muted)}
+  .demo-spacer{flex:1;min-width:8px}
+  .demo-status{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.04em;
+               padding:4px 9px;border-radius:99px;border:1px solid var(--panel-line);
+               color:var(--panel-muted);white-space:nowrap}
+  .demo-status[data-live="1"]{color:var(--exec);border-color:var(--exec-line);
+               background:color-mix(in srgb, var(--exec) 14%, transparent)}
+  .demo-status[data-live="2"]{color:var(--goal);border-color:var(--goal-line);
+               background:color-mix(in srgb, var(--goal) 16%, transparent)}
+
+  .demo-body{padding:20px 20px 18px;display:grid;gap:15px}
+  .task-line{font-family:var(--mono);font-size:13px;color:var(--panel-ink);line-height:1.6}
+  .task-line b{color:var(--panel-muted);font-weight:600;text-transform:uppercase;
+             font-size:10px;letter-spacing:.08em;display:block;margin-bottom:5px}
+  .pattern-tag{font-family:var(--sans);font-size:12px;color:var(--panel-muted);
+             font-style:italic;margin-top:-5px}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:600px){.cols{grid-template-columns:1fr}}
+  .colhead{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;
+           text-transform:uppercase;color:var(--panel-muted);margin-bottom:8px;
+           display:flex;align-items:center;gap:6px}
+  .colhead .sw{width:7px;height:7px;border-radius:2px;flex:none}
+  .colhead.plan .sw{background:var(--plan)}
+  .colhead.exec .sw{background:var(--exec)}
+  .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+  .steps li{font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--panel-muted);
+            padding:6px 8px;border-radius:6px;border:1px solid transparent;
+            display:grid;grid-template-columns:15px 1fr;gap:7px;
+            transition:background .35s,border-color .35s,color .35s}
+  .steps li .n{color:var(--panel-line);font-weight:600}
+  .steps li[data-state="active"]{background:color-mix(in srgb, var(--plan) 16%, transparent);
+            border-color:var(--plan);color:var(--plan-ink)}
+  .steps li[data-state="active"] .n{color:var(--plan)}
+  .steps li[data-state="done"]{color:var(--panel-ink);opacity:.82}
+  .steps li[data-state="done"] .n{color:var(--goal)}
+  .steps li[data-state="done"] .n::after{content:"✓";margin-left:2px}
+  .steps li[data-state="implicit"]{font-style:italic;opacity:.7}
+  .steps li[data-state="skipped"]{color:var(--miss);border-color:var(--miss);font-style:italic;
+            opacity:.85;background:color-mix(in srgb, var(--miss) 10%, transparent)}
+  .steps li[data-state="skipped"] .n{color:var(--miss)}
+  .steps li[data-state="skipped"] .n::after{content:"\2715";margin-left:2px}
+  .acts li[data-offplan="1"]{border-left:2px solid var(--miss)}
+  .steps .empty{font-family:var(--sans);font-size:12px;color:var(--panel-muted);
+            font-style:italic;padding:13px 11px;border:1px dashed var(--panel-line);
+            border-radius:8px;line-height:1.6}
+  .acts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;
+        max-height:220px;overflow:auto}
+  .acts li{font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--panel-muted);
+           padding:5px 8px;border-radius:6px;border:1px solid transparent;
+           display:grid;grid-template-columns:15px 1fr;gap:7px;
+           transition:background .3s,border-color .3s,color .3s}
+  .acts li .n{color:var(--panel-line)}
+  .acts li[data-state="current"]{background:color-mix(in srgb, var(--exec) 18%, transparent);
+           border-color:var(--exec);color:var(--exec-ink)}
+  .acts li[data-state="current"] .n{color:var(--exec)}
+  .acts li[data-state="past"]{color:var(--panel-ink);opacity:.55}
+
+  .seq-turn{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);
+            font-size:10.5px;font-weight:600;color:var(--plan-ink);
+            background:color-mix(in srgb, var(--plan) 16%, transparent);
+            border:1px solid var(--plan-line);border-radius:99px;padding:4px 10px;
+            margin-bottom:8px;transition:background .25s}
+  .seq-turn.flash{background:var(--plan);color:var(--panel)}
+  .seq-remaining{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+  .seq-remaining li{font-family:var(--mono);font-size:12px;color:var(--panel-muted);
+            padding:6px 8px;border-radius:6px;border:1px solid transparent;
+            display:grid;grid-template-columns:15px 1fr;gap:7px;
+            transition:opacity .4s, background .3s, border-color .3s}
+  .seq-remaining li .n{color:var(--panel-line);font-weight:600}
+  .seq-remaining li[data-state="active"]{background:color-mix(in srgb, var(--plan) 16%, transparent);
+            border-color:var(--plan);color:var(--plan-ink)}
+  .seq-remaining li[data-state="active"] .n{color:var(--plan)}
+  .seq-remaining li[data-state="leaving"]{opacity:0;height:0;padding:0;margin:0;overflow:hidden}
+  .seq-hint{font-family:var(--sans);font-size:11px;color:var(--panel-muted);margin-top:6px}
+
+  .pipeline{display:flex;flex-direction:column;gap:9px}
+  .lane-label{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;
+            text-transform:uppercase;color:var(--panel-muted)}
+  .queue-row{display:flex;flex-wrap:wrap;gap:7px}
+  .qchip{font-family:var(--mono);font-size:11.5px;color:var(--panel-muted);
+         border:1px solid var(--panel-line);border-radius:7px;padding:6px 9px;
+         transition:background .3s,border-color .3s,color .3s;position:relative}
+  .qchip[data-state="active"]{border-color:var(--plan);color:var(--plan-ink);
+         background:color-mix(in srgb, var(--plan) 16%, transparent)}
+  .qchip[data-state="done"]{color:var(--panel-ink);opacity:.75}
+  .qchip[data-state="done"]::after{content:"✓";margin-left:6px;color:var(--goal)}
+  .qchip[data-state="ghost"]{border-color:var(--miss);color:var(--miss);
+         border-style:dashed;background:color-mix(in srgb, var(--miss) 10%, transparent)}
+  .dispatch-row{display:flex;align-items:center;gap:8px;font-family:var(--mono);
+         font-size:11px;color:var(--panel-muted);padding-left:3px}
+  .dispatch-row .arrow{color:var(--exec);font-weight:600}
+  .exec-lane .acts{max-height:160px}
+
+  .orgchart{display:flex;flex-direction:column;align-items:center;padding-top:2px}
+  .orch-node{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--panel-ink);
+        background:var(--panel-2);border:1px solid var(--panel-line);border-radius:8px;
+        padding:8px 15px;position:relative;text-align:center;min-width:190px;
+        transition:border-color .3s}
+  .orch-node .role{display:block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+        color:var(--panel-muted);margin-bottom:3px;font-weight:600}
+  .orch-node::after{content:'';position:absolute;left:50%;bottom:-17px;width:1px;height:17px;
+        background:var(--panel-line);transform:translateX(-.5px)}
+  .workers{list-style:none;display:flex;justify-content:center;gap:9px;
+        padding:17px 0 0;margin:0;position:relative;width:100%}
+  .workers::before{content:'';position:absolute;top:0;left:12.5%;right:12.5%;height:1px;
+        background:var(--panel-line)}
+  .workers li{flex:1;min-width:0;position:relative;padding-top:17px}
+  .workers li::before{content:'';position:absolute;top:0;left:50%;width:1px;height:17px;
+        background:var(--panel-line);transition:background .3s}
+  .workers li[data-active="1"]::before{background:var(--exec)}
+  .worker-node{font-family:var(--mono);font-size:11px;color:var(--panel-muted);
+        background:var(--panel-2);border:1px solid var(--panel-line);border-radius:8px;
+        padding:8px 9px;height:100%;transition:border-color .3s,background .3s,color .3s}
+  .worker-node .role{display:block;font-size:8.5px;letter-spacing:.07em;text-transform:uppercase;
+        color:var(--panel-muted);margin-bottom:5px;font-weight:600}
+  .worker-node .task{display:block;color:var(--panel-ink);margin-bottom:6px;line-height:1.4}
+  .worker-node[data-state="active"]{border-color:var(--exec);
+        background:color-mix(in srgb, var(--exec) 14%, transparent)}
+  .worker-node[data-state="done"]{border-color:var(--goal-line)}
+  .worker-node[data-state="ghost"]{border-color:var(--miss-line);border-style:dashed}
+  .worker-mini{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;
+        max-height:105px;overflow:auto}
+  .worker-mini li{font-size:10px;padding:2px 4px;border-radius:4px;color:var(--panel-muted);
+        opacity:.55}
+  .worker-mini li[data-state="current"]{color:var(--exec-ink);opacity:1;
+        background:color-mix(in srgb, var(--exec) 16%, transparent)}
+  .worker-mini li[data-state="past"]{opacity:.85}
+  .worker-status{font-family:var(--sans);font-size:10px;margin-top:5px}
+  .worker-status.done{color:var(--goal)}
+  .worker-status.ghost{color:var(--miss)}
+
+  .goal-stamp{display:none;align-items:center;gap:9px;padding:11px 14px;border-radius:9px;
+              background:var(--goal-soft);border:1px solid var(--goal-line);color:var(--goal);
+              font-family:var(--mono);font-size:12px;font-weight:600}
+  .goal-stamp.show{display:flex}
+  .goal-stamp svg{flex:none}
+  .finding-note{display:none;padding:11px 14px;border-radius:9px;background:var(--miss-soft);
+              border:1px solid var(--miss-line);color:var(--miss);font-size:12px;
+              font-family:var(--sans);line-height:1.55}
+  .finding-note.show{display:block}
+
+  .demo-controls{display:flex;align-items:center;gap:11px;padding:11px 20px;
+                 border-top:1px solid var(--panel-line);flex-wrap:wrap}
+  .btn{font:inherit;font-family:var(--sans);font-size:12.5px;font-weight:600;cursor:pointer;
+       padding:7px 14px;border-radius:7px;border:1px solid var(--panel-line);
+       background:var(--panel-2);color:var(--panel-ink);display:inline-flex;
+       align-items:center;gap:6px}
+  .btn:hover{border-color:var(--exec-line)}
+  .btn:focus-visible{outline:2px solid var(--exec);outline-offset:2px}
+  .progress{flex:1;min-width:110px;height:3px;background:var(--panel-line);border-radius:99px;
+            overflow:hidden}
+  .progress i{display:block;height:100%;width:0%;background:var(--exec);transition:width .3s ease}
+  .demo-note{font-family:var(--mono);font-size:10.5px;color:var(--panel-muted)}
+  .demo-source{font-family:var(--sans);font-size:.78rem;color:var(--faint);margin-top:10px;
+               font-style:italic}
+
+  /* ── plain results table (matches the reference's evidence-not-decor tone) ── */
+  table.results{width:100%;border-collapse:collapse;margin-top:16px;font-family:var(--sans);
+        font-size:.92rem}
+  table.results th, table.results td{text-align:left;padding:9px 10px;
+        border-bottom:1px solid var(--line)}
+  table.results th{font-weight:600;font-size:.78rem;letter-spacing:.03em;
+        text-transform:uppercase;color:var(--muted)}
+  table.results td.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+  table.results tr:last-child td{border-bottom:2px solid var(--line-2);font-weight:600}
+
+  .plotfam{margin-top:30px}
+  .plotfam h3{font-size:1.05rem;font-weight:600;margin-bottom:4px}
+  .plotfam .cap{font-family:var(--sans);font-size:.86rem;color:var(--muted);
+                max-width:66ch;margin-bottom:12px;line-height:1.55}
+  .plotgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media (max-width:600px){.plotgrid{grid-template-columns:1fr}}
+  .plotcell{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+  .plotcell img{display:block;width:100%;height:auto}
+  .plotcell .plabel{font-family:var(--mono);font-size:10.5px;color:var(--muted);
+                     padding:6px 9px;border-top:1px solid var(--line);
+                     text-transform:uppercase;letter-spacing:.04em;background:var(--paper-2)}
+
+  /* ── planning-pattern deck ────────────────────────────────────────── */
+  .deck{margin-top:20px;border:1px solid var(--line-2);border-radius:14px;
+        background:var(--paper);overflow:hidden}
+  @media (min-width:1000px){.deck{margin-inline:-100px}}
+  .deck:focus-visible{outline:2px solid var(--llm);outline-offset:3px}
+  .deck-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px;
+        border-bottom:1px solid var(--line);background:var(--paper-2)}
+  .ptab{font:inherit;font-family:var(--sans);font-size:.78rem;font-weight:600;cursor:pointer;
+        padding:6px 11px;border-radius:99px;border:1px solid var(--line-2);
+        background:transparent;color:var(--muted);transition:background .2s,color .2s,border-color .2s}
+  .ptab:hover{border-color:var(--muted);color:var(--ink)}
+  .ptab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .slide{padding:20px 22px 6px}
+  .slide.enter{animation:slideIn .45s ease}
+  @keyframes slideIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+  .slide-kicker{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.09em;
+        text-transform:uppercase;color:var(--faint)}
+  .slide-title{font-size:1.5rem;font-weight:700;margin-top:2px}
+  .slide-blurb{font-size:1rem;color:var(--muted);margin-top:5px;max-width:64ch;line-height:1.55}
+  .cites{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;
+        font-family:var(--sans);font-size:.8rem;color:var(--muted);line-height:1.45}
+  .cites li{display:flex;gap:8px;align-items:baseline}
+  .cite-tag{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.07em;
+        text-transform:uppercase;color:var(--llm);border:1px solid color-mix(in srgb,var(--llm) 45%,transparent);
+        border-radius:4px;padding:1px 5px;flex:none}
+  .cites a{color:var(--ink);text-decoration-color:var(--line-2)}
+  .cites a:hover{text-decoration-color:var(--ink)}
+  .dg-wrap{margin-top:14px;border:1px solid var(--line);border-radius:10px;overflow-x:auto;
+        background:color-mix(in srgb,var(--paper-2) 55%,var(--paper))}
+  .dg-wrap svg{display:block;width:100%;min-width:640px;height:auto}
+  .dg-caption{display:flex;gap:10px;align-items:baseline;min-height:3.1em;padding:10px 2px 8px;
+        font-family:var(--sans);font-size:.9rem;line-height:1.5}
+  .cap-n{font-family:var(--mono);font-size:10.5px;color:var(--faint);flex:none;min-width:44px}
+  .deck-ctrl{display:flex;align-items:center;gap:8px;padding:10px 16px 12px;
+        border-top:1px solid var(--line);font-family:var(--sans)}
+  .dbtn{font:inherit;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;
+        padding:6px 12px;border-radius:7px;border:1px solid var(--line-2);background:var(--paper-2);
+        color:var(--ink);white-space:nowrap}
+  .dbtn:hover{border-color:var(--muted)}
+  .dbtn:focus-visible,.ptab:focus-visible,.pip:focus-visible{outline:2px solid var(--llm);outline-offset:2px}
+  .pips{display:flex;gap:6px;flex:1;justify-content:center;align-items:center}
+  .pip{width:7px;height:7px;border-radius:99px;border:0;padding:0;cursor:pointer;
+        background:var(--line-2);transition:width .25s,background .25s}
+  .pip[aria-current="true"]{background:var(--ink);width:20px}
+  .deck-count{font-family:var(--mono);font-size:11px;color:var(--faint);min-width:46px;text-align:right}
+
+  /* diagram marks */
+  .dg{font-family:var(--sans)}
+  .dg text{fill:var(--ink);font-size:13px}
+  .dg .lbl{font-weight:600}
+  .dg .sub{font-size:11px;fill:var(--muted)}
+  .dg .role{font-size:11.5px;font-weight:600}
+  .dg .elbl{font-size:11.5px;fill:var(--muted);font-style:italic}
+  .dg .note{font-size:11.5px;fill:var(--muted)}
+  .dg .trace{font-family:var(--mono);font-size:12px;fill:var(--tool)}
+  .dg .frame{fill:none;stroke:var(--ink);stroke-width:1.2;opacity:.6}
+  .dg .nest{fill:none;stroke:var(--exec);stroke-width:1.2;stroke-dasharray:5 4}
+  .dg .bubble{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+  .dg .person{fill:var(--ink)}
+  .dg .bot rect,.dg .bot circle.head{fill:var(--llm-soft);stroke:var(--llm);stroke-width:1.3}
+  .dg .bot .eye{fill:var(--llm)}
+  .dg .bot line{stroke:var(--llm);stroke-width:1.3}
+  .dg .ahead{fill:var(--edge)}
+  .dg .edge{fill:none;stroke:var(--edge);stroke-width:1.4;transition:stroke .3s,stroke-width .3s}
+  .dg .edge.on{stroke:var(--c);stroke-width:2.2}
+  .dg .nd{--c:var(--muted);transition:opacity .45s}
+  .dg .nd > rect,.dg .nd > polygon{fill:var(--card);stroke:var(--line-2);stroke-width:1.4;
+        transition:stroke-width .3s,filter .3s,stroke .3s}
+  .dg .nd.llm{--c:var(--llm)}   .dg .nd.llm > rect{fill:var(--llm-soft);stroke:var(--llm);stroke-dasharray:6 4}
+  .dg .nd.tool{--c:var(--tool)} .dg .nd.tool > rect{fill:var(--tool-soft);stroke:var(--tool);stroke-dasharray:6 4}
+  .dg .nd.xec{--c:var(--xec)}   .dg .nd.xec > rect{fill:var(--xec-soft);stroke:var(--xec);stroke-dasharray:6 4}
+  .dg .nd.rep{--c:var(--rep)}   .dg .nd.rep > rect{fill:var(--rep-soft);stroke:var(--rep);stroke-dasharray:6 4}
+  .dg .nd.syn{--c:var(--syn)}   .dg .nd.syn > rect{fill:var(--syn-soft);stroke:var(--syn)}
+  .dg .nd.jdg{--c:var(--jdg)}   .dg .nd.jdg > rect{fill:var(--jdg-soft);stroke:var(--jdg);stroke-dasharray:6 4}
+  .dg .nd.router{--c:var(--jdg)} .dg .nd.router > polygon{fill:var(--jdg-soft);stroke:var(--jdg)}
+  .dg .nd.pat{--c:var(--exec)}  .dg .nd.pat > rect{fill:var(--card);stroke:var(--line-2)}
+  .dg .nd.wk{--c:var(--exec)}
+  .dg .nd.out{--c:var(--goal)}  .dg .nd.out > rect{fill:var(--goal-soft);stroke:var(--goal-line)}
+  .dg .nd.card{--c:var(--plan)} .dg .nd.card > rect{fill:var(--llm-soft);stroke:var(--ink);stroke-opacity:.55}
+  .dg .nd.llm .lbl{fill:var(--llm)} .dg .nd.tool .lbl{fill:var(--tool)} .dg .nd.xec .lbl{fill:var(--xec)}
+  .dg .nd.rep .lbl{fill:var(--rep)} .dg .nd.syn .lbl{fill:var(--syn)} .dg .nd.out .lbl{fill:var(--goal)}
+  .dg .nd.on > rect,.dg .nd.on > polygon{stroke:var(--c);stroke-width:2.6;
+        filter:drop-shadow(0 0 6px color-mix(in srgb,var(--c) 60%,transparent))}
+  .dg .nd.locked > rect{stroke-width:2.2;stroke-opacity:1}
+  .dg .nd.done > rect{stroke:var(--goal);stroke-dasharray:none}
+  .dg .nd.win > rect{stroke:var(--goal);stroke-width:2.8;stroke-dasharray:none;
+        filter:drop-shadow(0 0 6px color-mix(in srgb,var(--goal) 55%,transparent))}
+  .dg .nd.dim{opacity:.38}
+  .dg .item{font-family:var(--mono);font-size:11.5px;transition:opacity .4s,fill .3s}
+  .dg .item.active{fill:var(--plan);font-weight:600}
+  .dg .item.done{fill:var(--goal)}
+  .dg .item.jump{fill:var(--miss);font-weight:600}
+  .dg .item.gone{opacity:.18}
+  .dg .item.rev{fill:var(--rep);font-weight:600}
+  .dg .nd.card > rect.ibg{fill:transparent;stroke:none;filter:none;transition:fill .3s}
+  .dg .nd.card > rect.ibg.active{fill:color-mix(in srgb,var(--plan) 20%,transparent)}
+  .dg .nd.card > rect.ibg.done{fill:color-mix(in srgb,var(--goal) 16%,transparent)}
+  .dg .nd.card > rect.ibg.jump{fill:color-mix(in srgb,var(--miss) 18%,transparent)}
+  .dg .nd.card > rect.ibg.rev{fill:color-mix(in srgb,var(--rep) 18%,transparent)}
+  .dg .ist{font-family:var(--mono);font-size:10px;font-weight:600;fill:var(--muted)}
+  .dg .ist.active{fill:var(--plan)} .dg .ist.done{fill:var(--goal)}
+  .dg .ist.jump{fill:var(--miss)} .dg .ist.rev{fill:var(--rep)}
+  .dg [data-hid="1"]{opacity:0}
+  .dg .pkt{stroke:var(--card);stroke-width:1.5}
+
+  pre.bib{margin:14px 0 12px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;
+        background:var(--paper-2);font-family:var(--mono);font-size:12px;line-height:1.55;
+        overflow-x:auto;white-space:pre}
+  ol.refs{margin:14px 0 0;padding-left:22px;font-size:.95rem;line-height:1.55}
+  ol.refs li{margin-bottom:8px}
+  ol.refs .rp{font-family:var(--mono);font-size:10.5px;color:var(--faint);text-transform:uppercase;
+        letter-spacing:.06em;margin-right:6px}
+
+  footer{padding-block:30px 50px;font-family:var(--sans)}
+  footer .fl{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+             font-size:.8rem;color:var(--faint)}
+
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="titleblock">
+    <h1 class="title">Do LLM Agents Execute the Plans They Declare?</h1>
+    <p class="subtitle">From planning-mode declaration to pattern-specific execution</p>
+    <p class="byline"><b>Subba Reddy Oota</b><sup>1</sup>, <b>Francisco Herrera</b><sup>1,2</sup>,
+      <b>Jordi Cabot Sagrera</b><sup>1,3</sup>, <b>Marcos López de Prado</b><sup>1,4,5</sup>,
+      <b>Shadab Khan</b><sup>1</sup></p>
+    <p class="affil"><sup>1</sup>ADIA Lab, Abu Dhabi &nbsp;·&nbsp; <sup>2</sup>University of Granada
+      &nbsp;·&nbsp; <sup>3</sup>Luxembourg Institute of Science and Technology<br>
+      <sup>4</sup>Cornell University &nbsp;·&nbsp; <sup>5</sup>Lawrence Berkeley National Laboratory</p>
+    <nav class="pagenav">
+      <a href="https://github.com/photonsarefree/agent-plan-analysis" target="_blank" rel="noopener">Code</a>
+      <a href="https://github.com/photonsarefree/agent-plan-analysis/issues/55" target="_blank" rel="noopener">Issue #55</a>
+      <a href="#patterns">Planning Patterns</a>
+      <a href="#demo-section">Replays</a>
+      <a href="#bibtex">BibTeX</a>
+    </nav>
+  </div>
+
+  <section>
+    <h2 class="h">Summary</h2>
+    <div class="prose">
+      <p>LLM agents solve long-horizon tasks by generating a plan and then executing it.
+      That takes two distinct capabilities: <b>selecting</b> a plan that suits the task,
+      and <b>executing</b> it faithfully. An agent can deviate from a structured plan while
+      acting, or faithfully execute a plan that is poorly matched to its environment, and
+      final task success cannot tell those two failures apart. We call a mismatch between
+      the declared plan and its execution the <em>Plan Declaration–Execution Gap</em>.</p>
+      <p>To study it we propose <b>Planning-as-Routing</b>: the LLM declares one of four
+      planning modes (<b>Predefined</b>, <b>Sequential</b>, <b>Hierarchical</b> or
+      <b>Search</b>) and a deterministic router sends the task to the matching
+      pattern-specific executor. We compare it with a plan-free <b>Flat ReAct</b> baseline
+      and a <b>Plan+ReAct</b> baseline that plans in the prompt but executes in a generic
+      loop, across WebArena, Mind2Web, SWE-bench Verified and ALFWorld with three LLMs.</p>
+      <p>Three patterns hold. Generic Plan+ReAct often fails to preserve the declared
+      structure, especially for longer plans: only 22–45% of trajectories preserve it across
+      three benchmarks, whereas pattern-specific executors enforce it. The best mode depends
+      on the environment and the model (Search on ALFWorld, Hierarchical on SWE-bench). The
+      largest gains come from execution: matching executors raise task success from 0.48 to
+      0.92 on ALFWorld and from 0.36 to 0.44 on SWE-bench Verified over Plan+ReAct. Current
+      LLMs do not yet reliably choose the strongest mode for a task. Routing closes much of
+      the execution gap; selecting the right mode remains open.</p>
+    </div>
+  </section>
+
+  <section id="patterns">
+    <h2 class="h">Planning Patterns</h2>
+    <div class="prose">
+      <p>Every pattern below runs on the same query, <em>“Check for pickup restaurants
+      available in Boston”</em>, so the only thing that changes from slide to slide is
+      how the plan is declared, dispatched and checked. Each slide cites the work the
+      pattern comes from; step through with the buttons or the arrow keys.</p>
+    </div>
+
+    <div class="deck" id="deck" tabindex="0" aria-roledescription="carousel" aria-label="Planning patterns">
+      <div class="deck-tabs" id="deckTabs" role="tablist"></div>
+      <div class="slide" id="slide">
+        <div class="slide-kicker" id="slideKicker"></div>
+        <h3 class="slide-title" id="slideTitle"></h3>
+        <p class="slide-blurb" id="slideBlurb"></p>
+        <ul class="cites" id="slideCites"></ul>
+        <div class="dg-wrap"><svg class="dg" id="dg" role="img" aria-labelledby="slideTitle"></svg></div>
+        <div class="dg-caption"><span class="cap-n" id="capN"></span><span id="capText"></span></div>
+      </div>
+      <div class="deck-ctrl">
+        <button class="dbtn" id="prevBtn" type="button" >‹ Prev</button>
+        <button class="dbtn" id="pauseBtn" type="button">❚❚ Pause</button>
+        <div class="pips" id="pips"></div>
+        <span class="deck-count" id="deckCount"></span>
+        <button class="dbtn" id="nextBtn" type="button" >Next ›</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo-section">
+    <h2 class="h">Watch a Plan Run</h2>
+    <div class="prose">
+      <p>Five of the seven tabs are ALFWorld, sharing one model
+      (DeepSeek-V4-Flash, seed 13) so the architecture is the only thing that
+      changes between them; three of those — Sequential, Predefined,
+      Hierarchical — are the <em>same underlying task</em>, forced through three
+      different planning structures, so they are directly comparable to one
+      another. The other two tabs are single Plan+ReAct examples from Mind2Web
+      and WebArena, chosen to show the gap from a different angle: one where the
+      task succeeds despite the plan being abandoned, one where the plan's
+      structure roughly holds and the task still fails.</p>
+    </div>
+
+    <div class="modes" id="modeTabs" role="tablist"></div>
+
+    <div class="demo">
+      <div class="demo-top">
+        <span class="dots"><span></span><span></span><span></span></span>
+        <span class="demo-path" id="demoPath"></span>
+        <span class="demo-spacer"></span>
+        <span class="demo-status" id="statusPill">ready</span>
+      </div>
+      <div class="demo-body">
+        <div class="task-line" id="taskLine"></div>
+        <div class="pattern-tag" id="patternTag"></div>
+        <div id="stage"></div>
+        <div class="goal-stamp" id="goalStamp">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+            <path d="M2 8.5L6 12.5L14 3.5" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span id="goalText"></span>
+        </div>
+        <div class="finding-note" id="findingNote"></div>
+      </div>
+      <div class="demo-controls">
+        <button class="btn" id="playBtn" type="button">▶ Replay</button>
+        <div class="progress"><i id="progFill"></i></div>
+        <span class="demo-note" id="stepNote"></span>
+      </div>
+    </div>
+    <div class="demo-source" id="demoSource"></div>
+  </section>
+
+  <section>
+    <h2 class="h">Scope</h2>
+    <div class="prose">
+      <p>The same declared-vs-executed check runs across every benchmark the
+      project covers, each with its own action vocabulary; the animations above
+      are ALFWorld, but the underlying analysis spans all four:
+      <b>ALFWorld</b> (household text-adventures — take, clean, heat, place),
+      <b>Mind2Web</b> (real website navigation — click, type, select),
+      <b>SWE-bench</b> (repository bug fixes — search, read, patch, test), and
+      <b>WebArena</b> (live simulated sites — GitLab, Reddit, shopping).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="h">How Often Is the Plan Actually Followed?</h2>
+    <div class="prose">
+      <p>100 Plan+ReAct ALFWorld trajectories were read independently by a human
+      annotator with no access to the automated checker's verdict, and scored
+      for whether the declared plan's structure was maintained during execution.</p>
+    </div>
+    <table class="results">
+      <thead><tr><th>Model</th><th>n</th><th>Plan structure maintained</th></tr></thead>
+      <tbody>
+        <tr><td>DeepSeek-V4-Flash</td><td class="num">43</td><td class="num">39.5%</td></tr>
+        <tr><td>Qwen3.6-35B-A3B</td><td class="num">29</td><td class="num">41.4%</td></tr>
+        <tr><td>Gemma-4-26B-A4B</td><td class="num">28</td><td class="num">35.7%</td></tr>
+        <tr><td>All models pooled</td><td class="num">100</td><td class="num">39%</td></tr>
+      </tbody>
+    </table>
+    <div class="prose" style="margin-top:18px">
+      <p>A rule-based structural checker exists and runs at scale, but it should
+      not be read on its own: against a second human annotator it agrees only
+      weakly (Cohen's κ 0.14–0.34), and the two annotators agree with each other
+      only moderately (κ≈0.35). The animations above make the same point a
+      different way — even a "success" episode routinely does not execute its
+      declared plan in the order, or with the division of labor, it declared.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="h">Cost and Robustness Across Modes</h2>
+    <div class="prose">
+      <p>Beyond whether a plan's structure holds, the full metrics suite tracks what
+      each mode costs and how it degrades. The same three measurements are run on
+      all three models, across all four benchmarks; ALFWorld's versions are
+      discussed below as a worked example, and the other three benchmarks' panels
+      sit alongside them for direct comparison.</p>
+    </div>
+
+    <div class="plotfam">
+      <h3>Thinking vs. answer tokens</h3>
+      <p class="cap">Mean tokens spent per task, split into thinking (solid) and
+      answer (hatched) tokens, per model and mode. In ALFWorld, Hierarchical- and
+      Search-forced modes spend 88–99% of their tokens thinking — several times
+      more total tokens per task than Plan+ReAct or flat ReAct, which stay in the
+      70–94% range.</p>
+      <div class="plotgrid">
+        <div class="plotcell"><img src="figures/alfworld_thinking_vs_content_all_modes.png" alt="ALFWorld thinking vs answer tokens by mode"><div class="plabel">ALFWorld</div></div>
+        <div class="plotcell"><img src="figures/mind2web_thinking_vs_content_all_modes.png" alt="Mind2Web thinking vs answer tokens by mode"><div class="plabel">Mind2Web</div></div>
+        <div class="plotcell"><img src="figures/swebench_thinking_vs_content_all_modes.png" alt="SWE-bench thinking vs answer tokens by mode"><div class="plabel">SWE-bench</div></div>
+        <div class="plotcell"><img src="figures/webarena_thinking_vs_content_all_modes.png" alt="WebArena thinking vs answer tokens by mode"><div class="plabel">WebArena</div></div>
+      </div>
+    </div>
+
+    <div class="plotfam">
+      <h3>Success rate by task length</h3>
+      <p class="cap">Success rate against task length, binned, one line per mode.
+      In ALFWorld, every mode's success rate falls as tasks get longer, but not at
+      the same rate: Hierarchical- and Search-forced hold up noticeably better past
+      16+ steps than the flat ReAct and Plan+ReAct baselines, which drop off
+      sharply.</p>
+      <div class="plotgrid">
+        <div class="plotcell"><img src="figures/alfworld_success_by_length.png" alt="ALFWorld success rate by task length"><div class="plabel">ALFWorld</div></div>
+        <div class="plotcell"><img src="figures/mind2web_success_by_length.png" alt="Mind2Web success rate by task length"><div class="plabel">Mind2Web</div></div>
+        <div class="plotcell"><img src="figures/swebench_success_by_length.png" alt="SWE-bench success rate by task length"><div class="plabel">SWE-bench</div></div>
+        <div class="plotcell"><img src="figures/webarena_success_by_length.png" alt="WebArena success rate by task length"><div class="plabel">WebArena</div></div>
+      </div>
+    </div>
+
+    <div class="plotfam">
+      <h3>LLM calls per task</h3>
+      <p class="cap">Mean number of LLM calls per task, with mean tokens per call
+      annotated above each bar. In ALFWorld, Hierarchical- and Search-forced make
+      roughly 3–8× more calls per task than the other modes, but each of those
+      calls is comparatively cheap — the call count and the tokens-per-call figure
+      move in opposite directions across modes, not together.</p>
+      <div class="plotgrid">
+        <div class="plotcell"><img src="figures/alfworld_llm_calls_all_modes.png" alt="ALFWorld LLM calls per task by mode"><div class="plabel">ALFWorld</div></div>
+        <div class="plotcell"><img src="figures/mind2web_llm_calls_all_modes.png" alt="Mind2Web LLM calls per task by mode"><div class="plabel">Mind2Web</div></div>
+        <div class="plotcell"><img src="figures/swebench_llm_calls_all_modes.png" alt="SWE-bench LLM calls per task by mode"><div class="plabel">SWE-bench</div></div>
+        <div class="plotcell"><img src="figures/webarena_llm_calls_all_modes.png" alt="WebArena LLM calls per task by mode"><div class="plabel">WebArena</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bibtex">
+    <h2 class="h">Citation</h2>
+    <pre class="bib" id="bibText">@misc{oota2026declare,
+  title  = {Do {LLM} Agents Execute the Plans They Declare? From Planning-Mode
+            Declaration to Pattern-Specific Execution},
+  author = {Oota, Subba Reddy and Herrera, Francisco and Cabot Sagrera, Jordi and
+            L{\'o}pez de Prado, Marcos and Khan, Shadab},
+  note   = {Preprint},
+  year   = {2026}
+}</pre>
+    <button class="dbtn" id="copyBib" type="button">Copy BibTeX</button>
+  </section>
+
+  <section id="references">
+    <h2 class="h">References</h2>
+    <div class="prose"><p>Prior work each planning pattern follows, as cited on its slide and in the paper.</p></div>
+    <ol class="refs" id="refList"></ol>
+  </section>
+
+  <footer>
+    <div class="fl">
+      <span>Oota, Herrera, Cabot Sagrera, López de Prado, Khan · ADIA Lab</span>
+      <span>declaration–execution gap · issue #55</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  function el(tag, cls, txt){
+    var n = document.createElement(tag);
+    if(cls) n.className = cls;
+    if(txt != null) n.textContent = txt;
+    return n;
+  }
+
+  // ── the five real ALFWorld conditions ────────────────────────────────
+  // Every task/model/seed/action string below is copied verbatim from the
+  // repo's run logs (see each packet's `source`), not invented for the demo.
+  var PACKETS = [
+    {
+      key: "react", label: "ALFWorld · ReAct", pattern: "flat", hasPlan: false,
+      meta: "alfworld · seed 13 · deepseek-v4-flash · episode 52/134",
+      task: "put a mug in desk.",
+      patternNote: "One reactive loop, no plan of any kind to compare against.",
+      source: "src/experiments/2026-08-22_baseline-react-alfworld-seed13/logs/slurm-5807-reactonly.out (lines 53894–54066)",
+      steps: [],
+      acts: [
+        "go to desk 1", "go to desk 2", "go to shelf 1",
+        "take mug 2 from shelf 1", "go to desk 1", "put mug 2 in desk 1",
+        "put mug 2 on desk 1", "move mug 2 to desk 1"
+      ],
+      actStep: [null,null,null,null,null,null,null,null],
+      outcome: "Goal reached — env_done = True, score = 1",
+      finding: "No declared plan exists for this arm by construction. Action 6 (“put mug 2 in desk 1”) is a near-miss the environment didn’t accept — the agent self-corrects with “on” instead of “in”, then confirms. Real, unscripted recovery, with nothing to “follow” or deviate from."
+    },
+    {
+      key: "sequential", label: "ALFWorld · Sequential", pattern: "sequential", hasPlan: true,
+      meta: "alfworld · seed 13 · deepseek-v4-flash · task 65/68 (forced SEQUENTIAL)",
+      task: "look at pencil under the desklamp.",
+      patternNote: "Re-declares its remaining plan fresh before every turn — watch the list shrink.",
+      source: "src/experiments/2026-08-17_alfworld-hierarchical-seed13/logs/slurm-5214-shard.out (lines 18321–18632)",
+      steps: [
+        "locate the pencil",
+        "take the pencil",
+        "go to the desklamp",
+        "look at the pencil under the desklamp"
+      ],
+      acts: [
+        "go to desk 1", "go to desk 2", "take pencil 1 from desk 2",
+        "inventory", "go to desk 1", "use desklamp 1"
+      ],
+      actStep: [0,0,1,1,2,3],
+      ghostSteps: [],
+      outcome: "Goal reached — env_done = True, score = 1",
+      finding: "The clean case: re-planned one step at a time, and each dispatched action stays inside the step that was active when it fired. No reordering, no idle steps."
+    },
+    {
+      key: "predefined", label: "ALFWorld · Predefined", pattern: "predefined", hasPlan: true,
+      meta: "alfworld · seed 13 · deepseek-v4-flash · task 65/68 (forced PREDEFINED)",
+      task: "look at pencil under the desklamp.",
+      patternNote: "Commits the whole plan upfront, then dispatches it step by step to an executor.",
+      source: "src/experiments/2026-08-17_alfworld-hierarchical-seed13/logs/slurm-5252-shard.out (lines 12547–12895)",
+      steps: [
+        "Find a pencil.",
+        "Take the pencil.",
+        "Find a desklamp.",
+        "Examine the pencil."
+      ],
+      acts: [
+        "go to desk 1", "go to desk 2", "take pencil 1 from desk 2",
+        "go to desk 1", "use desklamp 1", "examine pencil 1"
+      ],
+      actStep: [0,0,1,1,1,3],
+      ghostSteps: [2],
+      outcome: "Goal reached — env_done = True, score = 1",
+      finding: "The whole plan was committed upfront, then dispatched in order — but step 2 (“Take the pencil”) is the slice that actually walks to the desklamp and turns it on, work that reads as step 3’s job. Step 3 (“Find a desklamp”) is then dispatched and does nothing: it was already done. Declared order held; the actual division of labor didn’t."
+    },
+    {
+      key: "hierarchical", label: "ALFWorld · Hierarchical", pattern: "hierarchical", hasPlan: true,
+      meta: "alfworld · seed 13 · deepseek-v4-flash · task 65/68 (forced HIERARCHICAL)",
+      task: "look at pencil under the desklamp.",
+      patternNote: "An orchestrator dispatches each declared subgoal to its own worker.",
+      source: "src/experiments/2026-08-17_alfworld-hierarchical-seed13/logs/slurm-5131-shard.out (lines ≈43767–45187)",
+      steps: [
+        "Find and pick up a pencil.",
+        "Locate the desklamp and go to its location.",
+        "Put the pencil under the desklamp.",
+        "Examine the pencil."
+      ],
+      acts: [
+        "go to desk 1", "go to desk 2", "take pencil 1 from desk 2",
+        "go to desk 1", "move pencil 1 to desk 1", "use desklamp 1",
+        "take pencil 1 from desk 1"
+      ],
+      actStep: [0,0,0,0,0,0,0],
+      ghostSteps: [1,2,3],
+      outcome: "Goal reached — env_done = True, score = 1",
+      finding: "The most dramatic gap of the five: all 7 real actions happen inside the first top-level node’s own sub-decomposition. Nodes 2, 3 and 4 are each dispatched in order, as declared — and each reports “already completed” without issuing a single new action. The tree is nominally “followed”; three of its four declared branches did no real work."
+    },
+    {
+      key: "planreact", label: "ALFWorld · Plan+React", pattern: "flat", hasPlan: true,
+      meta: "alfworld · seed 13 · deepseek-v4-flash · episode 56/134",
+      task: "put two pillow in sofa.",
+      patternNote: "One ReAct loop executes the entire declared plan — no dispatcher, no per-step record.",
+      source: "src/experiments/2026-08-19_plan-metrics-gpa (slurm-5802-react.out, line 25418)",
+      steps: [
+        "Look around and identify the location of a pillow (e.g., on sofa, bed, or armchair).",
+        "Go to that location and take the pillow.",
+        "Go to the sofa and put the pillow on the sofa.",
+        "Look around and identify the location of the second pillow.",
+        "Go to that location and take the second pillow.",
+        "Go to the sofa and put the second pillow on the sofa."
+      ],
+      acts: [
+        "go to sofa 1", "go to armchair 1", "take pillow 1 from armchair 1",
+        "take pillow 2 from armchair 1", "inventory", "go to sofa 1",
+        "put pillow 1 on sofa 1", "move pillow 1 to sofa 1", "go to armchair 1",
+        "take pillow 2 from armchair 1", "go to sofa 1", "move pillow 2 to sofa 1"
+      ],
+      actStep: [0,0,1,4,1,2,2,2,4,4,5,5],
+      implicitSteps: [3],
+      outcome: "Goal reached — env_done = True, score = 1",
+      finding: "One ReAct loop executes the whole declared plan, with no per-step ground truth in the harness. Action 4 (“take pillow 2”) fires while step 2 is still nominally active — the agent grabbed both pillows opportunistically, ahead of the plan’s own order."
+    },
+    {
+      key: "mind2web_planreact", label: "Mind2Web · Plan+React", pattern: "flat", hasPlan: true,
+      meta: "mind2web · seed 7 · qwen3.6-35b-a3b · task_key 1f339e44… (row i=1237)",
+      task: "[fedex] Find out how to schedule a recurring pickup",
+      patternNote: "One ReAct loop executes the declared plan — here it abandons the plan entirely after step 1.",
+      source: "src/experiments/2026-08-25_mind2web-planreact-qwen36-seed7/results/mind2web_baseline_qwen36-35b-a3b.json (rows[i=1237]); slurm-6330-m2w.out lines ≈963870, 966444–966510",
+      steps: [
+        "Use get_page_state() to locate the search input element and click it to focus",
+        "Type “schedule a recurring pickup” into the focused search input",
+        "Click the search submit button or icon to execute the query",
+        "Examine the search results to find and select the relevant help article or guide containing instructions"
+      ],
+      acts: [
+        "get_page_state()", "click(element_index=1)", "get_page_state()", "click(element_index=12)"
+      ],
+      actStep: [0, null, null, null],
+      skipSteps: [1,2,3],
+      outcome: "Task succeeded — task_success = True, score = 1.0 — despite skipping steps 2–4",
+      finding: "The plan called for a type-into-search-box flow. The raw log shows the model reasoning it couldn’t find a visible search input, then abandoning that plan entirely for two off-plan navigation clicks (“SHIP TO HOMES” → “See pickup options”) never mentioned in the declared plan. Steps 2–4 are never executed — yet the task still succeeds."
+    },
+    {
+      key: "webarena_planreact", label: "WebArena · Plan+React", pattern: "flat", hasPlan: true,
+      meta: "webarena · seed 42 · qwen3.6-35b-a3b · task_id 293 (row i=34)",
+      task: "Show me the command to clone Super_Awesome_Robot with SSH.",
+      patternNote: "One ReAct loop executes the declared plan — structure roughly holds, yet the task still fails.",
+      source: "src/experiments/2026-09-03_webarena-planreact-qwen36-s42-modefix/results/webarena_baseline_qwen36-35b-a3b.json (rows[i=34]); slurm-7505-wa.out lines 26264–26600",
+      steps: [
+        "At the start URL, type “Super_Awesome_Robot” into the main search input field and press Enter to search for the repository.",
+        "Locate the repository named “Super_Awesome_Robot” in the search results and click its title or link to navigate to the project’s home page.",
+        "On the repository’s project page, look for the green “Code” or “Clone” button and click it to open the dropdown menu.",
+        "Ensure the “SSH” tab within the dropdown is selected, then read the resulting SSH command displayed in the code block.",
+        "Stop and output the full SSH clone command found."
+      ],
+      acts: [
+        "type_text(element_id=1507, text=“Super_Awesome_Robot”, press_enter=True)",
+        "press(key_comb=“Enter”)",
+        "click(element_id=1516)",
+        "type_text(element_id=1516, text=“Super_Awesome_Robot”, press_enter=True)",
+        "click(element_id=2082)",
+        "click(element_id=2697)",
+        "stop(answer=“git clone ssh://git@metis.lti.cs.cmu.edu:2222/convexegg/super_awesome_robot.git”)"
+      ],
+      actStep: [0,0,0,0,1,2,4],
+      skipSteps: [3],
+      outcome: "Task FAILED — score = 0.0 (exact-match grader), despite a confident final answer",
+      finding: "All four search actions (retype, re-press-enter, reclick) serve step 1 alone — the model’s first attempt silently didn’t register, so it retried against a different element without ever revising the declared plan. Step 4 (selecting the SSH tab) has no dedicated action at all; the model jumps straight from clicking “Clone” to outputting an SSH URL. The plan’s structure is roughly maintained — and the task still scores 0.0. Structure and correctness are not the same thing."
+    }
+  ];
+
+  // Keep the current action visible inside its own scrolling list, without
+  // scrolling the page (scrollIntoView would drag the window down to the demo).
+  function scrollList(li){
+    var box = li.parentNode, b = box.getBoundingClientRect(), r = li.getBoundingClientRect();
+    if(r.top < b.top) box.scrollTop -= b.top - r.top;
+    else if(r.bottom > b.bottom) box.scrollTop += r.bottom - b.bottom;
+  }
+
+  // Build a dispatch-order event list from (steps, ghostSteps, actStep, acts).
+  // Works for sequential / predefined / hierarchical because their actStep
+  // arrays are monotonically non-decreasing (each step's actions are
+  // contiguous) — true of all three real traces above.
+  function buildDispatchEvents(p){
+    var events = [];
+    var ghosts = p.ghostSteps || [];
+    for(var s = 0; s < p.steps.length; s++){
+      events.push({type:"dispatch", step:s});
+      if(ghosts.indexOf(s) >= 0){
+        events.push({type:"ghost", step:s});
+      } else {
+        for(var i = 0; i < p.acts.length; i++){
+          if(p.actStep[i] === s) events.push({type:"action", step:s, act:i});
+        }
+      }
+    }
+    return events;
+  }
+
+  // ── DOM refs shared across patterns ────────────────────────────────
+  var tabsEl = document.getElementById("modeTabs");
+  var stage = document.getElementById("stage");
+  var statusPill = document.getElementById("statusPill");
+  var progFill = document.getElementById("progFill");
+  var goalStamp = document.getElementById("goalStamp");
+  var goalText = document.getElementById("goalText");
+  var findingNote = document.getElementById("findingNote");
+  var playBtn = document.getElementById("playBtn");
+  var stepNote = document.getElementById("stepNote");
+  var taskLine = document.getElementById("taskLine");
+  var patternTag = document.getElementById("patternTag");
+  var demoPath = document.getElementById("demoPath");
+  var demoSource = document.getElementById("demoSource");
+
+  PACKETS.forEach(function(p, i){
+    var b = el("button", "mode-btn", null);
+    b.type = "button";
+    b.setAttribute("role", "tab");
+    b.dataset.plan = p.hasPlan ? "1" : "0";
+    b.appendChild(el("span", "dot", null));
+    b.appendChild(document.createTextNode(p.label));
+    b.addEventListener("click", function(){ selectPacket(i); });
+    tabsEl.appendChild(b);
+    p._tab = b;
+  });
+
+  var active = null, timer = null, idx = -1;
+  var STEP_MS = 850;
+
+  // ── pattern: flat (react baseline, plan+react) ─────────────────────
+  function buildFlat(p){
+    stage.innerHTML = "";
+    var cols = el("div", "cols", null);
+    var left = el("div", null, null);
+    var lh = el("div", "colhead plan", null);
+    lh.appendChild(el("span", "sw", null));
+    lh.appendChild(document.createTextNode("Declared plan"));
+    left.appendChild(lh);
+    var stepList = el("ol", "steps", null);
+    if(!p.hasPlan){
+      stepList.appendChild(el("li", "empty",
+        "No declared plan for this arm — the agent reacts directly, one action at a time, with nothing to check it against."));
+    } else {
+      p.steps.forEach(function(text, i){
+        var li = el("li", null, null);
+        li.dataset.state = "pending";
+        li.appendChild(el("span", "n", String(i + 1)));
+        li.appendChild(el("span", null, text));
+        stepList.appendChild(li);
+      });
+    }
+    left.appendChild(stepList);
+    var right = el("div", null, null);
+    var rh = el("div", "colhead exec", null);
+    rh.appendChild(el("span", "sw", null));
+    rh.appendChild(document.createTextNode("Executed actions"));
+    right.appendChild(rh);
+    var actList = el("ol", "acts", null);
+    p.acts.forEach(function(text, i){
+      var li = el("li", null, null);
+      li.dataset.state = "pending";
+      if(p.hasPlan && p.actStep[i] == null) li.dataset.offplan = "1";
+      li.appendChild(el("span", "n", String(i + 1)));
+      li.appendChild(el("span", null, text));
+      actList.appendChild(li);
+    });
+    right.appendChild(actList);
+    cols.appendChild(left); cols.appendChild(right);
+    stage.appendChild(cols);
+    p._refs = {
+      stepLis: Array.prototype.slice.call(stepList.querySelectorAll("li:not(.empty)")),
+      actLis: Array.prototype.slice.call(actList.children)
+    };
+    p._total = p.acts.length;
+  }
+  function renderFlat(p, tick){
+    var r = p._refs, implicit = p.implicitSteps || [], skip = p.skipSteps || [];
+    r.actLis.forEach(function(li, i){
+      li.dataset.state = i < tick ? "past" : (i === tick ? "current" : "pending");
+    });
+    var curIdx = Math.min(tick, p.acts.length - 1);
+    var stepIdx = p.hasPlan ? p.actStep[curIdx] : null;
+    if(p.hasPlan && stepIdx != null){
+      r.stepLis.forEach(function(li, i){
+        if(skip.indexOf(i) >= 0 && i < stepIdx){ li.dataset.state = "skipped"; return; }
+        if(implicit.indexOf(i) >= 0 && i !== stepIdx) return;
+        if(i < stepIdx) li.dataset.state = "done";
+        else if(i === stepIdx) li.dataset.state = "active";
+        else li.dataset.state = implicit.indexOf(i) >= 0 ? "implicit" : "pending";
+      });
+    }
+    if(tick < p.acts.length) scrollList(r.actLis[tick]);
+    stepNote.textContent = p.hasPlan
+      ? (stepIdx != null
+          ? ("action " + (tick + 1) + " of " + p.acts.length + " · serving declared step " + (stepIdx + 1))
+          : ("action " + (tick + 1) + " of " + p.acts.length + " · off-plan, not in the declared plan"))
+      : ("action " + (tick + 1) + " of " + p.acts.length + " · no plan to serve");
+  }
+  function finishFlat(p){
+    var r = p._refs, ghosts = p.ghostSteps || [], skip = p.skipSteps || [];
+    if(p.hasPlan) r.stepLis.forEach(function(li, i){
+      if(skip.indexOf(i) >= 0) li.dataset.state = "skipped";
+      else if(ghosts.indexOf(i) < 0) li.dataset.state = "done";
+    });
+    stepNote.textContent = "all " + p.acts.length + " actions replayed";
+  }
+
+  // ── pattern: sequential (shrinking remaining-plan list) ─────────────
+  function buildSequential(p){
+    stage.innerHTML = "";
+    p._events = buildDispatchEvents(p);
+    p._total = p._events.length;
+    var turnBadge = el("div", "seq-turn", "turn 1 · replanned");
+    stage.appendChild(turnBadge);
+    var cols = el("div", "cols", null);
+    var left = el("div", null, null);
+    var lh = el("div", "colhead plan", null);
+    lh.appendChild(el("span", "sw", null));
+    lh.appendChild(document.createTextNode("Current plan (remaining)"));
+    left.appendChild(lh);
+    var remList = el("ol", "seq-remaining", null);
+    p.steps.forEach(function(text, i){
+      var li = el("li", null, null);
+      li.dataset.state = "pending";
+      li.appendChild(el("span", "n", String(i + 1)));
+      li.appendChild(el("span", null, text));
+      remList.appendChild(li);
+    });
+    left.appendChild(remList);
+    left.appendChild(el("div", "seq-hint",
+      "The model only ever sees the steps still ahead of it — completed ones vanish, they aren’t crossed off."));
+    var right = el("div", null, null);
+    var rh = el("div", "colhead exec", null);
+    rh.appendChild(el("span", "sw", null));
+    rh.appendChild(document.createTextNode("Executed this turn"));
+    right.appendChild(rh);
+    var actList = el("ol", "acts", null);
+    p.acts.forEach(function(text, i){
+      var li = el("li", null, null);
+      li.dataset.state = "pending";
+      li.appendChild(el("span", "n", String(i + 1)));
+      li.appendChild(el("span", null, text));
+      actList.appendChild(li);
+    });
+    right.appendChild(actList);
+    cols.appendChild(left); cols.appendChild(right);
+    stage.appendChild(cols);
+    p._refs = {
+      turnBadge: turnBadge,
+      remLis: Array.prototype.slice.call(remList.children),
+      actLis: Array.prototype.slice.call(actList.children)
+    };
+  }
+  function renderSequential(p, tick){
+    var r = p._refs, turn = 1, ev;
+    for(var t = 0; t <= tick; t++){
+      ev = p._events[t];
+      if(ev.type === "dispatch" && t > 0) turn++;
+    }
+    ev = p._events[tick];
+    r.turnBadge.textContent = "turn " + turn + " · replanned";
+    if(ev.type === "dispatch"){
+      r.turnBadge.classList.add("flash");
+      setTimeout(function(){ r.turnBadge.classList.remove("flash"); }, 400);
+    }
+    r.remLis.forEach(function(li, i){
+      if(i < ev.step) li.dataset.state = "leaving";
+      else if(i === ev.step) li.dataset.state = "active";
+      else li.dataset.state = "pending";
+    });
+    var actIdx = -1;
+    for(var i = 0; i <= tick; i++){ if(p._events[i].type === "action") actIdx = p._events[i].act; }
+    r.actLis.forEach(function(li, i){
+      li.dataset.state = i < actIdx ? "past" : (i === actIdx ? "current" : "pending");
+    });
+    if(actIdx >= 0) scrollList(r.actLis[actIdx]);
+    stepNote.textContent = ev.type === "dispatch"
+      ? ("turn " + turn + " · re-declaring remaining plan (" + (p.steps.length - ev.step) + " steps left)")
+      : ("turn " + turn + " · acting on step " + (ev.step + 1));
+  }
+  function finishSequential(p){
+    var r = p._refs;
+    r.remLis.forEach(function(li){ li.dataset.state = "leaving"; });
+    r.turnBadge.textContent = "done — " + p.steps.length + " turns, 0 steps remaining";
+    stepNote.textContent = "all " + p.acts.length + " actions replayed";
+  }
+
+  // ── pattern: predefined (commit queue -> dispatch -> executor) ──────
+  function buildPredefined(p){
+    stage.innerHTML = "";
+    p._events = buildDispatchEvents(p);
+    p._total = p._events.length;
+    var pipe = el("div", "pipeline", null);
+    var qLane = el("div", "lane queue-lane", null);
+    qLane.appendChild(el("div", "lane-label", "Committed plan (dispatch queue)"));
+    var qRow = el("div", "queue-row", null);
+    p.steps.forEach(function(text, i){
+      var chip = el("div", "qchip", (i+1) + ". " + text);
+      chip.dataset.state = "pending";
+      qRow.appendChild(chip);
+    });
+    qLane.appendChild(qRow);
+    pipe.appendChild(qLane);
+    var dispatchRow = el("div", "dispatch-row", null);
+    var arrow = el("span", "arrow", "↓ dispatching");
+    dispatchRow.appendChild(arrow);
+    var dispatchLabel = el("span", null, "");
+    dispatchRow.appendChild(dispatchLabel);
+    pipe.appendChild(dispatchRow);
+    var eLane = el("div", "lane exec-lane", null);
+    eLane.appendChild(el("div", "lane-label", "Executor"));
+    var actList = el("ol", "acts", null);
+    p.acts.forEach(function(text, i){
+      var li = el("li", null, null);
+      li.dataset.state = "pending";
+      li.appendChild(el("span", "n", String(i + 1)));
+      li.appendChild(el("span", null, text));
+      actList.appendChild(li);
+    });
+    eLane.appendChild(actList);
+    pipe.appendChild(eLane);
+    stage.appendChild(pipe);
+    p._refs = {
+      chips: Array.prototype.slice.call(qRow.children),
+      dispatchLabel: dispatchLabel,
+      actLis: Array.prototype.slice.call(actList.children)
+    };
+  }
+  function renderPredefined(p, tick){
+    var r = p._refs, ev = p._events[tick], ghosts = p.ghostSteps || [];
+    r.chips.forEach(function(chip, i){
+      if(ghosts.indexOf(i) >= 0 && i <= ev.step && (ev.step > i || ev.type === "ghost"))
+        chip.dataset.state = "ghost";
+      else if(i < ev.step || (i === ev.step && ev.type === "ghost")) chip.dataset.state = "done";
+      else if(i === ev.step) chip.dataset.state = "active";
+      else chip.dataset.state = "pending";
+    });
+    r.dispatchLabel.textContent = "step " + (ev.step + 1) + ": “" + p.steps[ev.step] + "”" +
+      (ev.type === "ghost" ? "  — already done, 0 actions" : "");
+    var actIdx = -1;
+    for(var i = 0; i <= tick; i++){ if(p._events[i].type === "action") actIdx = p._events[i].act; }
+    r.actLis.forEach(function(li, i){
+      li.dataset.state = i < actIdx ? "past" : (i === actIdx ? "current" : "pending");
+    });
+    if(actIdx >= 0) scrollList(r.actLis[actIdx]);
+    stepNote.textContent = ev.type === "ghost"
+      ? ("step " + (ev.step + 1) + " dispatched — reported already complete")
+      : ("action " + (actIdx + 1) + " of " + p.acts.length + " · serving step " + (ev.step + 1));
+  }
+  function finishPredefined(p){
+    var r = p._refs, ghosts = p.ghostSteps || [];
+    r.chips.forEach(function(chip, i){ chip.dataset.state = ghosts.indexOf(i) >= 0 ? "ghost" : "done"; });
+    r.dispatchLabel.textContent = "queue drained — " + p.steps.length + " of " + p.steps.length + " steps dispatched";
+    stepNote.textContent = "all " + p.acts.length + " actions replayed";
+  }
+
+  // ── pattern: hierarchical (orchestrator / worker) ────────────────────
+  function buildHierarchical(p){
+    stage.innerHTML = "";
+    p._events = buildDispatchEvents(p);
+    p._total = p._events.length;
+    var org = el("div", "orgchart", null);
+    var orchNode = el("div", "orch-node", null);
+    orchNode.appendChild(el("span", "role", "Orchestrator"));
+    var orchLabel = el("span", null, "idle");
+    orchNode.appendChild(orchLabel);
+    org.appendChild(orchNode);
+    var workers = el("ul", "workers", null);
+    var workerRefs = [];
+    p.steps.forEach(function(text, i){
+      var li = el("li", null, null);
+      li.dataset.active = "0";
+      var node = el("div", "worker-node", null);
+      node.dataset.state = "pending";
+      node.appendChild(el("span", "role", "Worker " + (i + 1)));
+      node.appendChild(el("span", "task", text));
+      var mini = el("ol", "worker-mini", null);
+      var ghosts = p.ghostSteps || [];
+      if(ghosts.indexOf(i) < 0){
+        p.acts.forEach(function(text2, ai){
+          if(p.actStep[ai] === i){
+            var mli = el("li", null, text2);
+            mli.dataset.state = "pending";
+            mli.dataset.act = ai;
+            mini.appendChild(mli);
+          }
+        });
+      }
+      node.appendChild(mini);
+      var status = el("div", "worker-status", "");
+      node.appendChild(status);
+      li.appendChild(node);
+      workers.appendChild(li);
+      workerRefs.push({li:li, node:node, mini:mini, status:status});
+    });
+    org.appendChild(workers);
+    stage.appendChild(org);
+    p._refs = { orchLabel: orchLabel, workers: workerRefs };
+  }
+  function renderHierarchical(p, tick){
+    var r = p._refs, ev = p._events[tick], ghosts = p.ghostSteps || [];
+    r.workers.forEach(function(w, i){
+      w.li.dataset.active = (i === ev.step) ? "1" : "0";
+      if(i < ev.step || (i === ev.step && ev.type === "ghost" && tick > 0 && p._events[tick-1] && p._events[tick-1].step === ev.step)){
+        w.node.dataset.state = ghosts.indexOf(i) >= 0 ? "ghost" : "done";
+      } else if(i === ev.step){
+        w.node.dataset.state = "active";
+      } else {
+        w.node.dataset.state = "pending";
+      }
+    });
+    r.orchLabel.textContent = "dispatching worker " + (ev.step + 1);
+    if(ev.type === "action"){
+      var w = r.workers[ev.step];
+      Array.prototype.forEach.call(w.mini.children, function(mli){
+        var a = Number(mli.dataset.act);
+        mli.dataset.state = a < ev.act ? "past" : (a === ev.act ? "current" : "pending");
+      });
+      w.status.textContent = "";
+      w.status.className = "worker-status";
+    } else if(ev.type === "ghost"){
+      var w2 = r.workers[ev.step];
+      w2.node.dataset.state = "ghost";
+      w2.status.textContent = "reported: already completed · 0 actions";
+      w2.status.className = "worker-status ghost";
+    }
+    stepNote.textContent = ev.type === "ghost"
+      ? ("worker " + (ev.step + 1) + " dispatched — reported already complete")
+      : ev.type === "dispatch"
+      ? ("worker " + (ev.step + 1) + " dispatched")
+      : ("worker " + (ev.step + 1) + " · action " + (ev.act + 1) + " of " + p.acts.length + " overall");
+  }
+  function finishHierarchical(p){
+    var r = p._refs, ghosts = p.ghostSteps || [];
+    r.workers.forEach(function(w, i){
+      w.li.dataset.active = "0";
+      w.node.dataset.state = ghosts.indexOf(i) >= 0 ? "ghost" : "done";
+      if(ghosts.indexOf(i) >= 0 && !w.status.textContent){
+        w.status.textContent = "reported: already completed · 0 actions";
+        w.status.className = "worker-status ghost";
+      } else if(ghosts.indexOf(i) < 0){
+        w.status.textContent = "done";
+        w.status.className = "worker-status done";
+      }
+    });
+    r.orchLabel.textContent = "all " + p.steps.length + " workers reported";
+    stepNote.textContent = "all " + p.acts.length + " actions replayed";
+  }
+
+  var RENDERERS = {
+    flat: { build: buildFlat, render: renderFlat, finish: finishFlat },
+    sequential: { build: buildSequential, render: renderSequential, finish: finishSequential },
+    predefined: { build: buildPredefined, render: renderPredefined, finish: finishPredefined },
+    hierarchical: { build: buildHierarchical, render: renderHierarchical, finish: finishHierarchical }
+  };
+
+  function reset(p){
+    clearTimeout(timer);
+    idx = -1;
+    RENDERERS[p.pattern].build(p);
+    goalStamp.classList.remove("show");
+    findingNote.classList.remove("show");
+    progFill.style.width = "0%";
+    statusPill.textContent = "ready";
+    statusPill.dataset.live = "";
+    stepNote.textContent = p.hasPlan
+      ? (p.steps.length + " declared steps · " + p.acts.length + " executed actions")
+      : ("no declared plan · " + p.acts.length + " executed actions");
+    playBtn.textContent = "▶ Replay";
+  }
+
+  function finish(p){
+    RENDERERS[p.pattern].finish(p);
+    goalStamp.classList.add("show");
+    goalText.textContent = p.outcome;
+    findingNote.textContent = p.finding;
+    findingNote.classList.add("show");
+    statusPill.textContent = "done";
+    statusPill.dataset.live = "2";
+    playBtn.textContent = "↺ Replay";
+  }
+
+  function tick(p){
+    idx++;
+    if(idx >= p._total){ finish(p); return; }
+    RENDERERS[p.pattern].render(p, idx);
+    progFill.style.width = (100 * (idx + 1) / p._total) + "%";
+    timer = setTimeout(function(){ tick(p); }, STEP_MS);
+  }
+
+  function play(){
+    if(!active) return;
+    reset(active);
+    statusPill.textContent = "running";
+    statusPill.dataset.live = "1";
+    playBtn.textContent = "↺ Restart";
+    timer = setTimeout(function(){ tick(active); }, 250);
+  }
+
+  function selectPacket(i){
+    var p = PACKETS[i];
+    active = p;
+    PACKETS.forEach(function(q){ q._tab.setAttribute("aria-selected", q === p ? "true" : "false"); });
+    demoPath.textContent = p.meta;
+    taskLine.innerHTML = "";
+    taskLine.appendChild(el("b", null, "Task goal"));
+    taskLine.appendChild(document.createTextNode(p.task));
+    patternTag.innerHTML = "";
+    patternTag.appendChild(document.createTextNode(p.patternNote));
+    demoSource.textContent = "source: " + p.source;
+    reset(p);
+    setTimeout(play, 500);
+  }
+
+  playBtn.addEventListener("click", play);
+
+  selectPacket(4); // open on Plan+React, the architecture the rest of the page discusses most
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+
+  // ── planning-pattern deck ──────────────────────────────────────────
+  // Each slide redraws one diagram from workflow.pptx as SVG, then plays a
+  // script of ops over it: ["cap", text], ["flow", edge, color, ms, reverse],
+  // ["on"|"off"|"show"|"hide", ids...], ["cls", id, add, remove],
+  // ["sub"|"text", id, text], ["wait", ms], ["par", [ops...]].
+  var NS = "http://www.w3.org/2000/svg";
+  function S(tag, attrs, parent, txt){
+    var n = document.createElementNS(NS, tag);
+    for(var k in attrs) n.setAttribute(k, attrs[k]);
+    if(txt != null) n.textContent = txt;
+    if(parent) parent.appendChild(n);
+    return n;
+  }
+
+  function Scene(svg, w, h){
+    svg.innerHTML = "";
+    svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+    var defs = S("defs", {}, svg);
+    var m = S("marker", {id:"ah", viewBox:"0 0 10 10", refX:"9", refY:"5",
+      markerWidth:"9", markerHeight:"9", markerUnits:"userSpaceOnUse", orient:"auto-start-reverse"}, defs);
+    S("path", {d:"M0 0L10 5L0 10z", "class":"ahead"}, m);
+    this.g = S("g", {}, svg);
+    this.pk = S("g", {}, svg);
+    this.$ = {};
+  }
+  Scene.prototype.reg = function(id, n, hid){
+    if(id) this.$[id] = n;
+    if(hid) n.setAttribute("data-hid", "1");
+    return n;
+  };
+  Scene.prototype.text = function(x, y, t, cls, anchor, id, hid){
+    return this.reg(id, S("text", {x:x, y:y, "class":cls || "", "text-anchor":anchor || "middle"}, this.g, t), hid);
+  };
+  Scene.prototype.node = function(o, parent){
+    var g = S("g", {"class":"nd " + (o.kind || "")}, parent || this.g);
+    if(o.kind === "router"){
+      var mx = o.x + o.w/2, my = o.y + o.h/2;
+      S("polygon", {points:[mx,o.y, o.x+o.w,my, mx,o.y+o.h, o.x,my].join(" ")}, g);
+    } else {
+      S("rect", {x:o.x, y:o.y, width:o.w, height:o.h, rx:o.rx || 9}, g);
+    }
+    var lines = [o.label].concat(o.sub == null ? [] : [].concat(o.sub));
+    var cx = o.x + o.w/2, cy = o.y + o.h/2, y0 = cy - (lines.length - 1) * 7 + 4;
+    lines.forEach(function(t, i){
+      var tx = S("text", {x:cx, y:y0 + i*14, "class":i ? "sub" : "lbl", "text-anchor":"middle"}, g, t);
+      if(i === 1) g._sub = tx;
+    });
+    return this.reg(o.id, g, o.hid);
+  };
+  Scene.prototype.bot = function(x, y){
+    var g = S("g", {"class":"bot", transform:"translate(" + x + " " + y + ")"}, this.g);
+    S("line", {x1:12, y1:1, x2:12, y2:5}, g);
+    S("circle", {"class":"head", cx:12, cy:2, r:2}, g);
+    S("rect", {x:3, y:5, width:18, height:14, rx:5}, g);
+    S("circle", {"class":"eye", cx:9, cy:12, r:1.8}, g);
+    S("circle", {"class":"eye", cx:15, cy:12, r:1.8}, g);
+  };
+  Scene.prototype.frame = function(o){
+    S("rect", {x:o.x, y:o.y, width:o.w, height:o.h, "class":"frame"}, this.g);
+    if(o.role) this.text(o.x + 2, o.y - 8, o.role, "role", "start");
+    if(o.role) this.bot(o.x + o.w - 30, o.y - 25);
+  };
+  Scene.prototype.edge = function(o){
+    var p = this.reg(o.id, S("path", {d:o.d, "class":"edge", "marker-end":o.noHead ? "" : "url(#ah)"}, this.g));
+    if(o.label) this.text(o.lx, o.ly, o.label, "elbl", o.anchor);
+    return p;
+  };
+  Scene.prototype.card = function(o){
+    var g = this.node({id:o.id, x:o.x, y:o.y, w:o.w, h:o.h, kind:"card", label:""});
+    S("text", {x:o.x + 12, y:o.y + 21, "class":"lbl", "text-anchor":"start"}, g, o.title);
+    var self = this, gap = o.gap || 24;
+    o.items.forEach(function(t, i){
+      var y = o.y + 46 + i*gap;
+      var bg = S("rect", {x:o.x + 5, y:y - 15, width:o.w - 10, height:gap - 3, rx:5, "class":"ibg"}, g);
+      var tx = self.reg(o.id + i, S("text", {x:o.x + 12, y:y, "class":"item", "text-anchor":"start"}, g, t), o.hid);
+      if(!o.plain){
+        tx._bg = bg;
+        tx._st = S("text", {x:o.x + o.w - 11, y:y, "class":"ist", "text-anchor":"end"}, g, "");
+      }
+    });
+    return g;
+  };
+  Scene.prototype.query = function(x, y){
+    var d = "M" + (x+14) + " " + y + " H" + (x+136) + " Q" + (x+150) + " " + y + " " + (x+150) + " " + (y+14) +
+      " V" + (y+76) + " Q" + (x+150) + " " + (y+90) + " " + (x+136) + " " + (y+90) +
+      " H" + (x+52) + " L" + (x+34) + " " + (y+106) + " L" + (x+36) + " " + (y+90) +
+      " H" + (x+14) + " Q" + x + " " + (y+90) + " " + x + " " + (y+76) + " V" + (y+14) + " Q" + x + " " + y + " " + (x+14) + " " + y + " Z";
+    S("path", {d:d, "class":"bubble"}, this.g);
+    this.text(x + 75, y + 22, "User query", "lbl");
+    ["“Check for pickup", "restaurants available", "in Boston”"].forEach(function(t, i){
+      this.text(x + 75, y + 43 + i*15, t, "sub");
+    }, this);
+    S("circle", {cx:x + 26, cy:y + 118, r:8, "class":"person"}, this.g);
+    S("path", {d:"M" + (x+12) + " " + (y+142) + " Q" + (x+12) + " " + (y+128) + " " + (x+26) + " " + (y+128) +
+      " Q" + (x+40) + " " + (y+128) + " " + (x+40) + " " + (y+142) + " Z", "class":"person"}, this.g);
+  };
+
+  // ── runner (cancellable, pausable) ─────────────────────────────────
+  var run = {token:0, userPaused:false, offscreen:false};
+  function paused(){ return run.userPaused || run.offscreen; }
+  function frames(ms, tok, onTick){
+    return new Promise(function(res){
+      var t = 0, last = performance.now();
+      function f(now){
+        if(tok !== run.token) return res(false);
+        if(!paused()) t += now - last;
+        last = now;
+        var k = ms > 0 ? Math.min(1, t / ms) : 1;
+        if(onTick) onTick(k);
+        if(k < 1) requestAnimationFrame(f); else res(true);
+      }
+      requestAnimationFrame(f);
+    });
+  }
+  function flow(sc, id, color, ms, rev, tok){
+    var path = sc.$[id], L = path.getTotalLength();
+    path.style.setProperty("--c", "var(--" + color + ")");
+    path.classList.add("on");
+    var p0 = path.getPointAtLength(rev ? L : 0);
+    var dot = S("circle", {r:5.5, "class":"pkt", cx:p0.x, cy:p0.y}, sc.pk);
+    dot.style.fill = "var(--" + color + ")";
+    return frames(ms || 700, tok, function(k){
+      var e = k < .5 ? 2*k*k : 1 - Math.pow(-2*k + 2, 2) / 2;
+      var pt = path.getPointAtLength((rev ? 1 - e : e) * L);
+      dot.setAttribute("cx", pt.x); dot.setAttribute("cy", pt.y);
+    }).then(function(ok){ dot.remove(); path.classList.remove("on"); return ok; });
+  }
+
+  var capN = document.getElementById("capN"), capText = document.getElementById("capText");
+  function apply(sc, op, tok, st){
+    var kind = op[0], ids = op.slice(1);
+    switch(kind){
+      case "cap":
+        st.i++;
+        capN.textContent = st.i + " / " + st.n;
+        capText.textContent = op[1];
+        return Promise.resolve(true);
+      case "flow": return flow(sc, op[1], op[2], op[3], op[4], tok);
+      case "wait": return frames(op[1], tok);
+      case "par":
+        return Promise.all(op[1].map(function(o){ return apply(sc, o, tok, st); }))
+          .then(function(r){ return r.every(Boolean); });
+      case "on": case "off":
+        ids.forEach(function(id){ sc.$[id].classList.toggle("on", kind === "on"); }); break;
+      case "show": case "hide":
+        ids.forEach(function(id){ sc.$[id].setAttribute("data-hid", kind === "hide" ? "1" : "0"); }); break;
+      case "cls":
+        var el = sc.$[op[1]];
+        [el, el._bg, el._st].forEach(function(n){
+          if(!n) return;
+          if(op[2]) n.classList.add.apply(n.classList, op[2].split(" "));
+          if(op[3]) n.classList.remove.apply(n.classList, op[3].split(" "));
+        });
+        if(el._st){
+          var c = el.classList;
+          el._st.textContent = c.contains("jump") ? "early" : c.contains("rev") ? "revised"
+            : c.contains("gone") ? "" : c.contains("done") ? "✓" : c.contains("active") ? "●" : "";
+        }
+        break;
+      case "sub": sc.$[op[1]]._sub.textContent = op[2]; break;
+      case "text": sc.$[op[1]].textContent = op[2]; break;
+    }
+    return Promise.resolve(true);
+  }
+  function runOps(sc, ops, tok){
+    var st = {i:0, n:ops.filter(function(o){ return o[0] === "cap"; }).length};
+    return ops.reduce(function(chain, op){
+      return chain.then(function(ok){ return ok && apply(sc, op, tok, st); });
+    }, Promise.resolve(true));
+  }
+
+  // shorthand for repeated sequences
+  function stagger(ids, ms){
+    var out = [];
+    ids.forEach(function(id, i){ if(i) out.push(["wait", ms]); out.push(["show", id]); });
+    return out;
+  }
+
+  // ── the slides (layouts follow workflow.pptx) ──────────────────────
+  var SLIDES = [
+    {
+      tab:"Overview", kicker:"Condition 3 · Planning-as-Routing", title:"From declaration to dispatch",
+      blurb:"The LLM first declares one of four planning modes. A deterministic router, with no extra model inference, sends the task to the matching pattern-specific executor, so the declared structure decides the control flow. A verifier checks whether execution preserved it.",
+      cites:[{a:"Oota et al.", t:"Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution", v:"Preprint 2026", u:"#bibtex"}],
+      w:820, h:280,
+      build:function(sc){
+        sc.query(10, 95);
+        sc.edge({id:"q", d:"M160 140 H209"});
+        sc.frame({x:196, y:96, w:120, h:88, role:"Plan declaration"});
+        sc.node({id:"dc", x:211, y:118, w:90, h:44, kind:"llm", label:"LLM call"});
+        sc.text(256, 204, "selects plan mode", "note");
+        sc.edge({id:"e0", d:"M316 140 H348", label:"plan", lx:332, ly:130});
+        sc.node({id:"rt", x:350, y:92, w:100, h:96, kind:"router", label:"Router", sub:"dispatch"});
+        var P = [["Predefined","plan once, no replanning"],["Sequential","execute + replanner"],
+                 ["Hierarchical","orchestrator · workers"],["Search","explore candidates"]];
+        P.forEach(function(p, i){
+          var yc = 50 + i*60;
+          sc.node({id:"p"+i, x:508, y:yc - 23, w:150, h:46, kind:"pat", label:p[0], sub:p[1]});
+          sc.edge({id:"r"+i, d:"M450 140 C 480 140, 478 " + yc + ", 506 " + yc});
+          sc.edge({id:"v"+i, d:"M658 " + yc + " C 684 " + yc + ", 684 140, 704 140"});
+        });
+        sc.text(583, 272, "plan-specific design patterns", "note");
+        sc.node({id:"vf", x:706, y:112, w:84, h:56, kind:"jdg", label:"Plan", sub:"verifier"});
+        sc.edge({id:"out", d:"M790 140 H816", label:"Out", lx:803, ly:128});
+      },
+      script:function(loop){
+        var k = loop % 4;
+        var name = ["Predefined","Sequential","Hierarchical","Search"][k];
+        var desc = ["Predefined commits the whole plan once and never revises it.",
+                    "Sequential executes one step, then a replanner rewrites what’s left.",
+                    "Hierarchical hands sub-goals to workers and synthesizes their results.",
+                    "Search runs several candidate plans and lets a judge pick one."][k];
+        var dim = [0,1,2,3].filter(function(i){ return i !== k; }).map(function(i){ return ["cls","p"+i,"dim"]; });
+        return [
+          ["cap","A user query arrives."], ["flow","q","llm",650],
+          ["on","dc"], ["cap","One LLM call declares the plan and selects a plan mode."], ["wait",800],
+          ["off","dc"], ["flow","e0","plan",500], ["on","rt"],
+          ["cap","The router deterministically dispatches the task to the “" + name + "” executor."], ["wait",500],
+          ["flow","r"+k,"plan",650], ["off","rt"], ["on","p"+k]
+        ].concat(dim, [
+          ["cap", desc], ["wait",1400],
+          ["off","p"+k], ["flow","v"+k,"xec",650], ["on","vf"],
+          ["cap","A verifier checks whether execution preserved the declared plan structure."], ["wait",800],
+          ["off","vf"], ["flow","out","goal",450], ["wait",1400]
+        ]);
+      }
+    },
+    {
+      tab:"ReAct", kicker:"Condition 1 · no plan", title:"Flat ReAct",
+      blurb:"The plan-free baseline. One loop interleaves reasoning, a tool action and the observation that comes back. Nothing is declared, so there is nothing to follow or deviate from.",
+      cites:[{a:"Yao et al.", t:"ReAct: Synergizing Reasoning and Acting in Language Models", v:"ICLR 2023", u:"https://arxiv.org/abs/2210.03629"}],
+      w:820, h:280,
+      build:function(sc){
+        sc.query(10, 95);
+        sc.edge({id:"q", d:"M160 140 H278"});
+        sc.frame({x:250, y:74, w:380, h:150, role:"Executor agent"});
+        sc.node({id:"llm", x:280, y:114, w:110, h:52, kind:"llm", label:"LLM call", sub:"think"});
+        sc.node({id:"tool", x:490, y:114, w:110, h:52, kind:"tool", label:"Tool", sub:"search API"});
+        sc.edge({id:"act", d:"M390 132 H488", label:"action", lx:440, ly:124});
+        sc.edge({id:"fb", d:"M545 166 V198 H335 V168", label:"feedback", lx:440, ly:214});
+        sc.edge({id:"out", d:"M600 140 H692", label:"Out", lx:660, ly:132});
+        sc.node({id:"ans", x:694, y:116, w:118, h:48, kind:"out", label:"Answer", sub:"12 pickup spots", hid:1});
+        sc.text(440, 256, "", "trace", "middle", "trace");
+      },
+      script:function(){
+        var A = [["search(“restaurants”, city=“Boston”)","148 results"],
+                 ["filter(service=“pickup”)","23 results"],
+                 ["filter(open_now=True)","12 results"]];
+        var s = [["cap","A user query arrives."], ["flow","q","llm",650], ["on","llm"],
+                 ["cap","The model reasons about its next move. There is no plan to consult."], ["wait",900]];
+        A.forEach(function(a, i){
+          s.push(["cap","Act " + (i+1) + ": call a tool."], ["text","trace",a[0]],
+                 ["flow","act","llm",600], ["on","tool"], ["wait",450],
+                 ["cap","Observe: " + a[1] + ", fed straight back into the next thought."],
+                 ["text","trace","→ " + a[1]], ["flow","fb","tool",750], ["off","tool"]);
+        });
+        return s.concat([["off","llm"], ["text","trace",""], ["flow","out","goal",550], ["show","ans"],
+          ["cap","Answer after three action–observation loops, each chosen from the last observation."], ["wait",1800]]);
+      }
+    },
+    {
+      tab:"Plan+ReAct", kicker:"Condition 2 · declared, not enforced", title:"Plan + ReAct",
+      blurb:"Planning in the prompt. A planner selects a planning approach and writes a plan, which is handed to the same generic ReAct executor. The structure is available as context but is not enforced during execution.",
+      cites:[{a:"Yao et al.", t:"ReAct: Synergizing Reasoning and Acting in Language Models", v:"ICLR 2023", u:"https://arxiv.org/abs/2210.03629"},
+             {a:"Erdogan et al.", t:"Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks", v:"ICML 2025", u:"https://arxiv.org/abs/2503.09572"}],
+      w:820, h:260,
+      build:function(sc){
+        sc.query(10, 95);
+        sc.edge({id:"q", d:"M160 140 H227"});
+        sc.frame({x:214, y:96, w:120, h:88, role:"Planner"});
+        sc.node({id:"pl", x:229, y:118, w:90, h:44, kind:"llm", label:"LLM call"});
+        sc.edge({id:"e1", d:"M334 140 H356"});
+        sc.card({id:"plan", x:358, y:76, w:200, h:128, title:"Declared plan", hid:1,
+                 items:["1. Open search","2. Search Boston","3. Filter: pickup"]});
+        sc.edge({id:"e2", d:"M558 140 H582"});
+        sc.frame({x:584, y:76, w:180, h:128, role:"Executor agent"});
+        sc.node({id:"xl", x:598, y:100, w:60, h:40, kind:"llm", label:"LLM"});
+        sc.node({id:"xt", x:690, y:100, w:60, h:40, kind:"tool", label:"Tool"});
+        sc.edge({id:"xa", d:"M658 120 H688"});
+        sc.edge({id:"xf", d:"M720 140 V160 H628 V142"});
+        sc.text(674, 190, "one loop · whole plan", "note");
+        sc.edge({id:"out", d:"M764 140 H814", label:"Out", lx:789, ly:130});
+      },
+      script:function(){
+        var s = [["cap","A user query arrives."], ["flow","q","llm",600], ["on","pl"],
+                 ["cap","The planner declares the whole plan up front."]]
+          .concat(stagger(["plan0","plan1","plan2"], 380),
+          [["off","pl"], ["wait",400], ["flow","e2","plan",550], ["on","xl"],
+           ["cap","A single ReAct loop takes the plan. No dispatcher, no per-step record."], ["wait",700]]);
+        var A = [[0,"active","done","Act: open_search() serves step 1."],
+                 [2,"jump","jump","Act: filter(service=“pickup”) serves step 3 before step 2, out of the declared order."],
+                 [1,"active","done","Act: search(city=“Boston”) finally serves step 2."]];
+        A.forEach(function(a){
+          s.push(["cls","plan"+a[0],a[1]], ["cap",a[3]], ["flow","xa","llm",450], ["on","xt"],
+                 ["wait",300], ["flow","xf","tool",600], ["off","xt"], ["cls","plan"+a[0],a[2],"active"]);
+        });
+        return s.concat([["off","xl"],
+          ["cap","The task can still succeed, but the declared order was never enforced. That is the declaration gap."],
+          ["flow","out","goal",500], ["wait",2000]]);
+      }
+    },
+    {
+      tab:"Predefined", kicker:"Planning mode 1 of 4", title:"Predefined plan",
+      blurb:"Plan once, no replanning. The full plan is committed upfront, and the harness dispatches it to the executor step by step, in the declared order.",
+      cites:[{a:"Wang et al.", t:"Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models", v:"ACL 2023", u:"https://arxiv.org/abs/2305.04091"},
+             {a:"Xu et al.", t:"ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models", v:"arXiv 2023", u:"https://arxiv.org/abs/2305.18323"}],
+      w:820, h:260,
+      build:function(sc){
+        sc.query(10, 95);
+        sc.edge({id:"q", d:"M160 140 H227"});
+        sc.frame({x:214, y:96, w:120, h:88, role:"Planner"});
+        sc.node({id:"pl", x:229, y:118, w:90, h:44, kind:"llm", label:"LLM call"});
+        sc.edge({id:"e1", d:"M334 140 H356"});
+        sc.card({id:"plan", x:358, y:76, w:200, h:128, title:"Committed plan", hid:1,
+                 items:["1. Open search","2. Search Boston","3. Filter: pickup"]});
+        sc.text(458, 222, "plan order", "note");
+        sc.edge({id:"d", d:"M558 124 H604", label:"step", lx:581, ly:116});
+        sc.edge({id:"r", d:"M606 156 H560", label:"done", lx:583, ly:172});
+        sc.frame({x:584, y:76, w:180, h:128, role:"Executor agent"});
+        sc.node({id:"ex", x:606, y:110, w:140, h:60, kind:"xec", label:"Executor", sub:"runs steps 1..n"});
+        sc.edge({id:"out", d:"M764 140 H814", label:"Out", lx:789, ly:130});
+      },
+      script:function(){
+        var calls = ["open_search()","search(city=“Boston”)","filter(service=“pickup”)"];
+        var s = [["cap","A user query arrives."], ["flow","q","llm",600], ["on","pl"],
+                 ["cap","The planner commits the entire plan in one call. It will not be revised."]]
+          .concat(stagger(["plan0","plan1","plan2"], 380),
+          [["off","pl"], ["cls","plan","locked"], ["wait",500]]);
+        calls.forEach(function(c, i){
+          s.push(["cls","plan"+i,"active"], ["cap","Dispatch step " + (i+1) + " to the executor."],
+                 ["flow","d","plan",500], ["on","ex"], ["sub","ex",c], ["wait",650], ["off","ex"],
+                 ["flow","r","goal",450], ["cls","plan"+i,"done","active"]);
+        });
+        return s.concat([["sub","ex","runs steps 1..n"],
+          ["cap","Queue drained: each step dispatched once, in order. Nothing adapts if a step goes wrong."],
+          ["flow","out","goal",500], ["wait",2000]]);
+      }
+    },
+    {
+      tab:"Sequential", kicker:"Planning mode 2 of 4", title:"Sequential plan",
+      blurb:"Plan, execute one step, re-plan. After every step a replanner verifies the result and rewrites the remaining plan, so the agent only ever acts on what is still ahead.",
+      cites:[{a:"Sun et al.", t:"AdaPlanner: Adaptive Planning from Feedback with Language Models", v:"NeurIPS 2023", u:"https://arxiv.org/abs/2305.16653"}],
+      w:820, h:280,
+      build:function(sc){
+        sc.query(10, 95);
+        sc.edge({id:"q", d:"M160 140 H209"});
+        sc.frame({x:196, y:96, w:116, h:88, role:"Planner"});
+        sc.node({id:"pl", x:209, y:118, w:90, h:44, kind:"llm", label:"LLM call"});
+        sc.edge({id:"e1", d:"M312 140 H328"});
+        sc.card({id:"plan", x:330, y:76, w:172, h:128, title:"Remaining plan", hid:1,
+                 items:["1. Open search","2. Search Boston","3. Filter: pickup"]});
+        sc.edge({id:"e2", d:"M502 140 H530"});
+        sc.frame({x:520, y:96, w:112, h:88, role:"Executor"});
+        sc.node({id:"ex", x:532, y:118, w:88, h:44, kind:"xec", label:"Executor", sub:"current step"});
+        sc.edge({id:"res", d:"M620 140 H664", label:"result", lx:643, ly:132});
+        sc.frame({x:654, y:96, w:112, h:88, role:"Replanner"});
+        sc.node({id:"rp", x:666, y:118, w:88, h:44, kind:"rep", label:"Replanner", sub:"verify"});
+        sc.edge({id:"rev", d:"M710 162 V238 H416 V206", label:"revise remaining plan", lx:563, ly:256});
+        sc.edge({id:"out", d:"M754 140 H814", label:"Out", lx:789, ly:130});
+      },
+      script:function(){
+        var s = [["cap","A user query arrives."], ["flow","q","llm",600], ["on","pl"],
+                 ["cap","The planner declares an initial plan."]]
+          .concat(stagger(["plan0","plan1","plan2"], 380), [["off","pl"], ["wait",400]]);
+        var names = ["Open search","Search Boston","Filter: pickup"];
+        names.forEach(function(n, i){
+          s.push(["cls","plan"+i,"active"], ["cap","Turn " + (i+1) + ": execute only the current step (" + n + ")."],
+                 ["flow","e2","plan",500], ["on","ex"], ["wait",600], ["off","ex"],
+                 ["flow","res","xec",450], ["on","rp"], ["cls","plan"+i,"gone","active"]);
+          if(i === 0){
+            s.push(["cap","The replanner verifies the result and rewrites the rest: the pickup filter is a chip on this site."],
+                   ["wait",500], ["text","plan2","3. Pickup chip"], ["cls","plan2","rev"],
+                   ["flow","rev","rep",850], ["off","rp"]);
+          } else if(i === 1){
+            s.push(["cap","Verified. Only one step remains, and it is sent back as the new plan."],
+                   ["wait",400], ["flow","rev","rep",850], ["off","rp"], ["cls","plan2",null,"rev"]);
+          } else {
+            s.push(["cap","Nothing left to revise, so the replanner signs off."], ["wait",600], ["off","rp"]);
+          }
+        });
+        return s.concat([["flow","out","goal",500], ["wait",2000]]);
+      }
+    },
+    {
+      tab:"Hierarchical", kicker:"Planning mode 3 of 4", title:"Hierarchical plan",
+      blurb:"Orchestrator, workers, synthesizer. The query is decomposed into sub-goals, each dispatched to its own worker. Coarse sub-goals are decomposed again, and a synthesizer merges the results.",
+      cites:[{a:"Zhang et al.", t:"AgentOrchestra: Orchestrating Multi-Agent Intelligence with the Tool-Environment-Agent (TEA) Protocol", v:"arXiv 2025", u:"https://arxiv.org/abs/2506.12508"},
+             {a:"Choi et al.", t:"ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning", v:"arXiv 2025", u:"https://arxiv.org/abs/2511.02424"}],
+      w:820, h:340,
+      build:function(sc){
+        sc.query(10, 70);
+        sc.edge({id:"q", d:"M160 115 H210"});
+        sc.frame({x:198, y:70, w:142, h:92, role:"Orchestrator"});
+        sc.node({id:"orc", x:212, y:86, w:114, h:60, kind:"llm", label:"LLM call", sub:["decompose into","sub-goals"]});
+        sc.edge({id:"eA", d:"M326 106 C 385 106, 385 52, 428 52"});
+        sc.edge({id:"eB", d:"M326 116 C 385 116, 385 150, 428 150"});
+        sc.edge({id:"eC", d:"M326 126 C 385 126, 385 280, 428 280"});
+
+        var A = sc.node({id:"A", x:430, y:20, w:380, h:64, kind:"wk", label:"", hid:1});
+        S("text", {x:446, y:45, "class":"lbl", "text-anchor":"start"}, A, "Sub-goal A · worker");
+        S("text", {x:446, y:65, "class":"sub", "text-anchor":"start"}, A, "Open restaurant search");
+        sc.node({id:"exA", x:690, y:34, w:104, h:36, kind:"xec", label:"Executor"}, A);
+
+        var B = sc.node({id:"B", x:430, y:100, w:380, h:132, kind:"wk", label:"", hid:1});
+        S("text", {x:446, y:124, "class":"lbl", "text-anchor":"start"}, B, "Sub-goal B · decomposed further ↓");
+        S("text", {x:446, y:142, "class":"sub", "text-anchor":"start"}, B, "Find Boston pickup options");
+        S("rect", {x:446, y:152, width:348, height:68, rx:8, "class":"nest"}, B);
+        S("text", {x:458, y:168, "class":"sub", "text-anchor":"start"}, B, "↳ nested sub-goals · depth 2");
+        sc.node({id:"b1", x:462, y:176, w:156, h:34, kind:"xec", label:"B.1 · search Boston"}, B);
+        sc.node({id:"b2", x:630, y:176, w:156, h:34, kind:"xec", label:"B.2 · list pickup"}, B);
+
+        var C = sc.node({id:"C", x:430, y:248, w:380, h:64, kind:"wk", label:"", hid:1});
+        S("text", {x:446, y:273, "class":"lbl", "text-anchor":"start"}, C, "Sub-goal C · worker");
+        S("text", {x:446, y:293, "class":"sub", "text-anchor":"start"}, C, "Rank and compile results");
+        sc.node({id:"exC", x:690, y:262, w:104, h:36, kind:"xec", label:"Executor"}, C);
+
+        sc.edge({id:"es", d:"M269 146 V208"});
+        sc.node({id:"syn", x:212, y:210, w:114, h:52, kind:"syn", label:"Synthesizer", sub:"final result"});
+        sc.edge({id:"out", d:"M269 262 V322", label:"Out", lx:280, ly:300, anchor:"start"});
+      },
+      script:function(){
+        function worker(e, box, ex, cap){
+          return [["cap",cap], ["flow",e,"xec",650], ["on",box,ex], ["wait",800], ["off",ex],
+                  ["flow",e,"goal",600,true], ["cls",box,"done","on"]];
+        }
+        return [["cap","A user query arrives."], ["flow","q","llm",600], ["on","orc"],
+                ["cap","The orchestrator decomposes the query into sub-goals."], ["wait",500]]
+          .concat(stagger(["A","B","C"], 300),
+          [["wait",400]],
+          worker("eA","A","exA","Sub-goal A goes to its own worker, and the result comes back."),
+          [["cap","Sub-goal B is too coarse, so it is decomposed again (depth 2)."],
+           ["flow","eB","xec",650], ["on","B"], ["wait",300],
+           ["on","b1"], ["wait",650], ["off","b1"], ["on","b2"], ["wait",650], ["off","b2"],
+           ["flow","eB","goal",600,true], ["cls","B","done","on"]],
+          worker("eC","C","exC","Sub-goal C ranks and compiles what the others found."),
+          [["off","orc"], ["cap","The synthesizer merges the worker results into one answer."],
+           ["flow","es","syn",500], ["on","syn"], ["wait",700], ["off","syn"],
+           ["flow","out","goal",500], ["wait",2000]]);
+      }
+    },
+    {
+      tab:"Search", kicker:"Planning mode 4 of 4", title:"Search plan",
+      blurb:"Search-based exploration. The planner proposes N candidate plans and each is executed independently. A rubric judge, built from the query with ground truth stripped, scores the traces and selects the best.",
+      cites:[{a:"Zhou et al.", t:"Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models", v:"ICML 2024", u:"https://arxiv.org/abs/2310.04406"},
+             {a:"Yao et al.", t:"Tree of Thoughts: Deliberate Problem Solving with Large Language Models", v:"NeurIPS 2023", u:"https://arxiv.org/abs/2305.10601"}],
+      w:860, h:320,
+      build:function(sc){
+        sc.query(10, 120);
+        sc.edge({id:"q", d:"M160 165 H204"});
+        sc.frame({x:192, y:121, w:116, h:88, role:"Planner"});
+        sc.node({id:"pl", x:205, y:143, w:90, h:44, kind:"llm", label:"LLM call"});
+        sc.edge({id:"e0", d:"M308 165 H328"});
+        sc.card({id:"cand", x:330, y:101, w:176, h:128, title:"N candidate plans", hid:1,
+                 items:["1. search → pickup","2. search Boston","3. pickup → search"]});
+        [45,165,285].forEach(function(yc, i){
+          var d = i === 1 ? "M506 165 H564" : "M506 165 C 536 165, 536 " + yc + ", 564 " + yc;
+          sc.edge({id:"c"+i, d:d});
+          sc.node({id:"x"+i, x:566, y:yc - 23, w:104, h:46, kind:"xec", label:"Executor", sub:"candidate " + (i+1)});
+          sc.edge({id:"j"+i, d:i === 1 ? "M670 165 H714" : "M670 " + yc + " C 700 " + yc + ", 690 165, 714 165"});
+        });
+        sc.node({id:"jd", x:716, y:137, w:100, h:56, kind:"jdg", label:"Rubric judge", sub:"→ select"});
+        sc.edge({id:"out", d:"M816 165 H852", label:"Out", lx:834, ly:154});
+        sc.card({id:"rub", x:716, y:214, w:128, h:92, title:"Rubric", gap:18, hid:1,
+                 items:["Boston set?","Pickup applied?","Grounded?"], plain:true});
+        sc.$.rub.setAttribute("data-hid", "1");
+      },
+      script:function(){
+        return [["cap","A user query arrives."], ["flow","q","llm",600], ["on","pl"],
+                ["cap","Instead of committing to one plan, the planner samples N candidates."]]
+          .concat(stagger(["cand0","cand1","cand2"], 350),
+          [["off","pl"], ["wait",400],
+           ["cap","Each candidate plan is executed independently, in parallel."],
+           ["par",[["flow","c0","xec",700],["flow","c1","xec",700],["flow","c2","xec",700]]],
+           ["on","x0","x1","x2"], ["sub","x0","running…"], ["sub","x1","running…"], ["sub","x2","running…"],
+           ["wait",1000], ["off","x0","x1","x2"],
+           ["sub","x0","trace 1"], ["sub","x1","trace 2"], ["sub","x2","trace 3"],
+           ["cap","The traces go to a rubric judge. Ground truth is stripped, so it scores against the query alone."],
+           ["par",[["flow","j0","jdg",650],["flow","j1","jdg",650],["flow","j2","jdg",650]]],
+           ["on","jd"], ["show","rub","rub0","rub1","rub2"], ["wait",900],
+           ["cap","Each criterion gates, then scores are averaged: 0.91, 0.38 (pickup never applied), 0.64."],
+           ["sub","x0","score 0.91"], ["sub","x1","score 0.38"], ["sub","x2","score 0.64"], ["wait",1100],
+           ["cls","x0","win"], ["cls","x1","dim"], ["cls","x2","dim"], ["cls","cand0","done"],
+           ["cls","cand1","gone"], ["cls","cand2","gone"],
+           ["cap","Candidate 1 has the top score and is selected. The other traces are discarded."],
+           ["wait",700], ["off","jd"], ["flow","out","goal",450], ["wait",2000]]);
+      }
+    }
+  ];
+
+  // ── deck controller ────────────────────────────────────────────────
+  var deck = document.getElementById("deck");
+  var svg = document.getElementById("dg");
+  var slideEl = document.getElementById("slide");
+  var tabsEl = document.getElementById("deckTabs");
+  var pipsEl = document.getElementById("pips");
+  var pauseBtn = document.getElementById("pauseBtn");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cur = 0;
+
+  SLIDES.forEach(function(sl, i){
+    var t = document.createElement("button");
+    t.type = "button"; t.className = "ptab"; t.textContent = sl.tab;
+    t.setAttribute("role", "tab");
+    t.addEventListener("click", function(){ go(i); });
+    tabsEl.appendChild(t); sl._tab = t;
+    var p = document.createElement("button");
+    p.type = "button"; p.className = "pip"; p.setAttribute("aria-label", sl.tab);
+    p.addEventListener("click", function(){ go(i); });
+    pipsEl.appendChild(p); sl._pip = p;
+  });
+
+  function fillCites(ul, cites){
+    ul.innerHTML = "";
+    cites.forEach(function(c){
+      var li = document.createElement("li");
+      var tag = document.createElement("span");
+      tag.className = "cite-tag"; tag.textContent = "cite";
+      var a = document.createElement("a");
+      a.href = c.u;
+      if(c.u.charAt(0) !== "#"){ a.target = "_blank"; a.rel = "noopener"; }
+      a.textContent = c.t;
+      li.appendChild(tag);
+      var body = document.createElement("span");
+      body.appendChild(document.createTextNode(c.a + " · "));
+      body.appendChild(a);
+      body.appendChild(document.createTextNode(" · " + c.v));
+      li.appendChild(body);
+      ul.appendChild(li);
+    });
+  }
+
+  function staticFrame(sl){
+    var sc = new Scene(svg, sl.w, sl.h);
+    sl.build(sc);
+    Array.prototype.forEach.call(svg.querySelectorAll("[data-hid]"), function(n){ n.setAttribute("data-hid", "0"); });
+    capN.textContent = "";
+    capText.textContent = "Animation paused for reduced motion. Press Play to run it.";
+  }
+
+  function loop(sl, tok){
+    var n = 0;
+    function once(){
+      if(tok !== run.token) return;
+      var sc = new Scene(svg, sl.w, sl.h);
+      sl.build(sc);
+      runOps(sc, sl.script(n++), tok).then(function(ok){ if(ok) once(); });
+    }
+    once();
+  }
+
+  function setPauseLabel(){ pauseBtn.textContent = run.userPaused ? "▶ Play" : "❚❚ Pause"; }
+
+  function go(i){
+    cur = (i + SLIDES.length) % SLIDES.length;
+    var sl = SLIDES[cur];
+    run.token++;
+    SLIDES.forEach(function(s){
+      s._tab.setAttribute("aria-selected", s === sl ? "true" : "false");
+      s._pip.setAttribute("aria-current", s === sl ? "true" : "false");
+    });
+    document.getElementById("slideKicker").textContent = sl.kicker;
+    document.getElementById("slideTitle").textContent = sl.title;
+    document.getElementById("slideBlurb").textContent = sl.blurb;
+    fillCites(document.getElementById("slideCites"), sl.cites);
+    document.getElementById("deckCount").textContent = (cur + 1) + " / " + SLIDES.length;
+    slideEl.classList.remove("enter"); void slideEl.offsetWidth; slideEl.classList.add("enter");
+    if(reduce && run.userPaused){ staticFrame(sl); return; }
+    loop(sl, run.token);
+  }
+
+  pauseBtn.addEventListener("click", function(){
+    run.userPaused = !run.userPaused;
+    setPauseLabel();
+    if(reduce && !run.userPaused && !svg.querySelector(".pkt") && capN.textContent === "") go(cur);
+  });
+  document.getElementById("prevBtn").addEventListener("click", function(){ go(cur - 1); });
+  document.getElementById("nextBtn").addEventListener("click", function(){ go(cur + 1); });
+  deck.addEventListener("keydown", function(e){
+    if(e.key === "ArrowRight"){ go(cur + 1); e.preventDefault(); }
+    else if(e.key === "ArrowLeft"){ go(cur - 1); e.preventDefault(); }
+  });
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){ run.offscreen = !es[0].isIntersecting; }, {threshold:.15}).observe(deck);
+  }
+
+  // references list, generated from the same citation data as the slides
+  var refList = document.getElementById("refList"), seen = {};
+  SLIDES.forEach(function(sl){
+    sl.cites.forEach(function(c){
+      if(c.u.charAt(0) === "#") return;
+      if(seen[c.u]){ seen[c.u].pats.push(sl.tab); seen[c.u].tag.textContent = seen[c.u].pats.join(" · "); return; }
+      var li = document.createElement("li");
+      var tag = document.createElement("span"); tag.className = "rp"; tag.textContent = sl.tab;
+      var a = document.createElement("a"); a.href = c.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = c.t;
+      li.appendChild(tag); li.appendChild(document.createElement("br"));
+      li.appendChild(document.createTextNode(c.a + " "));
+      li.appendChild(a);
+      li.appendChild(document.createTextNode(". " + c.v + "."));
+      refList.appendChild(li);
+      seen[c.u] = {pats:[sl.tab], tag:tag};
+    });
+  });
+
+  var copyBib = document.getElementById("copyBib");
+  copyBib.addEventListener("click", function(){
+    var txt = document.getElementById("bibText").textContent;
+    function done(){ copyBib.textContent = "Copied"; setTimeout(function(){ copyBib.textContent = "Copy BibTeX"; }, 1500); }
+    if(navigator.clipboard) navigator.clipboard.writeText(txt).then(done, function(){});
+  });
+
+  // deep links: #pattern-overview, #pattern-react, … #pattern-search
+  function fromHash(){
+    var m = /^#pattern-(\w+)$/.exec(location.hash);
+    if(!m) return -1;
+    for(var i = 0; i < SLIDES.length; i++){
+      if(SLIDES[i].tab.toLowerCase().replace(/[^a-z]/g, "") === m[1]) return i;
+    }
+    return -1;
+  }
+  window.addEventListener("hashchange", function(){
+    var i = fromHash();
+    if(i >= 0){ go(i); deck.scrollIntoView({block:"start"}); }
+  });
+
+  run.userPaused = reduce;
+  setPauseLabel();
+  go(Math.max(0, fromHash()));
+})();
+</script>
+</body>
+</html>
