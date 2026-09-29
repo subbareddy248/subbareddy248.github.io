@@ -65,13 +65,14 @@
   h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
   p{margin:0}
   a{color:inherit;text-decoration-color:var(--line-2)}
-  .wrap{max-width:760px;margin:0 auto;padding-inline:20px}
+  .wrap{max-width:940px;margin:0 auto;padding-inline:20px}
 
   /* ── title block ─────────────────────────────────────────────────── */
   .titleblock{text-align:center;padding-block:56px 30px}
-  h1.title{font-size:clamp(2.1rem,6vw,2.85rem);font-weight:700;letter-spacing:-.01em}
+  h1.title{font-size:clamp(1.9rem,5.4vw,2.6rem);font-weight:700;letter-spacing:-.01em}
+  @media (min-width:860px){h1.title{white-space:nowrap}}
   .subtitle{font-weight:400;font-style:italic;color:var(--muted);
-            font-size:clamp(1.05rem,3vw,1.3rem);margin:10px auto 16px;max-width:46ch}
+            font-size:clamp(1.05rem,3vw,1.3rem);margin:10px auto 16px;max-width:62ch}
   .byline{font-size:.98rem;color:var(--muted);line-height:1.7}
   .byline b{color:var(--ink);font-weight:600}
   .affil{font-size:.86rem;color:var(--faint);margin-top:4px}
@@ -87,7 +88,7 @@
   h2.h{font-size:1.5rem;font-weight:700;margin-bottom:14px}
   section p{margin-bottom:14px}
   section p:last-child{margin-bottom:0}
-  .prose{max-width:66ch}
+  .prose{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
   .prose b{font-weight:600}
   .prose em{font-style:italic}
 
@@ -270,7 +271,7 @@
   .plotfam{margin-top:30px}
   .plotfam h3{font-size:1.05rem;font-weight:600;margin-bottom:4px}
   .plotfam .cap{font-family:var(--sans);font-size:.86rem;color:var(--muted);
-                max-width:66ch;margin-bottom:12px;line-height:1.55}
+                text-align:justify;hyphens:auto;margin-bottom:12px;line-height:1.55}
   .plotgrid{display:grid;grid-template-columns:1fr;gap:14px}
   .plotcell{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
   .plotcell img{display:block;width:100%;height:auto}
@@ -281,7 +282,6 @@
   /* ── planning-pattern deck ────────────────────────────────────────── */
   .deck{margin-top:20px;border:1px solid var(--line-2);border-radius:14px;
         background:var(--paper);overflow:hidden}
-  @media (min-width:1000px){.deck{margin-inline:-100px}}
   .deck:focus-visible{outline:2px solid var(--llm);outline-offset:3px}
   .deck-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px;
         border-bottom:1px solid var(--line);background:var(--paper-2)}
@@ -296,7 +296,7 @@
   .slide-kicker{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.09em;
         text-transform:uppercase;color:var(--faint)}
   .slide-title{font-size:1.5rem;font-weight:700;margin-top:2px}
-  .slide-blurb{font-size:1rem;color:var(--muted);margin-top:5px;max-width:64ch;line-height:1.55}
+  .slide-blurb{font-size:1rem;color:var(--muted);margin-top:5px;line-height:1.55;text-align:justify;hyphens:auto}
   .dg-wrap{margin-top:14px;border:1px solid var(--line);border-radius:10px;overflow-x:auto;
         background:color-mix(in srgb,var(--paper-2) 55%,var(--paper))}
   .dg-wrap svg{display:block;width:100%;min-width:640px;height:auto}
