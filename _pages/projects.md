@@ -8,6 +8,25 @@ permalink: /projects/
   <h1 class="mb-4">Research Projects</h1>
   
   <div class="projects-grid">
+    <!-- Standalone HTML project pages (not built from the project layout) -->
+    <div class="project-card">
+      <a href="{{ '/projects/declaration-gap-site/' | relative_url }}" class="project-link">
+        <div class="project-image project-image-contain">
+          <img src="{{ '/images/projects/declaration-gap.png' | relative_url }}" alt="Planning-as-Routing: an LLM declares a planning mode and a router dispatches it to a pattern-specific executor">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Do LLM Agents Execute the Plans They Declare?</h3>
+          <div class="project-meta">
+            <span class="project-date">September 2026</span>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">LLM agents</span>
+            <span class="project-tag">Planning</span>
+            <span class="project-tag">Preprint</span>
+          </div>
+        </div>
+      </a>
+    </div>
     {% assign projects = site.pages | where: "layout", "project" | sort: 'date' | reverse %}
     {% for project in projects %}
       <div class="project-card">
@@ -73,6 +92,15 @@ permalink: /projects/
     transition: transform 0.5s ease;
   }
   
+  .project-image-contain {
+    background-color: #fff;
+    padding: 0.75rem;
+  }
+
+  .project-image-contain img {
+    object-fit: contain;
+  }
+
   .project-card:hover .project-image img {
     transform: scale(1.05);
   }
