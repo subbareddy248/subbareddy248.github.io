@@ -1,3 +1,15 @@
+- title: "Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution"
+  image: declaration_gap_2026.png
+  authors: <b>Subba Reddy Oota</b>, Francisco Herrera, Jordi Cabot Sagrera, Marcos López de Prado, Shadab Khan
+  venue: Arxiv (Pre-print)
+  venue_abbr: Arxiv
+  year: '2026'
+  links:
+  - url: https://arxiv.org/pdf/2609.38108
+    display: Arxiv
+  - url: https://subbareddy248.github.io/projects/declaration-gap-site/
+    display: Project Page
+
 - title: Linguistic Properties and Model Scale in Brain Encoding - From Small to Compressed Language Models
   image: icml_image_2026.png
   authors: <b>Subba Reddy Oota</b>, Satya Sai Srinath Namburi GNVV, Vijay Rowtula, Khushbu Pahwa, Anant Khandelwal, Manish Gupta, Tanmoy Chakraborty, Bapi Raju Surampudi

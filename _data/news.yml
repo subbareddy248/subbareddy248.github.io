@@ -1,3 +1,8 @@
+- date: Sep 29, 2026
+  title: "New Preprint: Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution"
+  description: "Our new work on the Plan Declaration–Execution Gap in LLM agents is now available on arXiv. Explore the animated planning patterns on the <a href='https://subbareddy248.github.io/projects/declaration-gap-site/' target='_blank'>project page</a>."
+  link: "https://arxiv.org/abs/2609.38108"
+
 - date: Sep 10, 2026
   title: "I am serving as an Area Chair for ICLR 2027"
   description: "I am honored to serve as an Area Chair for ICLR 2027 (<font color='red'>A*</font>)."
